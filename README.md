@@ -9,7 +9,7 @@ As a first step that you only have to do once, clone the repo to your local mach
 Here are the steps to do it:
 1. Navigate to the folder you want to clone the repo in.
 2. Open your terminal and type:
-    - For SSH (recommended): `git clone https://github.com/Lassonde-Blockchain-Club/lba-website-2023.git`
+    - For SSH (recommended): `git clone git@github.com:Lassonde-Blockchain-Club/lba-website-2023.git`
     - For HTTPS: `git clone https://github.com/Lassonde-Blockchain-Club/lba-website-2023.git`
 
 Some resources to solve errors while setting up SSH:
