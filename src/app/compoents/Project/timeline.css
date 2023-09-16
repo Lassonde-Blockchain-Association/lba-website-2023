@@ -1,0 +1,13 @@
+.is-hidden {
+  opacity: 0;
+  transform: translateY(1rem);
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.bounce-in {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition: all 0.3s;
+}
