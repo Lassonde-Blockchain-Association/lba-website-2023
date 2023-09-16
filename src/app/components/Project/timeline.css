@@ -1,4 +1,4 @@
-.is-hidden {
+/* .is-hidden {
   opacity: 0;
   transform: translateY(1rem);
   visibility: hidden;
@@ -10,4 +10,19 @@
   transform: translateY(0);
   visibility: visible;
   transition: all 0.3s;
+} */
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.bounce-in {
+  animation: bounce-in 0.6s;
 }
