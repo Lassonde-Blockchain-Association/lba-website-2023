@@ -27,9 +27,9 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   title,
   description,
 }) => (
-  <div className="flex mb-8 is-hidden">
-    <div className="flex-none mt-0.5 mr-3 text-blue-500">{date}</div>
-    <div className="flex-grow pl-4">
+  <div className="md:inline-block md:mr-10    max-md:flex mb-8 is-hidden">
+    <div className="max-md:flex-none mt-0.5 mr-3 text-blue-500">{date}</div>
+    <div className="md:pt-4 flex-grow max-md:pl-4">
       <h3 className="text-xl font-bold">{title}</h3>
       <p className="mt-1">{description}</p>
     </div>
@@ -67,7 +67,10 @@ const Project: React.FC = () => {
   return (
     <div className="p-8">
       <h2 className="text-2xl font-bold mb-6">Project Timeline</h2>
-      <div className="border-l-2 border-blue-500 pl-4" ref={timelineRef}>
+      <div
+        className="md:border-t-2 md:pt-4 border-blue-500 max-md:border-l-2 max-md:pl-4"
+        ref={timelineRef}
+      >
         {timelineData.map((item, idx) => (
           <TimelineItem key={idx} {...item} />
         ))}
