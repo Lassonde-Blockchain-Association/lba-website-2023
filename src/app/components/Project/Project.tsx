@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import "./timeline.css";
 
 interface TimelineItemProps {
   date: string;
@@ -27,12 +26,28 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   title,
   description,
 }) => (
-  <div className="md:inline-block md:mr-10    max-md:flex mb-8 is-hidden">
-    <div className="max-md:flex-none mt-0.5 mr-3 text-blue-500">{date}</div>
-    <div className="md:pt-4 flex-grow max-md:pl-4">
-      <h3 className="text-xl font-bold">{title}</h3>
-      <p className="mt-1">{description}</p>
+  <div className="flex items-center relative mb-16 last:mb-0">
+    <div className="z-10 w-16 h-16 relative">
+      {/* Cube faces */}
+      <div className="absolute w-16 h-16 bg-blue-500 transform translateZ(-8px)"></div>
+      <div className="absolute w-16 h-16 bg-red-500 transform rotateY(90deg) translateZ(-8px)"></div>
+      <div className="absolute w-16 h-16 bg-green-500 transform rotateY(180deg) translateZ(-8px)"></div>
+      <div className="absolute w-16 h-16 bg-yellow-500 transform rotateY(-90deg) translateZ(-8px)"></div>
+      <div className="absolute w-16 h-16 bg-purple-500 transform rotateX(90deg) translateZ(-8px)"></div>
+      <div className="absolute w-16 h-16 bg-orange-500 transform rotateX(-90deg) translateZ(-8px)"></div>
     </div>
+    <div className="ml-8 bg-white rounded-lg p-4 shadow-lg border border-gray-200 w-72">
+      <div className="flex items-center justify-between mb-2">
+        <h3 className="text-xl font-bold">{title}</h3>
+        <span className="text-sm text-gray-500">{date}</span>
+      </div>
+      <p className="text-sm">{description}</p>
+    </div>
+    {/* Timeline line */}
+    <div
+      className="absolute top-0 left-8 z-0 w-1 h-full bg-gray-400"
+      style={{ top: "-50%", height: "200%" }}
+    ></div>
   </div>
 );
 
@@ -65,12 +80,9 @@ const Project: React.FC = () => {
   }, []);
 
   return (
-    <div className="p-8">
-      <h2 className="text-2xl font-bold mb-6">Project Timeline</h2>
-      <div
-        className="md:border-t-2 md:pt-4 border-blue-500 max-md:border-l-2 max-md:pl-4"
-        ref={timelineRef}
-      >
+    <div className="bg-gray-200 min-h-screen p-8">
+      <h2 className="text-3xl font-bold mb-8">Project Timeline</h2>
+      <div ref={timelineRef} className="relative">
         {timelineData.map((item, idx) => (
           <TimelineItem key={idx} {...item} />
         ))}
