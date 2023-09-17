@@ -18,6 +18,7 @@ const timelineData: TimelineItemProps[] = [
     title: "Design Phase",
     description: "Developed wireframes and high-fidelity prototypes.",
   },
+
   // ... Add more items as necessary
 ];
 
