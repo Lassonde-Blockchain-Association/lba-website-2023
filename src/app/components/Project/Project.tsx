@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import "./timeline.css";
 
 interface TimelineItemProps {
   date: string;
@@ -19,7 +20,16 @@ const timelineData: TimelineItemProps[] = [
     title: "Design Phase",
     description: "Developed wireframes and high-fidelity prototypes.",
   },
-  // ... Add more items as necessary
+  {
+    date: "Feb 2023",
+    title: "Design Phase",
+    description: "Developed wireframes and high-fidelity prototypes.",
+  },
+  {
+    date: "Feb 2023",
+    title: "Design Phase",
+    description: "Developed wireframes and high-fidelity prototypes.",
+  },
 ];
 
 const TimelineItem: React.FC<TimelineItemProps> = ({
@@ -29,26 +39,26 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
 }) => (
   <div className="flex items-center relative mb-16 last:mb-0">
     <div className="z-10 w-16 h-16 relative">
-      {/* Cube faces */}
-      {/*
-      <div className="absolute w-16 h-16 bg-blue-500 transform translateZ(-8px)"></div>
-      <div className="absolute w-16 h-16 bg-red-500 transform rotateY(90deg) translateZ(-8px)"></div>
-      <div className="absolute w-16 h-16 bg-green-500 transform rotateY(180deg) translateZ(-8px)"></div>
-      <div className="absolute w-16 h-16 bg-yellow-500 transform rotateY(-90deg) translateZ(-8px)"></div>
-      <div className="absolute w-16 h-16 bg-purple-500 transform rotateX(90deg) translateZ(-8px)"></div>
-      <div className="absolute w-16 h-16 bg-orange-500 transform rotateX(-90deg) translateZ(-8px)"></div>*/}
-
       <img src="/isometric_cube.png"></img>
     </div>
-    <div className="ml-8 bg-white rounded-lg p-4 shadow-lg border border-gray-200 w-72">
-      <div className="flex items-center justify-between mb-2">
-        <h3 className="text-xl font-bold">{title}</h3>
-        <span className="text-sm text-gray-500">{date}</span>
+    {/* <div className="ml-8 bg-white rounded-lg p-4 shadow-lg border border-gray-200 w-72">
+      <div className="flex items-center justify-between mb-2"> */}
+    <li className="direction-r">
+      <div className="relative">
+        <div className="flex justify-end items-center space-x">
+          <span className="flag bg-gray-100 px-2.5 py-1.5 rounded-md shadow-md relative text-left font-semibold">
+            {title}
+          </span>
+
+          <span className="bg-gray-50 text-red-400 text-sm px-2">{date}</span>
+        </div>
+        <p className="desc mt-3 italic text-sm leading-relaxed">
+          {description}
+        </p>
       </div>
-      <p className="text-sm">{description}</p>
-    </div>
-    {/* Timeline line */}
-    <div className="absolute top-[80%] left-[30px] z-0 w-1 h-[115%] bg-gray-400"></div>
+      {/* Timeline line */}
+      <div className="absolute top-[80%] left-[30px] z-0 w-1 h-[115%] bg-gray-400"></div>
+    </li>
   </div>
 );
 
