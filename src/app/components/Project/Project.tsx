@@ -20,16 +20,6 @@ const timelineData: TimelineItemProps[] = [
     title: "Design Phase",
     description: "Developed wireframes and high-fidelity prototypes.",
   },
-  {
-    date: "Feb 2023",
-    title: "Design Phase",
-    description: "Developed wireframes and high-fidelity prototypes.",
-  },
-  {
-    date: "Feb 2023",
-    title: "Design Phase",
-    description: "Developed wireframes and high-fidelity prototypes.",
-  },
 ];
 
 const TimelineItem: React.FC<TimelineItemProps> = ({
