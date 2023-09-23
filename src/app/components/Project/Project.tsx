@@ -1,25 +1,31 @@
 "use client";
-// import React, { useEffect, useRef } from "react";
-// import Image from "next/image";
+import React, { MutableRefObject, useEffect, useRef } from "react";
+import Image from "next/image";
+import "./timeline.css";
+import Timeline from "../Timeline";
+import data from "./TimelineData";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+   
 
-// interface TimelineItemProps {
-//   date: string;
-//   title: string;
-//   description: string;
-// }
+interface TimelineItemProps {
+  date: string;
+  title: string;
+  description: string;
+}
 
-// const timelineData: TimelineItemProps[] = [
-//   {
-//     date: "Jan 2023",
-//     title: "Project Kickoff",
-//     description: "Met with the team and defined the scope of the project.",
-//   },
-//   {
-//     date: "Feb 2023",
-//     title: "Design Phase",
-//     description: "Developed wireframes and high-fidelity prototypes.",
-//   },
-// ];
+const timelineData: TimelineItemProps[] = [
+  {
+    date: "Jan 2023",
+    title: "Project Kickoff",
+    description: "Met with the team and defined the scope of the project.",
+  },
+  {
+    date: "Feb 2023",
+    title: "Design Phase",
+    description: "Developed wireframes and high-fidelity prototypes.",
+  },
+];
 
 // const TimelineItem: React.FC<TimelineItemProps> = ({
 //   date,
@@ -51,64 +57,61 @@
 //   </div>
 // );
 
-// const Project: React.FC = () => {
-//   const timelineRef = useRef<HTMLDivElement>(null);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       if (timelineRef.current) {
-//         const timelineBlocks = Array.from(timelineRef.current.children);
-//         timelineBlocks.forEach((block) => {
-//           if (
-//             block.getBoundingClientRect().top <= window.innerHeight * 0.75 &&
-//             block.classList.contains("is-hidden")
-//           ) {
-//             block.classList.remove("is-hidden");
-//             block.classList.add("bounce-in");
-//           }
-//         });
-//       }
-//     };
-
-//     handleScroll();
-
-//     window.addEventListener("scroll", handleScroll);
-
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll);
-//     };
-//   }, []);
-
-//   return (
-//     <div className="bg-gray-200 min-h-screen p-8">
-//       <h2 className="text-3xl font-bold mb-8">Project Timeline</h2>
-//       <div className="absolute top-[10%] left-[62px] z-0 w-1 h-[5%] bg-gray-400"></div>
-//       <div ref={timelineRef} className="relative">
-//         {timelineData.map((item, idx) => (
-//           <TimelineItem key={idx} {...item} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Project;
-
-import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import data from "./TimelineData";
-
 const Project: React.FC = () => {
   console.log("ScrollSection component rendered"); // Add this line
+
+
+  
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const triggerRef = useRef<HTMLDivElement | null>(null);
 
   gsap.registerPlugin(ScrollTrigger);
   console.log(sectionRef); // Add this line
+      
+  const bodyRef = useRef(null);
+  const maskRef = useRef(null);
+  const projectBodyColour = "gray-200";
+
+  const bodyClassName: string = `bg-${projectBodyColour} min-h-screen p-8`;
+  // Unsure how to make the rectangle fill the whole screen, causes glitches in smaller screens
+  const maskClassName: string = `absolute bg-${projectBodyColour} h-16 w-3/4`;
 
   useEffect(() => {
+     const handleScroll = () => {
+       if (timelineRef.current) {
+         const timelineBlocks = Array.from(timelineRef.current.children);
+         timelineBlocks.forEach((block) => {
+           if (
+             block.getBoundingClientRect().top <= window.innerHeight * 0.75 &&
+             block.classList.contains("is-hidden")
+           ) {
+             block.classList.remove("is-hidden");
+             block.classList.add("bounce-in");
+           }
+         });
+       }
+     };
+
+    gsap.to(maskRef.current, {
+      width: "5%",
+      x: 800,
+      duration: 2,
+      /*
+      ease: "none",
+      delay: 1,*/
+      // Trying to figure out how to sync it with the scroll
+      scrollTrigger: {
+        trigger: bodyRef.current,
+        markers: true,
+        start: "top left",
+        scrub: 1,
+      },
+    });
+
+    handleScroll();
+
+
     console.log("Running useEffect");
 
     if (!sectionRef.current || !triggerRef.current) {
@@ -135,16 +138,36 @@ const Project: React.FC = () => {
         },
       }
     );
-    return () => {
-      {
-        /* A return function for killing the animation on component unmount */
-      }
-      pin.kill();
-    };
+    window.addEventListener("scroll", handleScroll);
+
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
   }, []);
 
+  {
+    /* 
+    <div className="bg-gray-200 min-h-screen p-8">
+      <h2 className="text-3xl font-bold mb-8">Project Timeline</h2>
+      <div ref={timelineRef} className="relative">
+        {timelineData.map((item, idx) => (
+          <TimelineItem key={idx} {...item} />
+        ))}
+      </div>
+    </div>*/
+  }
   return (
-    <>
+    <div ref={bodyRef} className={bodyClassName}>
+      <h2 className="text-3xl font-bold mb-8">Project Timeline</h2>
+      <div>
+        <div className="absolute">
+          <Timeline className="flex flex-start h-16 opacity-100 " length={5} />
+        </div>
+        <div ref={maskRef} className={maskClassName}></div>
+        <div className="absolute">
+          <Timeline className="flex flex-start h-16 opacity-40" length={5} />
+        </div>
+      </div>
       <section className="">
         <svg
           viewBox="0 0 900 10"
@@ -198,7 +221,7 @@ const Project: React.FC = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
