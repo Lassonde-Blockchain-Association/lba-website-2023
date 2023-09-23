@@ -1,7 +1,8 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { MutableRefObject, useEffect, useRef } from "react";
 import "./timeline.css";
 import Timeline from "../Timeline";
+import gsap from "gsap";
 
 interface TimelineItemProps {
   date: string;
@@ -55,6 +56,14 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
 const Project: React.FC = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
 
+  const bodyRef = useRef(null);
+  const maskRef = useRef(null);
+  const projectBodyColour = "gray-200";
+
+  const bodyClassName: string = `bg-${projectBodyColour} min-h-screen p-8`;
+  // Unsure how to make the rectangle fill the whole screen, causes glitches in smaller screens
+  const maskClassName: string = `absolute bg-${projectBodyColour} h-16 w-3/4`;
+
   useEffect(() => {
     const handleScroll = () => {
       if (timelineRef.current) {
@@ -70,6 +79,22 @@ const Project: React.FC = () => {
         });
       }
     };
+
+    gsap.to(maskRef.current, {
+      width: "5%",
+      x: 800,
+      duration: 2,
+      /*
+      ease: "none",
+      delay: 1,*/
+      // Trying to figure out how to sync it with the scroll
+      scrollTrigger: {
+        trigger: bodyRef.current,
+        markers: true,
+        start: "top left",
+        scrub: 1,
+      },
+    });
 
     handleScroll();
 
@@ -92,9 +117,17 @@ const Project: React.FC = () => {
     </div>*/
   }
   return (
-    <div className="bg-gray-200 min-h-screen p-8">
+    <div ref={bodyRef} className={bodyClassName}>
       <h2 className="text-3xl font-bold mb-8">Project Timeline</h2>
-      <Timeline className="opacity-100" length={3} />
+      <div>
+        <div className="absolute">
+          <Timeline className="flex flex-start h-16 opacity-100 " length={5} />
+        </div>
+        <div ref={maskRef} className={maskClassName}></div>
+        <div className="absolute">
+          <Timeline className="flex flex-start h-16 opacity-40" length={5} />
+        </div>
+      </div>
     </div>
   );
 };

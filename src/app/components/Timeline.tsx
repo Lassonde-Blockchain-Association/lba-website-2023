@@ -5,7 +5,7 @@ interface TimelineProps {
 
 const Timeline: React.FC<TimelineProps> = ({ className, length }) => {
   const elementIndex = new Array<number>(length - 1);
-  const divClassName = `flex flex-start h-16 ${className}`;
+  const divClassName = `${className}`;
 
   for (let i = 0; i < elementIndex.length; i++) {
     elementIndex[i] = i + 1;
