@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import Image from "next/image";
 import "./timeline.css";
+import Timeline from "../Timeline";
 
 interface TimelineItemProps {
   date: string;
@@ -80,7 +80,8 @@ const Project: React.FC = () => {
     };
   }, []);
 
-  return (
+  {
+    /* 
     <div className="bg-gray-200 min-h-screen p-8">
       <h2 className="text-3xl font-bold mb-8">Project Timeline</h2>
       <div ref={timelineRef} className="relative">
@@ -88,6 +89,12 @@ const Project: React.FC = () => {
           <TimelineItem key={idx} {...item} />
         ))}
       </div>
+    </div>*/
+  }
+  return (
+    <div className="bg-gray-200 min-h-screen p-8">
+      <h2 className="text-3xl font-bold mb-8">Project Timeline</h2>
+      <Timeline className="opacity-100" length={3} />
     </div>
   );
 };
