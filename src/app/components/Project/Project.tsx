@@ -155,9 +155,9 @@ const Project: React.FC = () => {
   const maskRef = useRef(null); // Needed for the max
   const projectBodyColour = "gray-200";
 
-  const bodyClassName: string = `bg-${projectBodyColour} min-h-screen p-8`;
+  const bodyClassName: string = `bg-gray-200 min-h-screen p-8`;
   // Unsure how to make the rectangle fill the whole screen, causes glitches in smaller screens
-  const maskClassName: string = `absolute bg-${projectBodyColour} h-16 w-3/4`;
+  const maskClassName: string = `absolute bg-gray-200 h-16 w-3/4`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -188,7 +188,7 @@ const Project: React.FC = () => {
         trigger: bodyRef.current,
         markers: true,
         start: "top top",
-        end: `+=${Math.ceil(775 * data.length)}`,
+        end: `+=${Math.ceil(1500 * Math.pow(data.length, 0.4))}`,
         scrub: 1,
         pin: true,
       },
@@ -210,13 +210,13 @@ const Project: React.FC = () => {
         translateX: 0,
       },
       {
-        translateX: "-350vw",
+        translateX: `${-250 - 7 * Math.pow(data.length, 1.35)}vw`,
         ease: "none",
         duration: 1,
         scrollTrigger: {
           trigger: triggerRef.current,
           start: "top top",
-          end: "2000 top",
+          end: `${800 + 100 * Math.pow(data.length, 1.2)} top`,
           scrub: 0.6,
           pin: true,
           markers: true,
