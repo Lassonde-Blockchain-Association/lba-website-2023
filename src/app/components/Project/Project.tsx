@@ -1,59 +1,28 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import Image from "next/image";
-import "./timeline.css";
-
-interface TimelineItemProps {
-  date: string;
-  title: string;
-  description: string;
-}
-
-const timelineData: TimelineItemProps[] = [
-  {
-    date: "Jan 2023",
-    title: "Project Kickoff",
-    description: "Met with the team and defined the scope of the project.",
-  },
-  {
-    date: "Feb 2023",
-    title: "Design Phase",
-    description: "Developed wireframes and high-fidelity prototypes.",
-  },
-];
-
-const TimelineItem: React.FC<TimelineItemProps> = ({
-  date,
-  title,
-  description,
-}) => (
-  <div className="flex items-center relative mb-16 last:mb-0">
-    <div className="z-10 w-16 h-16 relative">
-      <img src="/isometric_cube.png"></img>
-    </div>
-    {/* <div className="ml-8 bg-white rounded-lg p-4 shadow-lg border border-gray-200 w-72">
-      <div className="flex items-center justify-between mb-2"> */}
-    <li className="direction-r">
-      <div className="relative">
-        <div className="flex justify-end items-center space-x">
-          <span className="flag bg-gray-100 px-2.5 py-1.5 rounded-md shadow-md relative text-left font-semibold">
-            {title}
-          </span>
-
-          <span className="bg-gray-50 text-red-400 text-sm px-2">{date}</span>
-        </div>
-        <p className="desc mt-3 italic text-sm leading-relaxed">
-          {description}
-        </p>
-      </div>
-      {/* Timeline line */}
-      <div className="absolute top-[80%] left-[30px] z-0 w-1 h-[115%] bg-gray-400"></div>
-    </li>
-  </div>
-);
+import Timeline from "../Timeline";
+import data from "./TimelineData";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const Project: React.FC = () => {
+  console.log("ScrollSection component rendered"); // Add this line
+
   const timelineRef = useRef<HTMLDivElement>(null);
+
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const triggerRef = useRef<HTMLDivElement | null>(null);
+
+  gsap.registerPlugin(ScrollTrigger);
+  console.log(sectionRef); // Add this line
+
+  const bodyRef = useRef(null);
+  const maskRef = useRef(null); // Needed for the max
+  const projectBodyColour = "gray-200";
+
+  const bodyClassName: string = `bg-${projectBodyColour} min-h-screen p-8`;
+  // Unsure how to make the rectangle fill the whole screen, causes glitches in smaller screens
+  const maskClassName: string = `absolute bg-${projectBodyColour} h-16 w-3/4`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,24 +40,93 @@ const Project: React.FC = () => {
       }
     };
 
+    gsap.to(maskRef.current, {
+      width: "5%",
+      x: 800,
+      duration: 2,
+      // Trying to figure out how to sync it with the scroll
+      scrollTrigger: {
+        trigger: bodyRef.current,
+        markers: true,
+        start: "top left",
+        scrub: 1,
+        pin: true,
+      },
+    });
+
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll);
+    /*
+    console.log("Running useEffect");
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    if (!sectionRef.current || !triggerRef.current) {
+      console.log("Refs not attached");
+      return;
+    }*/
+
+    const pin = gsap.fromTo(
+      sectionRef.current,
+      {
+        translateX: 0,
+      },
+      {
+        translateX: "-300vw",
+        ease: "none",
+        duration: 1,
+        scrollTrigger: {
+          trigger: triggerRef.current,
+          start: "top top",
+          end: "2000 top",
+          scrub: 0.6,
+          pin: true,
+          markers: true,
+        },
+      }
+    );
+    window.addEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div className="bg-gray-200 min-h-screen p-8">
+    <div ref={bodyRef} className={bodyClassName}>
       <h2 className="text-3xl font-bold mb-8">Project Timeline</h2>
-      <div className="absolute top-[10%] left-[62px] z-0 w-1 h-[5%] bg-gray-400"></div>
-      <div ref={timelineRef} className="relative">
-        {timelineData.map((item, idx) => (
-          <TimelineItem key={idx} {...item} />
-        ))}
+      <div>
+        <div className="absolute">
+          <Timeline
+            className="flex flex-start h-16 opacity-100 "
+            length={data.length}
+          />
+        </div>
+        <div ref={maskRef} className={maskClassName}></div>
+        <div className="absolute">
+          <Timeline
+            className="flex flex-start h-16 opacity-40"
+            length={data.length}
+          />
+        </div>
       </div>
+      <section className="">
+        {/* The section up act just as a wrapper. If the trigger (below) is the
+      first jsx element in the component, you get an error on route change */}
+
+        {/* The div below act just as a trigger. As the doc suggests, the trigger and 
+      the animation should alway be two separated refs */}
+        <div ref={triggerRef}>
+          <div
+            ref={sectionRef}
+            className="h-screen w-[400vw] flex flex-row relative"
+          >
+            {data.map((item, index) => (
+              <section key={index}>
+                <div className="section h-screen w-screen justify-center items-center">
+                  <span className="text-lg">{item.date}</span>
+                  <h1 className="text-2xl">{item.title}</h1>
+                  <p className="text-base">{item.description}</p>
+                </div>
+              </section>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
