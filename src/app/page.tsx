@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="">
       <Hero />
-      <Testing />
+      <Project />
       <Footer />
     </main>
   );
