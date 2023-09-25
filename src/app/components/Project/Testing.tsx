@@ -81,7 +81,7 @@ function Testing() {
     <section className=" overflow-hidden flex">
       <div ref={triggerRef} className=" overflow-hidden ">
         {/* old timeline */}
-        {/* <svg
+        <svg
           viewBox="0 0 900 10"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -106,22 +106,22 @@ function Testing() {
           <g mask="url(#mask0_0_1)">
             <rect className="mask" y="-49" height="99" fill="black" />
           </g>
-        </svg> */}
-        <div>
+        </svg>
+        {/* <div>
           <div className="absolute">
             <Timeline
               className="flex flex-start h-16 opacity-100 "
               length={data.length}
             />
           </div>
-          {/* <div ref={maskRef} className={maskClassName}></div> */}
+          <div ref={maskRef} className={maskClassName}></div>
           <div className="absolute">
             <Timeline
               className="flex flex-start h-16 opacity-40"
               length={data.length}
             />
           </div>
-        </div>
+        </div> */}
         <div
           ref={sectionRef}
           className=" flex overflow-x-hidden w-[400vw] m-0  relative h-screen"
