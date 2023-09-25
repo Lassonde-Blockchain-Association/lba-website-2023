@@ -173,26 +173,47 @@ const Project: React.FC = () => {
           }
         });
       }
-    };
-
-    gsap.to(maskRef.current, {
-      width: "5%",
-      translateX: `${
-        Math.ceil(7 * data.length) +
-        8 * data.length * (1920 / window.innerWidth - 1)
-      }vw`,
-      duration: 20,
-      // Trying to figure out how to sync it with the scroll
-
-      scrollTrigger: {
-        trigger: bodyRef.current,
-        markers: true,
-        start: "top top",
-        end: `+=${Math.ceil(1500 * Math.pow(data.length, 0.4))}`,
-        scrub: 1,
-        pin: true,
-      },
-    });
+    }; 
+    let ctx = gsap.context(() => {
+      gsap.to(maskRef.current, {
+        width: "5%",
+        translateX: `${
+          Math.ceil(7 * data.length) +
+          8 * data.length * (1920 / window.innerWidth - 1)
+        }vw`,
+        duration: 20,
+        // Trying to figure out how to sync it with the scroll
+  
+        scrollTrigger: {
+          trigger: bodyRef.current,
+          markers: true,
+          start: "top top",
+          end: `+=${Math.ceil(1500 * Math.pow(data.length, 0.4))}`,
+          scrub: 1,
+          pin: true,
+        },
+      });
+      gsap.fromTo(
+        sectionRef.current,
+        {
+          translateX: 0,
+        },
+        {
+          translateX: `${-250 - 7 * Math.pow(data.length, 1.35)}vw`,
+          ease: "none",
+          duration: 1,
+          scrollTrigger: {
+            trigger: triggerRef.current,
+            start: "top top",
+            end: `${800 + 100 * Math.pow(data.length, 1.2)} top`,
+            scrub: 0.6,
+            pin: true,
+            markers: true,
+          },
+        }
+      );
+    })
+    
 
     handleScroll();
 
@@ -204,26 +225,10 @@ const Project: React.FC = () => {
       return;
     }*/
 
-    const pin = gsap.fromTo(
-      sectionRef.current,
-      {
-        translateX: 0,
-      },
-      {
-        translateX: `${-250 - 7 * Math.pow(data.length, 1.35)}vw`,
-        ease: "none",
-        duration: 1,
-        scrollTrigger: {
-          trigger: triggerRef.current,
-          start: "top top",
-          end: `${800 + 100 * Math.pow(data.length, 1.2)} top`,
-          scrub: 0.6,
-          pin: true,
-          markers: true,
-        },
-      }
-    );
+    
     window.addEventListener("scroll", handleScroll);
+
+    return () => ctx.revert();
   }, []);
 
   return (
