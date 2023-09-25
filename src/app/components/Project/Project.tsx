@@ -155,9 +155,9 @@ const Project: React.FC = () => {
   const maskRef = useRef(null); // Needed for the max
   const projectBodyColour = "gray-200";
 
-  const bodyClassName: string = `bg-gray-200 min-h-screen p-8`;
+  const bodyClassName: string = `bg-gray-500 min-h-screen p-8`;
   // Unsure how to make the rectangle fill the whole screen, causes glitches in smaller screens
-  const maskClassName: string = `absolute bg-gray-200 h-16 w-3/4`;
+  const maskClassName: string = `absolute bg-gray-500 h-16 w-3/4`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -227,9 +227,9 @@ const Project: React.FC = () => {
   }, []);
 
   return (
-    <section className=" overflow-hidden flex">
-      <div ref={triggerRef} className=" overflow-hidden ">
-        <div ref={bodyRef} className={bodyClassName}>
+    <section ref={triggerRef} className=" overflow-hidden flex">
+      <div ref={bodyRef} className=" overflow-hidden ">
+        <div className={bodyClassName}>
           <h2 className="text-3xl font-bold mb-8">Project Timeline</h2>
           <div className="">
             <div className="absolute">
@@ -246,25 +246,22 @@ const Project: React.FC = () => {
               />
             </div>
           </div>
+
           <div
             ref={sectionRef}
-            className=" flex overflow-x-hidden w-[400vw] m-0  relative h-screen"
+            className="h-screen w-[400vw] flex flex-row relative"
           >
-            <div
-              ref={sectionRef}
-              className="h-screen w-[400vw] flex flex-row relative"
-            >
-              {data.map((item, index) => (
-                <section key={index} className="pin w-screen p-16">
-                  <span className="anim">{item.date}</span>
-                  <h1 className="anim text-7xl">{item.title}</h1>
-                  <p className="anim text-lg">{item.description}</p>
-                </section>
-              ))}
-            </div>
+            {data.map((item, index) => (
+              <section key={index} className="pin w-screen p-16">
+                <span className="anim">{item.date}</span>
+                <h1 className="anim text-7xl">{item.title}</h1>
+                <p className="anim text-lg">{item.description}</p>
+              </section>
+            ))}
           </div>
         </div>
       </div>
+      {/* </div> */}
     </section>
   );
 };
