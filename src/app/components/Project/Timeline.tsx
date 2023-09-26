@@ -1,9 +1,14 @@
 interface TimelineProps {
   className: string;
+  heightClassName: string;
   length: number;
 }
 
-const Timeline: React.FC<TimelineProps> = ({ className, length }) => {
+const Timeline: React.FC<TimelineProps> = ({
+  className,
+  heightClassName,
+  length,
+}) => {
   const elementIndex = new Array<number>(length - 1);
   const divClassName = `${className}`;
 
@@ -14,10 +19,12 @@ const Timeline: React.FC<TimelineProps> = ({ className, length }) => {
   return (
     <div className={divClassName}>
       {elementIndex.map((index) => (
-        <div className="flex flex-start h-20">
-          <img src="/isometric_cube.png"></img>
+        <div className="flex items-center h-20">
+          <img className={heightClassName} src="/isometric_cube.png"></img>
           <div className="my-auto w-20 h-1 bg-black"></div>
-          {index == length - 1 && <img src="/isometric_cube.png"></img>}
+          {index == length - 1 && (
+            <img className={heightClassName} src="/isometric_cube.png"></img>
+          )}
         </div>
       ))}
     </div>
