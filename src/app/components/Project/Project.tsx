@@ -22,7 +22,7 @@ const Project: React.FC = () => {
 
   const heightOfTimeline = 20;
 
-  const bodyClassName: string = `bg-gray-500 min-h-screen p-8 w-full`;
+  const bodyClassName: string = `bg-gray-500 min-h-screen p-5 pl-40 w-full`;
   // Unsure how to make the rectangle fill the whole screen, causes glitches in smaller screens
   const maskClassName: string = `absolute bg-gray-500 h-20 w-full z-10`;
 
@@ -111,15 +111,20 @@ const Project: React.FC = () => {
 
           <div
             ref={sectionRef}
-            className="h-screen w-[400vw] flex flex-row relative items-center justify-center"
+            className="h-screen w-[400vw] flex flex-row relative items-center justify-center "
           >
             {timelineData.map((item, index) => (
-              <section key={index} className="w-screen p-16 border text-center	">
-                <span className="item-center flex justify-center">
+              <section
+                key={index}
+                className="w-screen p-20 m-20 text-center bg-slate-50 rounded-lg shadow-lg"
+              >
+                <h4 className="item-center flex justify-center text-red-400 text-lg">
                   {item.date}
-                </span>
-                <h1 className="text-5xl flex justify-center">{item.title}</h1>
-                <p className="text-lg italic leading-6 flex justify-center">
+                </h4>
+                <h1 className="text-5xl flex justify-center font-semibold">
+                  {item.title}
+                </h1>
+                <p className="text-lg italic leading-6 flex justify-center p-5">
                   {item.description}
                 </p>
               </section>
