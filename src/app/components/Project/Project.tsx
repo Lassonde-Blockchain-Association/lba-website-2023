@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import Timeline from "../Timeline";
+import Timeline from "./Timeline";
 import timelineData from "./TimelineData";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -53,7 +53,7 @@ const Project: React.FC = () => {
 
         scrollTrigger: {
           trigger: bodyRef.current,
-          markers: true,
+          markers: false,
           start: "top top",
           end: `+=${Math.ceil(1500 * Math.pow(timelineData.length, 0.4))}`,
           scrub: 1,
@@ -75,7 +75,7 @@ const Project: React.FC = () => {
             end: `${800 + 100 * Math.pow(timelineData.length, 1.2)} top`,
             scrub: 0.6,
             pin: true,
-            markers: true,
+            markers: false,
           },
         }
       );
