@@ -18,11 +18,13 @@ const Project: React.FC = () => {
 
   const bodyRef = useRef(null);
   const maskRef = useRef(null); // Needed for the max
-  const projectBodyColour = "gray-200";
+  let projectBodyColour = "gray-200";
 
-  const bodyClassName: string = `bg-gray-500 min-h-screen p-8`;
+  const heightOfTimeline = 20;
+
+  const bodyClassName: string = `bg-gray-500 min-h-screen p-8 w-full`;
   // Unsure how to make the rectangle fill the whole screen, causes glitches in smaller screens
-  const maskClassName: string = `absolute bg-gray-500 h-16 w-3/4`;
+  const maskClassName: string = `absolute bg-gray-500 h-20 w-full z-10`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,9 +43,9 @@ const Project: React.FC = () => {
     };
     let ctx = gsap.context(() => {
       gsap.to(maskRef.current, {
-        width: "5%",
+        width: "1%",
         translateX: `${
-          Math.ceil(7 * timelineData.length) +
+          Math.ceil(9 * timelineData.length) +
           8 * timelineData.length * (1920 / window.innerWidth - 1)
         }vw`,
         duration: 20,
@@ -90,18 +92,18 @@ const Project: React.FC = () => {
     <section ref={triggerRef} className="overflow-hidden flex">
       <div ref={bodyRef} className="overflow-hidden ">
         <div className={bodyClassName}>
-          <h2 className="text-3xl font-bold mb-8">Project Timeline</h2>
-          <div className="flextems-center justify-center">
-            <div className="absolute">
+          <h2 className="text-3xl font-bold mb-12">Project Timeline</h2>
+          <div className="flex justify-center">
+            <div className="absolute z-10">
+              <div ref={maskRef} className={maskClassName}></div>
               <Timeline
-                className="flex flex-start h-16 opacity-100 "
+                className="flex flex-start h-16 opacity-100 z-0"
                 length={timelineData.length}
               />
             </div>
-            <div ref={maskRef} className={maskClassName}></div>
-            <div className="absolute">
+            <div className="absolute z-30">
               <Timeline
-                className="flex flex-start h-16 opacity-40"
+                className="flex flex-start h-16 opacity-40 z-30"
                 length={timelineData.length}
               />
             </div>
