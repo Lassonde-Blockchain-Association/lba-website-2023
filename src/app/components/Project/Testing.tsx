@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import data from "./TimelineData";
-import Timeline from "../Timeline";
+import Timeline from "./Timeline";
 
 function Testing() {
   const triggerRef = useRef<HTMLDivElement | null>(null);

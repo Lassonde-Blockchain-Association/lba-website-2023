@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
-import Timeline from "../Timeline";
+import Timeline from "./Timeline";
 import timelineData from "./TimelineData";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
