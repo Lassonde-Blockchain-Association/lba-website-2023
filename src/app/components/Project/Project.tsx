@@ -97,13 +97,15 @@ const Project: React.FC = () => {
             <div className="absolute z-10">
               <div ref={maskRef} className={maskClassName}></div>
               <Timeline
-                className="flex flex-start h-16 opacity-100 z-0"
+                className="flex flex-start h-20 opacity-100 z-0"
+                heightClassName="h-20"
                 length={timelineData.length}
               />
             </div>
             <div className="absolute z-30">
               <Timeline
-                className="flex flex-start h-16 opacity-40 z-30"
+                className="flex flex-start h-20 opacity-40 z-30"
+                heightClassName="h-20"
                 length={timelineData.length}
               />
             </div>
