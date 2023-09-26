@@ -14,9 +14,9 @@ const Timeline: React.FC<TimelineProps> = ({ className, length }) => {
   return (
     <div className={divClassName}>
       {elementIndex.map((index) => (
-        <div className="flex flex-start h-16">
+        <div className="flex flex-start h-20">
           <img src="/isometric_cube.png"></img>
-          <div className="my-auto w-16 h-1 bg-black"></div>
+          <div className="my-auto w-20 h-1 bg-black"></div>
           {index == length - 1 && <img src="/isometric_cube.png"></img>}
         </div>
       ))}
