@@ -1,0 +1,16 @@
+{
+    "type": "PullRequest",
+    "pulls":[
+        {
+            "type": "pull",
+            "order": 1,
+            "from": "IND",
+            "to": "SIN",
+            "startLat": 28.6126302,
+            "startLng": 77.2307275,
+            "endLat": 1.29709,
+            "endLng": 103.855579,
+            "arcAlt": 0.05
+        }
+    ]
+}

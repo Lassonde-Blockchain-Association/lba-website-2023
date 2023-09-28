@@ -3,6 +3,9 @@
 import * as THREE from "three";
 
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import countries from "../../../public/custom.geo.json";
+import lines from "./lines.json";
+import map from "./map.json";
 
 var renderer, scene, camera, controls;
 
