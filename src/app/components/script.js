@@ -1,7 +1,11 @@
 // Script to make Github Globe with three.js
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const { window } = new JSDOM();
+global.window = window;
+global.document = window.document;
 
 import * as THREE from "three";
-
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import countries from "../../../public/custom.geo.json";
 import lines from "./lines.json";
@@ -22,7 +26,8 @@ onWindowResize();
 animate();
 
 function init() {
-  renderer = new THREE.WebGLRenderer({ antialias: true });
+
+  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
@@ -82,7 +87,47 @@ function initGlobe() {
   Globe = new ThreeGlobe({
     waitForGlobeReady: true,
     animateIn: true,
-  });
+  })
+
+    .hexPolygonData(countries.features)
+    .hexPolygonResolution(3)
+    .hexPolygonMargin(0.7)
+    .showAtmosphere(true)
+    .atmosphereColor("#3A228A")
+    .atmosphereAltitude(0.25);
+
+  setTimeout(() => {
+    // arc data + styling
+    Globe.arcsData(lines.pulls)
+      .arcColor((e) => {
+        return e.status ? "#9CFF00" : "#FF4000";
+      })
+      .arcAltitude((e) => {
+        return e.arcAlt;
+      })
+      .arcStroke((e) => {
+        return e.status ? 0.5 : 0.3;
+      })
+      .arcDashLength(0.9)
+      .arcDashGap(4)
+      .arcDashAnimateTime(1000)
+      .arcTransitionDuration(1000)
+      .arcDashInitialGap((e) => e.order * 1)
+      .labelsData(map.maps)
+      .labelColor(() => "#FFCB21")
+
+      // Adding location labels
+      .labelDotRadius(0.3)
+      .labelSize((e) => e.size)
+      .labelText("city")
+      .labelResolution(6)
+      .labelAltitude(0.01)
+      .pointsData(map.maps)
+      .pointColor(() => "#FFFFFF")
+      .pointsMerge(true)
+      .pointAltitude(0.07)
+      .pointRadius(0.05);
+  }, 1000);
 
   Globe.rotateY(-Math.PI * (5 / 9));
   Globe.rotateZ(-Math.PI / 6);
@@ -111,12 +156,12 @@ function onWindowResize() {
 function animate() {
   camera.position.x +=
     Math.abs(mouseX) <= windowHalfX / 2
-        ? (mouseX / 2 - camera.position.x) * 0.005
-        : 0;
+      ? (mouseX / 2 - camera.position.x) * 0.005
+      : 0;
 
-    camera.position.y += (-mouseY / 2 - camera.position.y) * 0.005;
-    camera.lookAt(scene.position);
-    controls.update();
-    camera.render(scene, camera);
-    requestAnimationFrame(animate);
+  camera.position.y += (-mouseY / 2 - camera.position.y) * 0.005;
+  camera.lookAt(scene.position);
+  controls.update();
+  camera.render(scene, camera);
+  requestAnimationFrame(animate);
 }
