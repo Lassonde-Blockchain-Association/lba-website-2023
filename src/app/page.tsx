@@ -1,12 +1,12 @@
-import React from 'react';
-import Mission from './components/mission';
+import React from "react";
+import Mission from "./components/Mission/mission";
 import Landing from "./components/Landing/landing";
 
 export default function Home() {
   return (
-    <main className="LBA bg-[#121A48] h-screen w-screen">
-      <div >
-          <Landing />
+    <main className="LBA bg-[#121A48]">
+      <div>
+        <Landing />
         <Mission />
       </div>
     </main>
