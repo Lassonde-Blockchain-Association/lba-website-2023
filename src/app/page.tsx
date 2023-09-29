@@ -1,7 +1,9 @@
-import Project from "./components/Project/project";
 import React from "react";
-import Mission from "./components/Mission/mission";
 import Landing from "./components/Landing/landing";
+import Mission from "./components/Mission/mission";
+import Project from "./components/Project/project";
+import TeamCard from './components/TeamCard'
+
 
 export default function Home() {
   return (
@@ -9,6 +11,7 @@ export default function Home() {
         <Landing />
         <Mission />
         <Project />
+        <TeamCard />
     </main>
   );
 }

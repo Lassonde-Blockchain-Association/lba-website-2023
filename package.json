@@ -30,6 +30,7 @@
     "cobe": "^0.6.3",
     "jsdom": "^22.1.0",
     "postcss": "8.4.29",
+    "react-parallax-tilt": "^1.7.167",
     "three-globe": "^2.29.3"
   },
   "devDependencies": {
