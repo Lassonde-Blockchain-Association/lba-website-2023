@@ -4,7 +4,7 @@ interface TimelineProps {
   length: number;
 }
 
-const Timeline: React.FC<TimelineProps> = ({
+const timeline: React.FC<TimelineProps> = ({
   className,
   heightClassName,
   length,
@@ -31,4 +31,4 @@ const Timeline: React.FC<TimelineProps> = ({
   );
 };
 
-export default Timeline;
+export default timeline;
