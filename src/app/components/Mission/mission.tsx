@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import MissionHeader from "./missionHeader";
-import MissionBigTitle from "./missionBigTitle";
-import MissionParagraph from "./missionParagraph";
+import MissionHeader from "./MissionHeader";
+import MissionBigTitle from "./MissionBigTitle";
+import MissionParagraph from "./MissionParagraph";
 import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
 
