@@ -1,14 +1,12 @@
 import React from 'react';
 import Mission from './components/mission';
-import Globe from './components/globe';
 
 
 export default function Home() {
   return (
-    <main className="LBA">
+    <main className="LBA bg-[#121A48] h-screen w-screen">
       <div >
-        {/* <Mission /> */}
-        <Globe/>
+        <Mission />
       </div>
     </main>
   );

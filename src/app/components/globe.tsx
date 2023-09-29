@@ -17,7 +17,7 @@ export default function App() {
         phi: 0,
         theta: 0,
         dark: 1,
-        diffuse: 1.2,
+        diffuse: 1.8,
         mapSamples: 16000,
         mapBrightness: 6,
         baseColor: [0.3, 0.3, 0.3],
@@ -26,7 +26,11 @@ export default function App() {
         markers: [
           // longitude latitude
           { location: [37.7595, -122.4367], size: 0.03 },
-          { location: [40.7128, -74.006], size: 0.1 }
+          { location: [43.650182, -79.378144], size: 0.1 },
+          { location: [35.673541, 139.698401], size: 0.1 },
+          { location: [28.613534, 77.228200], size: 0.2 },
+          { location: [1.289931, 103.857082], size: 0.3 },
+          { location: [25.232026, 55.270747], size: 0.1 }
         ],
         onRender: (state) => {
           // Called on every animation frame.
@@ -44,10 +48,13 @@ export default function App() {
 
   return (
     <>
-      <canvas
-        ref={canvasRef}
-        style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }}
-      />
+      <div
+        className="bg-gray-900">
+        <canvas
+          ref={canvasRef}
+          style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }}
+        />
+      </div>
     </>
   );
 };
