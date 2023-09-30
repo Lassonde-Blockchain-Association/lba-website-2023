@@ -6,7 +6,7 @@ import TeamData from './TeamData'
 
 const TeamCard = () => {
   return (
-    <div className='h-screen w-screen bg-sky-950 flex flex-col items-center justify-center'>
+    <div className='h-max w-screen flex flex-col items-center justify-center'>
     <div className="p-4 w-4/5 h-4/6">
     <h2 className="text-4xl text-white font-bold mb-4">OUR TEAM</h2>
     <div className="p-1 flex flex-wrap items-center justify-center">

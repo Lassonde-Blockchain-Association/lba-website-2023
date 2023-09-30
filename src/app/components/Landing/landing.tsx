@@ -2,7 +2,7 @@ import React from "react";
 
 const landing = () => {
   return (
-    <div className="Landing w-screen h-screen relative bg-indigo-950 shadow flex flex-col justify-between">
+    <div className="Landing w-screen h-screen relative shadow flex flex-col justify-between">
       <div className="TopSection flex flex-row h-[20%] justify-between align-top">
         <div className="LassondeBlockChainVariant2 w-[40%]  relative flex flex-row ml-16 mt-12">
           <div className="MainLogo   text-white text-4xl font-bold font-['Inter'] mr-4">
