@@ -1,6 +1,15 @@
-import React from "react";
+"use client";
+
+import { useEffect, useState } from "react";
 
 const Landing = () => {
+  const scrollToMission = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="Landing w-screen h-screen relative bg-indigo-950 shadow flex flex-col justify-between">
       <div className="TopSection flex flex-row h-[20%] justify-between align-top">
@@ -40,18 +49,20 @@ const Landing = () => {
         >
           Join Us
         </a>
-        <div className="Line1 w-[50%] border-2 border-white mx-auto my-auto"></div>
-        <svg
-          className="my-auto float-right box-border border-2 border-transparent p-2 w-16 h-16 rounded-full bg-white "
-          viewBox="0 0 24 24"
+        <div className="Line1 w-[60%] border-2 border-white mx-auto my-auto mt-5"></div>
+        <button
+          className="my-auto float-right box-border border-2 border-transparent p-2 w-16 h-16 rounded-full bg-white hover:bg-slate-300"
+          onClick={scrollToMission}
         >
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M12 3C12.5523 3 13 3.44772 13 4V17.5858L18.2929 12.2929C18.6834 11.9024 19.3166 11.9024 19.7071 12.2929C20.0976 12.6834 20.0976 13.3166 19.7071 13.7071L12.7071 20.7071C12.3166 21.0976 11.6834 21.0976 11.2929 20.7071L4.29289 13.7071C3.90237 13.3166 3.90237 12.6834 4.29289 12.2929C4.68342 11.9024 5.31658 11.9024 5.70711 12.2929L11 17.5858V4C11 3.44772 11.4477 3 12 3Z"
-            fill="#1E1B4B"
-          />
-        </svg>
+          <svg viewBox="0 0 24 24">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12 3C12.5523 3 13 3.44772 13 4V17.5858L18.2929 12.2929C18.6834 11.9024 19.3166 11.9024 19.7071 12.2929C20.0976 12.6834 20.0976 13.3166 19.7071 13.7071L12.7071 20.7071C12.3166 21.0976 11.6834 21.0976 11.2929 20.7071L4.29289 13.7071C3.90237 13.3166 3.90237 12.6834 4.29289 12.2929C4.68342 11.9024 5.31658 11.9024 5.70711 12.2929L11 17.5858V4C11 3.44772 11.4477 3 12 3Z"
+              fill="#1E1B4B"
+            />
+          </svg>
+        </button>
       </div>
     </div>
   );
