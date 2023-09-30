@@ -1,6 +1,6 @@
 import React from "react";
 
-const landing = () => {
+const Landing = () => {
   return (
     <div className="Landing w-screen h-screen relative shadow flex flex-col justify-between">
       <div className="TopSection flex flex-row h-[20%] justify-between align-top">
@@ -57,4 +57,4 @@ const landing = () => {
   );
 };
 
-export default landing;
+export default Landing;

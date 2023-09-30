@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
-import MissionHeader from "./missionHeader";
-import MissionBigTitle from "./missionBigTitle";
-import MissionParagraph from "./missionParagraph";
+import MissionBigTitle from "./MissionBigTitle";
+import MissionParagraph from "./MissionParagraph";
 import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
 
@@ -53,7 +52,7 @@ function Mission() {
   return (
     <div className="w-screen h-screen relative">
       <div className="h-max">
-        <MissionHeader />
+        {/* <MissionHeader /> */}
         <div className="flex">
           <MissionBigTitle />
           <canvas

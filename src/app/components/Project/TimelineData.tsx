@@ -1,4 +1,4 @@
-let timelineData = [
+let TimelineData = [
   {
     date: "May 2022",
     title: "Formation of the Lassonde Blockchain",
@@ -31,4 +31,4 @@ let timelineData = [
   },
 ];
 
-export default timelineData;
+export default TimelineData;

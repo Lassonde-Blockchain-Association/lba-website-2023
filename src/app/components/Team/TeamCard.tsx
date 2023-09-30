@@ -1,8 +1,7 @@
-'use client'
-import React from 'react';
-import Tilt from 'react-parallax-tilt'; 
-import TeamData from './TeamData'
-
+"use client";
+import React from "react";
+import Tilt from "react-parallax-tilt";
+import TeamData from "./TeamData";
 
 const TeamCard = () => {
   return (
@@ -19,19 +18,17 @@ const TeamCard = () => {
                 <div className="text-center">
                   <span className="block font-semibold text-4xl">{person.name}</span>
                   <span className={` text-2xl font-bold px-3 py-2 leading-none mt-1`}>{person.job}</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </Tilt>
-      ))}
-    </div>
-    </div>
+              </a>
+            </Tilt>
+          ))}
+        </div>
+      </div>
     </div>
   );
-  
-  
-}
+};
 
 export default TeamCard;
-

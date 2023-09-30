@@ -6,7 +6,7 @@ import timelineData from "./TimelineData";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-const project: React.FC = () => {
+const Project: React.FC = () => {
   console.log("ScrollSection component rendered"); // Add this line
 
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -142,4 +142,4 @@ const project: React.FC = () => {
   );
 };
 
-export default project;
+export default Project;
