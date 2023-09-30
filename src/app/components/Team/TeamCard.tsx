@@ -11,10 +11,10 @@ const TeamCard = () => {
         <div className="p-1 flex flex-wrap items-center justify-center">
           {TeamData.map((person, index) => (
             <Tilt key={index}>
-              <a href={person.linkedin}>
-                <div
-                  className={`flex-shrink-0 m-10 relative overflow-hidden ${person.bgColor} rounded-lg max-w-xs shadow-lg`}
-                >
+              <div
+                className={`flex-shrink-0 m-10 relative overflow-hidden ${person.bgColor} rounded-lg max-w-xs shadow-lg`}
+              >
+                <a href={person.linkedin}>
                   <div className="relative lg: w-80 h-96">
                     <img className="relative" src={person.image} alt="" />
                     <div className="absolute h-full inset-0 flex flex-col items-center justify-end opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-50 text-white">
@@ -28,8 +28,8 @@ const TeamCard = () => {
                       </div>
                     </div>
                   </div>
-                </div>
-              </a>
+                </a>
+              </div>
             </Tilt>
           ))}
         </div>
