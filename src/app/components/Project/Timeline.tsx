@@ -28,6 +28,8 @@ const Timeline: React.FC<TimelineProps> = ({
               alt="isometric_cube"
               className={heightClassName}
               src="/isometric_cube.png"
+              width={10}
+              height={10}
             ></Image>
           )}
         </div>
