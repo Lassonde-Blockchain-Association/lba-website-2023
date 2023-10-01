@@ -1,11 +1,12 @@
 "use client";
+
 import React, { useEffect, useRef } from "react";
-import Timeline from "./timeline";
-import timelineData from "./timelineData";
+import Timeline from "./Timeline";
+import timelineData from "./TimelineData";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-const project: React.FC = () => {
+const Project: React.FC = () => {
   console.log("ScrollSection component rendered"); // Add this line
 
   const timelineRef = useRef<HTMLDivElement>(null);
@@ -22,9 +23,12 @@ const project: React.FC = () => {
 
   const heightOfTimeline = 20;
 
-  const bodyClassName: string = `bg-gray-500 min-h-screen p-5 pl-40 w-full`;
+  // const bodyClassName: string = `bg-gray-500 min-h-screen p-5 pl-40 w-full`;
+  const bodyClassName: string = `bg-[#191970] min-h-screen p-5 pl-40 w-full`;
+
   // Unsure how to make the rectangle fill the whole screen, causes glitches in smaller screens
-  const maskClassName: string = `absolute bg-gray-500 h-20 w-full z-10`;
+  // const maskClassName: string = `absolute bg-gray-500 h-20 w-full z-10`;
+  const maskClassName: string = `absolute bg-[#191970] h-20 w-full z-10`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -138,4 +142,4 @@ const project: React.FC = () => {
   );
 };
 
-export default project;
+export default Project;

@@ -9,24 +9,25 @@ const iconsData = [
   {
     iconName: "BiLogoDiscordAlt",
     socialLinkTitle: "Discord",
-    url: "https://www.google.com/",
+    url: "https://discord.gg/FHtcj7sFkv",
   },
   {
     iconName: "BiLogoInstagramAlt",
     socialLinkTitle: "Instagram",
-    url: "https://www.google.com/",
+    url: "https://www.instagram.com/lassondeblockchain/",
   },
   {
     iconName: "BiLogoLinkedinSquare",
     socialLinkTitle: "LinkedIn",
-    url: "https://www.google.com/",
+    url: "https://www.linkedin.com/company/lassonde-blockchain-association/",
   },
 ];
 
 const Footer = () => {
   return (
-    <div className="w-screen h-screen bg-blue-950 text-white flex-col">
-      <div className="fixed inset-x-0 bottom-0 h-4/6">
+    <div className="h-screen overflow-hidden text-white flex-col flex justify-end">
+      {/* <div className="fixed inset-x-0 bottom-0 h-4/6"> */}
+      <div className="h-4/6 inset-x-0">
         <NewsLetter />
         <div className="flex w-full border-solid border-white border-t-8 h-2/5 items-center justify-center">
           {iconsData.map((data, index) => (
