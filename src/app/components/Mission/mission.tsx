@@ -50,7 +50,7 @@ function Mission() {
   }, []);
 
   return (
-    <div className="w-screen h-screen relative">
+    <div className="h-screen relative">
       <div className="h-max">
         {/* <MissionHeader /> */}
         <div className="flex">
