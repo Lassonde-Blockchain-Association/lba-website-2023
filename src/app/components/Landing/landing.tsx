@@ -11,7 +11,7 @@ const Landing = () => {
   };
 
   return (
-    <div className="Landing w-screen h-screen relative bg-indigo-950 shadow flex flex-col justify-between">
+    <div className="Landing h-screen relative shadow flex flex-col justify-between">
       <div className="TopSection flex flex-row h-[20%] justify-between align-top">
         <div className="LassondeBlockChainVariant2 w-[40%]  relative flex flex-row ml-16 mt-12">
           <div className="MainLogo   text-white text-4xl font-bold font-['Inter'] mr-4">
@@ -21,11 +21,11 @@ const Landing = () => {
             LBA-Blog
           </div>
         </div>
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <div className="Rectangle1 w-12 h-1 bg-zinc-300 mr-12 mt-8" />
           <div className="Rectangle3 w-8 h-1 bg-zinc-300 ml-4 mt-4" />
           <div className="Rectangle2 w-4 h-1 bg-zinc-300 ml-8 mt-4" />
-        </div>
+        </div> */}
       </div>
 
       <div className="LassondeBlockchainAssociation pb-[7%] ml-16 align-center">

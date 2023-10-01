@@ -7,12 +7,12 @@ import Footer from "./components/Footer/Footer";
 
 export default function Home() {
   return (
-    <main className="LBA bg-[#121A48]">
+    <main className="LBA bg-[#191970]">
       <Landing />
       <Mission />
       <Project />
       <TeamCard />
-      {/* <Footer /> */}
+      <Footer />
     </main>
   );
 }

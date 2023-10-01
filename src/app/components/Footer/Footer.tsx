@@ -25,8 +25,9 @@ const iconsData = [
 
 const Footer = () => {
   return (
-    <div className="w-screen h-screen bg-blue-950 text-white flex-col">
-      <div className="fixed inset-x-0 bottom-0 h-4/6">
+    <div className="h-screen overflow-hidden text-white flex-col flex justify-end">
+      {/* <div className="fixed inset-x-0 bottom-0 h-4/6"> */}
+      <div className="h-4/6 inset-x-0">
         <NewsLetter />
         <div className="flex w-full border-solid border-white border-t-8 h-2/5 items-center justify-center">
           {iconsData.map((data, index) => (
