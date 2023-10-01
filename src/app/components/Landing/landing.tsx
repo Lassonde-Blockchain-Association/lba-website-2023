@@ -43,7 +43,7 @@ const Landing = () => {
       </div>
       <div className="BottomSection select-none whitespace-nowrap align-bottom mb-20 ml-20 mr-20">
         <a
-          href="https://discord.gg/EsJA32bHC9"
+          href="https://discord.gg/FHtcj7sFkv"
           className="my-auto float-left select-none text-xl border-white text-white font-['Inter'] box-border h-16 w-64 p-4 border-4 inline-block 
           rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950"
         >

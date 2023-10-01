@@ -9,17 +9,17 @@ const iconsData = [
   {
     iconName: "BiLogoDiscordAlt",
     socialLinkTitle: "Discord",
-    url: "https://www.google.com/",
+    url: "https://discord.gg/FHtcj7sFkv",
   },
   {
     iconName: "BiLogoInstagramAlt",
     socialLinkTitle: "Instagram",
-    url: "https://www.google.com/",
+    url: "https://www.instagram.com/lassondeblockchain/",
   },
   {
     iconName: "BiLogoLinkedinSquare",
     socialLinkTitle: "LinkedIn",
-    url: "https://www.google.com/",
+    url: "https://www.linkedin.com/company/lassonde-blockchain-association/",
   },
 ];
 

@@ -4,7 +4,7 @@ const TeamData = [
     job: "Chairman | Co-Founder",
     image:
       "https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png",
-    linkedin: "https://www.linkedin.com/in/samson-chan-15913b169/",
+    linkedin: "https://www.linkedin.com/in/samson-chan/",
     bgColor: "bg-purple-500",
   },
   {
