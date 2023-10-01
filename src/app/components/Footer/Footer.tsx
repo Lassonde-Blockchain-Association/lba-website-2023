@@ -25,7 +25,7 @@ const iconsData = [
 
 const Footer = () => {
   return (
-    <div className="w-screen h-screen text-white flex-col flex justify-end">
+    <div className="h-screen overflow-hidden text-white flex-col flex justify-end">
       {/* <div className="fixed inset-x-0 bottom-0 h-4/6"> */}
       <div className="h-4/6 inset-x-0">
         <NewsLetter />
