@@ -23,11 +23,8 @@ const Project: React.FC = () => {
 
   const heightOfTimeline = 20;
 
-  // const bodyClassName: string = `bg-gray-500 min-h-screen p-5 pl-40 w-full`;
   const bodyClassName: string = `bg-[#191970] min-h-screen p-5 pl-40 w-full`;
 
-  // Unsure how to make the rectangle fill the whole screen, causes glitches in smaller screens
-  // const maskClassName: string = `absolute bg-gray-500 h-20 w-full z-10`;
   const maskClassName: string = `absolute bg-[#191970] h-20 w-full z-10`;
 
   useEffect(() => {
@@ -96,7 +93,9 @@ const Project: React.FC = () => {
     <section ref={triggerRef} className="overflow-hidden flex">
       <div ref={bodyRef} className="overflow-hidden ">
         <div className={bodyClassName}>
-          <h2 className="text-3xl font-bold mb-12">Project Timeline</h2>
+          <h2 className="text-3xl font-bold mb-12 text-white">
+            Project Timeline
+          </h2>
           <div className="flex justify-center">
             <div className="absolute z-10">
               <div ref={maskRef} className={maskClassName}></div>
