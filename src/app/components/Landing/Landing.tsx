@@ -11,7 +11,7 @@ const Landing = () => {
   };
 
   return (
-    <div className="Landing h-screen relative shadow flex flex-col justify-between">
+    <div className="Landing h-screen relative flex flex-col justify-between">
       <div className="TopSection flex flex-row h-[20%] justify-between align-top">
         <div className="LassondeBlockChainVariant2 w-[40%]  relative flex flex-row ml-16 mt-12">
           <div className="MainLogo   text-white text-4xl font-bold font-['Inter'] mr-4">
@@ -21,11 +21,6 @@ const Landing = () => {
             LBA-Blog
           </div>
         </div>
-        {/* <div className="flex flex-col">
-          <div className="Rectangle1 w-12 h-1 bg-zinc-300 mr-12 mt-8" />
-          <div className="Rectangle3 w-8 h-1 bg-zinc-300 ml-4 mt-4" />
-          <div className="Rectangle2 w-4 h-1 bg-zinc-300 ml-8 mt-4" />
-        </div> */}
       </div>
 
       <div className="LassondeBlockchainAssociation pb-[7%] ml-16 align-center">
@@ -41,20 +36,23 @@ const Landing = () => {
           ASSOCIATION
         </span>
       </div>
-      <div className="BottomSection select-none whitespace-nowrap align-bottom mb-20 ml-20 mr-20">
+      <div className="BottomSection select-none whitespace-nowrap align-bottom mb-20 ml-20 mr-20 flex ">
         <a
-          href="https://discord.gg/FHtcj7sFkv"
+          href="https://discord.gg/YRdu7zeb8g"
           className="my-auto float-left select-none text-xl border-white text-white font-['Inter'] box-border h-16 w-64 p-4 border-4 inline-block 
-          rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950"
+      rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950 mr-4"
         >
           Join Us
         </a>
-        <div className="Line1 w-[60%] border-2 border-white mx-auto my-auto mt-5"></div>
+        <div className="Line1 w-[60%] border-2 border-white mx-auto my-auto"></div>
         <button
-          className="my-auto float-right box-border border-2 border-transparent p-2 w-16 h-16 rounded-full bg-white hover:bg-slate-300"
+          className="my-auto float-right box-border border-2 border-transparent p-2 w-16 h-16 rounded-full bg-white ml-4 hover:bg-slate-300"
           onClick={scrollToMission}
         >
-          <svg viewBox="0 0 24 24">
+          <svg
+            // className="my-auto float-right box-border border-2 border-transparent p-2 w-16 h-16 rounded-full bg-white ml-4 "
+            viewBox="0 0 24 24"
+          >
             <path
               fill-rule="evenodd"
               clip-rule="evenodd"

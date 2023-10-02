@@ -61,7 +61,7 @@ const TeamData = [
     name: "Humza",
     job: "Software Developer",
     image: "/plant.png",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/humza-inam/",
     bgColor: "bg-purple-500",
   },
 ];
