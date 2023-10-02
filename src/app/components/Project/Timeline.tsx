@@ -21,15 +21,21 @@ const Timeline: React.FC<TimelineProps> = ({
     <div className={divClassName}>
       {elementIndex.map((index, count) => (
         <div key={count} className="flex items-center h-20">
-          <img className={heightClassName} src="/isometric_cube.png"></img>
+          <Image
+            className={heightClassName}
+            src="/isometric_cube.png"
+            alt="isometric_cube"
+            width={75}
+            height={75}
+          ></Image>
           <div className="my-auto w-20 h-1 bg-black"></div>
           {index == length - 1 && (
             <Image
               alt="isometric_cube"
               className={heightClassName}
               src="/isometric_cube.png"
-              width={10}
-              height={10}
+              width={75}
+              height={75}
             ></Image>
           )}
         </div>
