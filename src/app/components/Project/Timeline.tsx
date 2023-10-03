@@ -1,3 +1,4 @@
+import Image from "next/image";
 interface TimelineProps {
   className: string;
   heightClassName: string;
@@ -18,12 +19,24 @@ const Timeline: React.FC<TimelineProps> = ({
 
   return (
     <div className={divClassName}>
-      {elementIndex.map((index) => (
-        <div className="flex items-center h-20">
-          <img className={heightClassName} src="/isometric_cube.png"></img>
-          <div className="my-auto w-20 h-1 bg-black"></div>
+      {elementIndex.map((index, count) => (
+        <div key={count} className="flex items-center h-20">
+          <Image
+            className={heightClassName}
+            src="/isometric_cube_light.png"
+            alt="isometric_cube"
+            width={75}
+            height={75}
+          ></Image>
+          <div className="my-auto w-20 h-1 bg-white"></div>
           {index == length - 1 && (
-            <img className={heightClassName} src="/isometric_cube.png"></img>
+            <Image
+              alt="isometric_cube"
+              className={heightClassName}
+              src="/isometric_cube_light.png"
+              width={75}
+              height={75}
+            ></Image>
           )}
         </div>
       ))}

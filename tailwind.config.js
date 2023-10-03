@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      alata: ["var(--font-Alata)"],
+      saira_extra_condensed: ["var(--font-saira_extra_condensed)"],
+    }
   },
   plugins: [],
 }

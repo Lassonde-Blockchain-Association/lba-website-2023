@@ -1,10 +1,10 @@
-let timelineData = [
-  {
-    date: "May 2022",
-    title: "Formation of the Lassonde Blockchain",
-    description:
-      "The Lassonde Blockchain Association is officially established, setting a foundation for technological and educational development within the field of blockchain technology.",
-  },
+let TimelineData = [
+  // {
+  //   date: "May 2022",
+  //   title: "Formation of the Lassonde Blockchain",
+  //   description:
+  //     "The Lassonde Blockchain Association is officially established, setting a foundation for technological and educational development within the field of blockchain technology.",
+  // },
   {
     date: "June 2023",
     title: "Launch of LBA Insights Blog",
@@ -31,4 +31,4 @@ let timelineData = [
   },
 ];
 
-export default timelineData;
+export default TimelineData;

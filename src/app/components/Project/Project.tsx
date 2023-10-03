@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useRef } from "react";
 import Timeline from "./Timeline";
 import timelineData from "./TimelineData";
@@ -20,11 +21,11 @@ const Project: React.FC = () => {
   const maskRef = useRef(null); // Needed for the max
   let projectBodyColour = "gray-200";
 
-  const heightOfTimeline = 20;
+  // const heightOfTimeline = 20;
 
-  const bodyClassName: string = `bg-gray-500 min-h-screen p-5 pl-40 w-full`;
-  // Unsure how to make the rectangle fill the whole screen, causes glitches in smaller screens
-  const maskClassName: string = `absolute bg-gray-500 h-20 w-full z-10`;
+  // const bodyClassName: string = `bg-[#191970] min-h-screen p-5 pl-40 w-full`;
+
+  // const maskClassName: string = `absolute bg-[#191970] h-20 w-full z-10`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -89,13 +90,18 @@ const Project: React.FC = () => {
   }, []);
 
   return (
-    <section ref={triggerRef} className="overflow-hidden flex">
+    <section ref={triggerRef} className="overflow-hidden h-[100vh] flex">
       <div ref={bodyRef} className="overflow-hidden ">
-        <div className={bodyClassName}>
-          <h2 className="text-3xl font-bold mb-12">Project Timeline</h2>
-          <div className="flex justify-center">
+        <div className="bg-[#191970] min-h-screen  w-full">
+          <h2 className="text-3xl font-bold text-white pl-[150px] pt-[3%] mb-20">
+            Project Timeline
+          </h2>
+          <div className=" flex justify-center item-center">
             <div className="absolute z-10">
-              <div ref={maskRef} className={maskClassName}></div>
+              <div
+                ref={maskRef}
+                className="absolute bg-[#191970] h-20 w-full z-10"
+              ></div>
               <Timeline
                 className="flex flex-start h-20 opacity-100 z-0"
                 heightClassName="h-20"
@@ -110,7 +116,6 @@ const Project: React.FC = () => {
               />
             </div>
           </div>
-
           <div
             ref={sectionRef}
             className="h-screen w-[400vw] flex flex-row relative items-center justify-center "
