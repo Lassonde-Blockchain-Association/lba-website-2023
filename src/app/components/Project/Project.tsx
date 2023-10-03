@@ -90,7 +90,7 @@ const Project: React.FC = () => {
   }, []);
 
   return (
-    <section ref={triggerRef} className="overflow-hidden flex">
+    <section ref={triggerRef} className="overflow-hidden h-[100vh] flex">
       <div ref={bodyRef} className="overflow-hidden ">
         <div className="bg-[#191970] min-h-screen  w-full">
           <h2 className="text-3xl font-bold text-white pl-[150px] pt-[3%] mb-20">
