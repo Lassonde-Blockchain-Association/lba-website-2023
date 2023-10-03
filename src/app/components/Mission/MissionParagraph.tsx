@@ -1,6 +1,6 @@
-import React from "react";
+// import React from "react";
 
-const MissionParagraph: React.FC = () => {
+const MissionParagraph = () => {
   return (
     <div className="flex ml-[40%] justify-center">
       <p className="text-white text-left font-inter text-2xl font-normal font-weight-400 leading-normal w-[50%]">
