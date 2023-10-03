@@ -11,7 +11,7 @@ const Landing = () => {
   };
 
   return (
-    <div className="Landing h-max relative flex flex-col justify-between">
+    <div className="Landing h-[100vh] relative flex flex-col justify-between">
       <div className="TopSection flex flex-row h-[20%] justify-between align-top">
         <div className="LassondeBlockChainVariant2 w-[40%]  relative flex flex-row ml-16 mt-12">
           <div className="MainLogo   text-white text-4xl font-bold font-alata mr-4">
