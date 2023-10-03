@@ -14,39 +14,39 @@ const Landing = () => {
     <div className="Landing h-screen relative flex flex-col justify-between">
       <div className="TopSection flex flex-row h-[20%] justify-between align-top">
         <div className="LassondeBlockChainVariant2 w-[40%]  relative flex flex-row ml-16 mt-12">
-          <div className="MainLogo   text-white text-4xl font-bold font-['Inter'] mr-4">
+          <div className="MainLogo   text-white text-4xl font-bold font-alata mr-4">
             LBA
           </div>
-          <div className="LbaBlog  relative text-white text-opacity-80 text-3xl font-bold font-['Inter']">
+          <div className="LbaBlog  relative text-white text-opacity-80 text-3xl font-bold font-alata">
             LBA-Blog
           </div>
         </div>
       </div>
-
-      <div className="LassondeBlockchainAssociation pb-[7%] ml-16 align-center">
-        <span className="text-white text-2xl sm:text-2xl md:text-4xl lg:text-6xl font-extrabold font-['Inter']">
+    <div className="MainContent">
+      <div className="LassondeBlockchainAssociation pb-[3%] ml-16 align-center mt-20">
+        <span className="text-white text-6xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
           LASSONDE
           <br />
         </span>
-        <span className="text-rose-400 text-2xl sm:text-2xl md:text-4xl lg:text-6xl font-extrabold font-['Inter']">
+        <span className="text-rose-400 text-6xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
           BLOCKCHAIN
           <br />
         </span>
-        <span className="text-white text-2xl sm:text-2xl md:text-4xl lg:text-6xl font-extrabold font-['Inter']">
+        <span className="text-white text-6xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
           ASSOCIATION
         </span>
       </div>
-      <div className="BottomSection select-none whitespace-nowrap align-bottom mb-20 ml-20 mr-20 flex ">
+      <div className="BottomSection select-none whitespace-nowrap align-bottom mb-20 ml-16 mr-20 flex">
         <a
           href="https://discord.gg/YRdu7zeb8g"
           className="my-auto float-left select-none text-xl border-white text-white font-['Inter'] box-border h-16 w-64 p-4 border-4 inline-block 
-      rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950 mr-4"
+      rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950 mr-4 font-alata"
         >
           Join Us
         </a>
-        <div className="Line1 w-[60%] border-2 border-white mx-auto my-auto"></div>
+        <div className="Line1 w-[80%] border-2 border-white mx-auto my-auto hidden sm:hidden md:block lg:block"></div>
         <button
-          className="my-auto float-right box-border border-2 border-transparent p-2 w-16 h-16 rounded-full bg-white ml-4 hover:bg-slate-300"
+          className="my-auto float-right box-border border-2 border-transparent p-2 w-16 h-16 rounded-full bg-white ml-4 hover:bg-slate-300 hidden sm:hidden md:block lg:block"
           onClick={scrollToMission}
         >
           <svg
@@ -61,6 +61,7 @@ const Landing = () => {
             />
           </svg>
         </button>
+      </div>
       </div>
     </div>
   );
