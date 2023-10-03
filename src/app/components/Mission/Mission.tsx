@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import MissionBigTitle from "./MissionBigTitle";
 import MissionParagraph from "./MissionParagraph";
@@ -13,9 +14,9 @@ function Mission() {
 
     if (canvasRef.current) {
       const globe = createGlobe(canvasRef.current, {
-        devicePixelRatio: 2,
-        width: 600 * 2,
-        height: 600 * 2,
+        devicePixelRatio: 1,
+        width: 600 * 1,
+        height: 600 * 1,
         phi: 5.4,
         theta: 0.4,
         dark: 1,
@@ -51,7 +52,6 @@ function Mission() {
 
   return (
     <div className="h-screen relative">
-      <div className="h-max">
         {/* <MissionHeader /> */}
         <div className="flex">
           <MissionBigTitle />
@@ -67,7 +67,6 @@ function Mission() {
           />
         </div>
         <MissionParagraph />
-      </div>
     </div>
   );
 }
