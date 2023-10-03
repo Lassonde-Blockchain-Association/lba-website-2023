@@ -15,6 +15,10 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    fontFamily: {
+      alata: ["var(--font-Alata)"],
+      saira_extra_condensed: ["var(--font-saira_extra_condensed)"],
+    }
   },
   plugins: [],
 };
