@@ -15,12 +15,12 @@ function Mission() {
     if (canvasRef.current) {
       const globe = createGlobe(canvasRef.current, {
         devicePixelRatio: 1,
-        width: 600 * 1,
-        height: 600 * 1,
-        phi: 5.4,
-        theta: 0.4,
+        width: 600,
+        height: 600,
+        phi: 2.7,
+        theta: 0.7,
         dark: 1,
-        diffuse: 3,
+        diffuse: 2.85,
         opacity: 0.4,
         mapSamples: 16000,
         mapBrightness: 5,
@@ -37,8 +37,6 @@ function Mission() {
           { location: [25.232026, 55.270747], size: 0.04 },
         ],
         onRender: (state) => {
-          // Called on every animation frame.
-          // `state` will be an empty object, return updated params.
           state.phi = phi;
           phi += 0.01;
         },
@@ -51,10 +49,12 @@ function Mission() {
   }, []);
 
   return (
-    <div className="h-screen relative">
-        {/* <MissionHeader /> */}
-        <div className="flex">
-          <MissionBigTitle />
+    <div className="h-max relative">
+      <div className="container mx-auto w-[85%]">
+      {/* <MissionHeader /> */}
+      <div className="flex flex-col-2 items-center rounded-lg border border-white bg-[#FFFFFF] bg-opacity-10 backdrop-blur-30">
+        <MissionBigTitle />
+        <div className="inline-block">
           <canvas
             className=""
             ref={canvasRef}
@@ -66,7 +66,9 @@ function Mission() {
             }}
           />
         </div>
-        <MissionParagraph />
+      </div>
+      {/* <MissionParagraph /> */}
+      </div>
     </div>
   );
 }

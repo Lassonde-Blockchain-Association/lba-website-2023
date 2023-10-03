@@ -11,7 +11,7 @@ const Landing = () => {
   };
 
   return (
-    <div className="Landing h-screen relative flex flex-col justify-between">
+    <div className="Landing h-max relative flex flex-col justify-between">
       <div className="TopSection flex flex-row h-[20%] justify-between align-top">
         <div className="LassondeBlockChainVariant2 w-[40%]  relative flex flex-row ml-16 mt-12">
           <div className="MainLogo   text-white text-4xl font-bold font-alata mr-4">
@@ -39,7 +39,7 @@ const Landing = () => {
       <div className="BottomSection select-none whitespace-nowrap align-bottom mb-20 ml-16 mr-20 flex">
         <a
           href="https://discord.gg/YRdu7zeb8g"
-          className="my-auto float-left select-none text-xl border-white text-white font-['Inter'] box-border h-16 w-64 p-4 border-4 inline-block 
+          className="my-auto float-left select-none text-xl border-white text-white box-border h-16 w-64 p-4 border-4 inline-block 
       rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950 mr-4 font-alata"
         >
           Join Us
