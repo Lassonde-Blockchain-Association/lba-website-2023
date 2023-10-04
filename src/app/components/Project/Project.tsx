@@ -7,25 +7,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const Project: React.FC = () => {
-  console.log("ScrollSection component rendered"); // Add this line
-
   const timelineRef = useRef<HTMLDivElement>(null);
-
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const triggerRef = useRef<HTMLDivElement | null>(null);
 
   gsap.registerPlugin(ScrollTrigger);
-  console.log(sectionRef); // Add this line
 
   const bodyRef = useRef(null);
   const maskRef = useRef(null); // Needed for the max
-  let projectBodyColour = "gray-200";
-
-  // const heightOfTimeline = 20;
-
-  // const bodyClassName: string = `bg-[#191970] min-h-screen p-5 pl-40 w-full`;
-
-  // const maskClassName: string = `absolute bg-[#191970] h-20 w-full z-10`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -118,13 +107,11 @@ const Project: React.FC = () => {
           </div>
           <div
             ref={sectionRef}
-            // className="h-screen w-[400vw] flex flex-row relative items-center justify-center "
             className="h-screen w-[400vw] flex flex-row relative items-center justify-center "
           >
             {timelineData.map((item, index) => (
               <section
                 key={index}
-                // className="w-screen p-20 m-20 text-center bg-slate-50 rounded-lg shadow-lg"
                 className="w-screen p-20 m-20 text-center rounded-lg shadow-lg shadow-cyan-500/50 border-2 border-white bg-[#ffb8ec] bg-opacity-10 backdrop-blur-30"
               >
                 <h4 className="item-center flex justify-center text-orange-600 text-xl font-bold tracking-widest ">
