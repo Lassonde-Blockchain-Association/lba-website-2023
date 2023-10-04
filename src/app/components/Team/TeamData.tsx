@@ -37,8 +37,8 @@ const TeamData = [
   {
     name: "Seth",
     job: "Software Developer",
-    image: "",
-    linkedin: "",
+    image: "https://media.licdn.com/dms/image/D5603AQHUouxJ_8gTvA/profile-displayphoto-shrink_400_400/0/1693814113643?e=1701907200&v=beta&t=hI2aE4HbjYSjhsZO5vEmnjsugphqFVslcDPw1duSMHY",
+    linkedin: "https://www.linkedin.com/in/zhaohui-li-a75234263/",
     bgColor: "bg-orange-500",
   },
   {
@@ -52,14 +52,14 @@ const TeamData = [
   {
     name: "Tom Sun",
     job: "Software Developer",
-    image: "",
+    image: "https://th.bing.com/th/id/OIG.hz0yGHB3HSNv92nst1T0?pid=ImgGn",
     linkedin: "https://www.linkedin.com/in/ts2846/",
     bgColor: "bg-purple-500",
   },
   {
     name: "Krishna Patel",
     job: "Software Developer",
-    image: "",
+    image: "https://th.bing.com/th/id/OIG.LM8CttahLJA7QfB6yGH_?pid=ImgGn",
     linkedin: "https://www.linkedin.com/in/krishna-patel-a33548257/",
     bgColor: "bg-purple-500",
   },
@@ -73,7 +73,7 @@ const TeamData = [
   {
     name: "Gloria Boakye Yiadom",
     job: "Social Media Manager",
-    image: "https://media.licdn.com/dms/image/D5603AQEzlRnwMSu2hw/profile-displayphoto-shrink_400_400/0/1694489648566?e=1701907200&v=beta&t=cyD-IeWUtYai9_Ao7UBePYId8ZGukUkYnGT04Ize7Q4",
+    image: "https://media.licdn.com/dms/image/D5603AQFBCS-x8uSvzQ/profile-displayphoto-shrink_400_400/0/1696378584819?e=1701907200&v=beta&t=_dHF-kbeGk1GnWwCR-WdDOC5cCKmTz_KQ5e2uzWYqRk",
     linkedin: "https://www.linkedin.com/in/gloria-boakye-yiadom-300b9721b/",
     bgColor: "bg-purple-500",
   },
@@ -85,10 +85,10 @@ const TeamData = [
     bgColor: "bg-purple-500",
   },
   {
-    name: "Huyen",
+    name: "Huyen Le",
     job: "Student Ambassador",
-    image: "",
-    linkedin: "",
+    image: "https://media.licdn.com/dms/image/D5603AQFDVCE9lbLGXA/profile-displayphoto-shrink_400_400/0/1696369322464?e=1701907200&v=beta&t=7reWImpozvmXdHlymXswQaUQeadBrFhVLaCW65Ajl6Q",
+    linkedin: "https://www.linkedin.com/in/huyenttle/",
     bgColor: "bg-purple-500",
   },
 ];
