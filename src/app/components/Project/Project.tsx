@@ -105,26 +105,28 @@ const Project: React.FC = () => {
               />
             </div>
           </div>
-          <div
-            ref={sectionRef}
-            className="h-screen w-[400vw] flex flex-row relative items-center justify-center "
-          >
-            {timelineData.map((item, index) => (
-              <section
-                key={index}
-                className="w-screen p-20 m-20 text-center rounded-lg shadow-lg shadow-cyan-500/50 border-2 border-white bg-[#ffb8ec] bg-opacity-10 backdrop-blur-30"
-              >
-                <h4 className="item-center flex justify-center text-orange-600 text-xl font-bold tracking-widest ">
-                  {item.date}
-                </h4>
-                <h1 className="text-7xl flex justify-center font-semibold text-white">
-                  {item.title}
-                </h1>
-                <p className="text-2xl leading-6 flex justify-center p-5 text-slate-200">
-                  {item.description}
-                </p>
-              </section>
-            ))}
+          <div className="relative">
+            <div
+              ref={sectionRef}
+              className="h-screen w-[400vw] flex flex-row  items-center justify-center"
+            >
+              {timelineData.map((item, index) => (
+                <section
+                  key={index}
+                  className="w-screen p-20 m-20 text-center rounded-lg shadow-xl shadow-cyan-500/50 border-2 border-white bg-[#ffb8ec] bg-opacity-10 backdrop-blur-30"
+                >
+                  <h4 className="item-center flex justify-center text-orange-600 text-xl font-bold tracking-widest ">
+                    {item.date}
+                  </h4>
+                  <h1 className="text-7xl flex justify-center font-semibold text-white">
+                    {item.title}
+                  </h1>
+                  <p className="text-2xl leading-6 flex justify-center p-5 text-slate-200">
+                    {item.description}
+                  </p>
+                </section>
+              ))}
+            </div>
           </div>
         </div>
       </div>
