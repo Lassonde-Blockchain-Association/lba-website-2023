@@ -17,13 +17,16 @@ const Timeline: React.FC<TimelineProps> = ({
     elementIndex[i] = i + 1;
   }
 
+  const cubeClassName =
+    heightClassName + " hue-rotate-90 saturate-50 brightness-200";
+
   return (
     <div className={divClassName}>
       {elementIndex.map((index, count) => (
         <div key={count} className="flex items-center h-20">
           <Image
-            className={heightClassName}
-            src="/isometric_cube_light.png"
+            className={cubeClassName}
+            src="/3D_cube.png"
             alt="isometric_cube"
             width={75}
             height={75}
@@ -32,8 +35,8 @@ const Timeline: React.FC<TimelineProps> = ({
           {index == length - 1 && (
             <Image
               alt="isometric_cube_light"
-              className={heightClassName}
-              src="/isometric_cube_light.png"
+              className={cubeClassName}
+              src="/3D_cube.png"
               width={75}
               height={75}
             ></Image>
