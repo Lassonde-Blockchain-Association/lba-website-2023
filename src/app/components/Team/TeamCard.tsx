@@ -16,7 +16,7 @@ const TeamCard = () => {
                 className={`flex-shrink-0 m-10 relative overflow-hidden ${person.bgColor} rounded-lg max-w-xs shadow-lg`}
               >
                 <a href={person.linkedin}>
-                  <div className="relative lg: w-80 h-96">
+                  <div className="relative lg: w-40 h-40">
                     <Image
                       className="relative"
                       src={person.image}
@@ -24,7 +24,7 @@ const TeamCard = () => {
                       height={196}
                       alt=""
                     />
-                    <div className="absolute h-full inset-0 flex flex-col items-center justify-end opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-50 text-white">
+                    <div className="absolute h-full inset-0 flex flex-col items-center justify-end opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-50 text-white pb-4">
                       <div className="text-center">
                         <span className="block font-semibold text-3xl">
                           {person.name}

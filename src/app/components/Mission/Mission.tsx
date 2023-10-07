@@ -2,7 +2,6 @@
 
 import React from "react";
 import MissionBigTitle from "./MissionBigTitle";
-import MissionParagraph from "./MissionParagraph";
 import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
 
@@ -49,25 +48,23 @@ function Mission() {
   }, []);
 
   return (
-    <div className="h-[100vh] relative">
+    <div className="h-[100vh] flex justify-center items-center">
       <div className="container mx-auto w-[85%]">
-      {/* <MissionHeader /> */}
-      <div className="flex flex-col-2 items-center rounded-lg border border-white bg-[#FFFFFF] bg-opacity-10 backdrop-blur-30">
-        <MissionBigTitle />
-        <div className="inline-block">
-          <canvas
-            className=""
-            ref={canvasRef}
-            style={{
-              width: 600,
-              height: 600,
-              maxWidth: "100%",
-              aspectRatio: 1,
-            }}
-          />
+        <div className="flex flex-col-2 items-center rounded-lg border border-white bg-[#FFFFFF] bg-opacity-10 backdrop-blur-30">
+          <MissionBigTitle />
+          <div className="inline-block">
+            <canvas
+              className=""
+              ref={canvasRef}
+              style={{
+                width: 600,
+                height: 600,
+                maxWidth: "100%",
+                aspectRatio: 1,
+              }}
+            />
+          </div>
         </div>
-      </div>
-      {/* <MissionParagraph /> */}
       </div>
     </div>
   );
