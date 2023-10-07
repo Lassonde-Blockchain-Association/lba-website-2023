@@ -12,7 +12,7 @@ export default function Home() {
       <Mission />
       <Project />
       <TeamCard />
-      <Footer />s
+      <Footer />
     </main>
   );
 }

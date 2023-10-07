@@ -31,7 +31,7 @@ const Timeline: React.FC<TimelineProps> = ({
           <div className="my-auto w-20 h-1 bg-white"></div>
           {index == length - 1 && (
             <Image
-              alt="isometric_cube"
+              alt="isometric_cube_light"
               className={heightClassName}
               src="/isometric_cube_light.png"
               width={75}
