@@ -62,7 +62,8 @@ const Project: React.FC = () => {
           scrollTrigger: {
             trigger: triggerRef.current,
             start: "top top",
-            end: `${800 + 100 * Math.pow(timelineData.length, 1.2)} top`,
+            // updated
+            end: `${900 + 150 * Math.pow(timelineData.length, 1.2)} top`,
             scrub: 0.6,
             pin: true,
             markers: false,
@@ -81,7 +82,7 @@ const Project: React.FC = () => {
   return (
     <section ref={triggerRef} className="overflow-hidden h-[100vh] flex">
       <div ref={bodyRef} className="overflow-hidden ">
-        <div className="bg-[#191970] min-h-screen  w-full">
+        <div className="bg-[#191970] min-h-screen w-full">
           <h2 className="text-3xl font-bold tracking-widest  text-white pl-[150px] pt-[3%] mb-20">
             Project Timeline
           </h2>
@@ -89,18 +90,18 @@ const Project: React.FC = () => {
             <div className="absolute z-10">
               <div
                 ref={maskRef}
-                className="absolute bg-[#191970] h-20 w-full z-10"
+                className="absolute bg-[#191970] h-40 w-screen z-10"
               ></div>
               <Timeline
-                className="flex flex-start h-20 opacity-100 z-0"
-                heightClassName="h-20"
+                className="flex flex-start h-30 opacity-100 z-0"
+                heightClassName="h-30"
                 length={timelineData.length}
               />
             </div>
             <div className="absolute z-30">
               <Timeline
-                className="flex flex-start h-20 opacity-40 z-30"
-                heightClassName="h-20"
+                className="flex flex-start h-30 opacity-40 z-30"
+                heightClassName="h-30"
                 length={timelineData.length}
               />
             </div>
