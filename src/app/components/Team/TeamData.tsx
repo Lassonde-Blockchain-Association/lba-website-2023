@@ -9,7 +9,7 @@ const TeamData = [
   },
   {
     name: "Abdulmalik O. Iyiola",
-    job: "Co-Founder",
+    job: "Director | Co-Founder",
     image:
       "https://media.licdn.com/dms/image/C4E03AQFx4MEezEx7cg/profile-displayphoto-shrink_800_800/0/1622978818766?e=1701907200&v=beta&t=6PHYL_QV-PZgIUYERFt1ZtkiHpPQNzZmt0LH54RRrKo",
     linkedin: "https://www.linkedin.com/in/abdulmalikiyiola/",
