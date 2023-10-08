@@ -41,6 +41,9 @@ const Footer = () => {
           ))}
         </div>
         <ScrollingBar />
+        <p className="text-center mt-3 tracking-wide">
+          lassondeblockchain © {new Date().getFullYear()} All rights reserved.
+        </p>
       </div>
     </div>
   );
