@@ -83,8 +83,8 @@ const Project: React.FC = () => {
     <section ref={triggerRef} className="overflow-hidden h-[100vh] flex">
       <div ref={bodyRef} className="overflow-hidden ">
         <div className="bg-[#191970] min-h-screen w-full">
-          <h2 className="text-3xl font-bold tracking-widest  text-white pl-[150px] pt-[3%] mb-20">
-            Project Timeline
+          <h2 className="text-xl font-semibold leading-normal tracking-widest text-white pl-[8%] pt-[3%] mb-20 uppercase">
+            P r o j e c t - [ T i m e l i n e ]
           </h2>
           <div className=" flex justify-center item-center">
             <div className="absolute z-10">
