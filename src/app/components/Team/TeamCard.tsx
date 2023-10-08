@@ -9,7 +9,7 @@ const TeamCard = () => {
     <div className="h-max flex flex-col items-center justify-center py-20">
       <div className="p-4 w-4/5 h-4/6">
         <h2 className="text-xl font-semibold leading-normal tracking-widest text-white mb-4">
-          O U R - [ T E A M ]
+          O U R -<span className="text-orange-600"> [ T E A M ]</span>
         </h2>
         <div className="p-1 flex flex-wrap items-center justify-center">
           {TeamData.map((person, index) => (

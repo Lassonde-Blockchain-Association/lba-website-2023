@@ -18,13 +18,13 @@ let TimelineData = [
       "A complete overhaul of the official LBA website is undertaken by a newly assembled team of 10 specialists. The updated site is optimized for performance and user experience, featuring state-of-the-art technologies like Next.js and Tailwind CSS.",
   },
   {
-    date: "October 2023",
+    date: "October - December 2023",
     title: "Upcoming: LBA - Blog 2.0",
     description:
       "Stay tuned for the next iteration of our blog, which promises to deliver even deeper insights into the ever-evolving technological landscape.",
   },
   {
-    date: "December 2023",
+    date: "January - May 2024",
     title: "Upcoming: Open Source & DAO",
     description:
       "Plans are in motion to transition to an Open Source framework and implement a Decentralized Autonomous Organization (DAO) model for enhanced community involvement and governance.",

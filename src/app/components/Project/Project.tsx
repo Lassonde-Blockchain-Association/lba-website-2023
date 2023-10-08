@@ -56,15 +56,15 @@ const Project: React.FC = () => {
           translateX: 0,
         },
         {
-          translateX: `${-250 - 7 * Math.pow(timelineData.length, 1.35)}vw`,
+          translateX: `${-250 - 8 * Math.pow(timelineData.length, 1.35)}vw`,
           ease: "none",
           duration: 1,
           scrollTrigger: {
             trigger: triggerRef.current,
             start: "top top",
             // updated
-            end: `${900 + 150 * Math.pow(timelineData.length, 1.2)} top`,
-            scrub: 0.6,
+            end: `${800 + 150 * Math.pow(timelineData.length, 1.2)} top`,
+            scrub: 1,
             pin: true,
             markers: false,
           },
@@ -83,8 +83,9 @@ const Project: React.FC = () => {
     <section ref={triggerRef} className="overflow-hidden h-[100vh] flex">
       <div ref={bodyRef} className="overflow-hidden ">
         <div className="bg-[#191970] min-h-screen w-full">
-          <h2 className="text-xl font-semibold leading-normal tracking-widest text-white pl-[8%] pt-[3%] mb-20 uppercase">
-            P r o j e c t - [ T i m e l i n e ]
+          <h2 className="text-xl font-semibold leading-normal tracking-widest text-white pl-[8%] pt-[3%] mb-[ddddddddd%] uppercase">
+            P r o j e c t -
+            <span className="text-orange-600"> [ T i m e l i n e ]</span>
           </h2>
           <div className=" flex justify-center item-center">
             <div className="absolute z-10">
@@ -114,15 +115,15 @@ const Project: React.FC = () => {
               {timelineData.map((item, index) => (
                 <section
                   key={index}
-                  className="w-screen p-20 m-20 text-center rounded-lg shadow-xl shadow-cyan-500/50 border-2 border-white bg-[#ffb8ec] bg-opacity-10 backdrop-blur-30"
+                  className="w-[60%] p-20 m-20 text-center rounded-lg shadow-xl shadow-cyan-500/50 border-2 border-white bg-[#ffb8ec] bg-opacity-10 backdrop-blur-30 "
                 >
                   <h4 className="item-center flex justify-center text-orange-600 text-xl font-bold tracking-widest ">
                     {item.date}
                   </h4>
-                  <h1 className="text-7xl flex justify-center font-semibold text-white">
+                  <h1 className="text-8xl flex justify-center font-semibold text-white">
                     {item.title}
                   </h1>
-                  <p className="text-2xl leading-6 flex justify-center p-5 text-slate-200">
+                  <p className="flex font-inter text-2xl font-normal leading-normal font-alata justify-center p-5 text-slate-200">
                     {item.description}
                   </p>
                 </section>
