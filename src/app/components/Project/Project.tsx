@@ -35,8 +35,8 @@ const Project: React.FC = () => {
       gsap.to(maskRef.current, {
         width: "1%",
         translateX: `${
-          Math.ceil(9 * timelineData.length) +
-          8 * timelineData.length * (1920 / window.innerWidth - 1)
+          Math.ceil(9.4 * timelineData.length) +
+          9 * timelineData.length * (1920 / window.innerWidth - 1)
         }vw`,
         duration: 20,
         // Trying to figure out how to sync it with the scroll
