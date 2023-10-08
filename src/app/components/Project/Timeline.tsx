@@ -23,13 +23,13 @@ const Timeline: React.FC<TimelineProps> = ({
   return (
     <div className={divClassName}>
       {elementIndex.map((index, count) => (
-        <div key={count} className="flex items-center h-20">
+        <div key={count} className="flex items-center">
           <Image
             className={cubeClassName}
             src="/3D_cube.png"
             alt="isometric_cube"
-            width={75}
-            height={75}
+            width={105}
+            height={105}
           ></Image>
           <div className="my-auto w-20 h-1 bg-white"></div>
           {index == length - 1 && (
@@ -37,8 +37,8 @@ const Timeline: React.FC<TimelineProps> = ({
               alt="isometric_cube_light"
               className={cubeClassName}
               src="/3D_cube.png"
-              width={75}
-              height={75}
+              width={105}
+              height={105}
             ></Image>
           )}
         </div>
