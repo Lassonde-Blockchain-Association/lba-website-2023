@@ -35,8 +35,8 @@ const Project: React.FC = () => {
       gsap.to(maskRef.current, {
         width: "1%",
         translateX: `${
-          Math.ceil(9.4 * timelineData.length) +
-          9 * timelineData.length * (1920 / window.innerWidth - 1)
+          Math.ceil(7 * timelineData.length) +
+          7 * timelineData.length * (1920 / window.innerWidth - 1)
         }vw`,
         duration: 20,
         // Trying to figure out how to sync it with the scroll
@@ -87,22 +87,22 @@ const Project: React.FC = () => {
             P r o j e c t -
             <span className="text-orange-600"> [ T i m e l i n e ]</span>
           </h2>
-          <div className=" flex justify-center item-center">
+          <div className=" md:flex hidden justify-center item-center">
             <div className="absolute z-10">
               <div
                 ref={maskRef}
-                className="absolute bg-[#191970] h-40 w-screen z-10"
+                className="absolute bg-[#191970] h-20 w-screen z-10"
               ></div>
               <Timeline
-                className="flex flex-start h-30 opacity-100 z-0"
-                heightClassName="h-30"
+                className="flex flex-start h-20 opacity-100 z-0"
+                height={50}
                 length={timelineData.length}
               />
             </div>
             <div className="absolute z-30">
               <Timeline
-                className="flex flex-start h-30 opacity-40 z-30"
-                heightClassName="h-30"
+                className="flex flex-start h-20 opacity-40 z-30"
+                height={50}
                 length={timelineData.length}
               />
             </div>
@@ -110,7 +110,7 @@ const Project: React.FC = () => {
           <div className="relative">
             <div
               ref={sectionRef}
-              className="h-screen w-[400vw] flex flex-row  items-center justify-center"
+              className="h-screen w-[400vw] flex md:flex-row items-center justify-center"
             >
               {timelineData.map((item, index) => (
                 <section
