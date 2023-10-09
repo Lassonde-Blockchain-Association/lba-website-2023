@@ -1,15 +1,11 @@
 import Image from "next/image";
 interface TimelineProps {
   className: string;
-  heightClassName: string;
+  height: number;
   length: number;
 }
 
-const Timeline: React.FC<TimelineProps> = ({
-  className,
-  heightClassName,
-  length,
-}) => {
+const Timeline: React.FC<TimelineProps> = ({ className, height, length }) => {
   const elementIndex = new Array<number>(length - 1);
   const divClassName = `${className}`;
 
@@ -17,8 +13,7 @@ const Timeline: React.FC<TimelineProps> = ({
     elementIndex[i] = i + 1;
   }
 
-  const cubeClassName =
-    heightClassName + " hue-rotate-90 saturate-50 brightness-200";
+  const cubeClassName = " ";
 
   return (
     <div className={divClassName}>
@@ -28,8 +23,8 @@ const Timeline: React.FC<TimelineProps> = ({
             className={cubeClassName}
             src="/3D_cube.png"
             alt="isometric_cube"
-            width={105}
-            height={105}
+            height={height}
+            width={height}
           ></Image>
           <div className="my-auto w-20 h-0.5 bg-white"></div>
           {index == length - 1 && (
@@ -37,8 +32,8 @@ const Timeline: React.FC<TimelineProps> = ({
               alt="isometric_cube_light"
               className={cubeClassName}
               src="/3D_cube.png"
-              width={105}
-              height={105}
+              height={height}
+              width={height}
             ></Image>
           )}
         </div>
