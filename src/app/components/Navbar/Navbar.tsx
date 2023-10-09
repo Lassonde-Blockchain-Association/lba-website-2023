@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -28,32 +29,33 @@ const Navbar = () => {
     setOpen((prev) => !prev);
   };
 
-  useEffect(() => {
-    const handleScroll = (e) => {
-      // Prevent scrolling down when the mouse wheel is used
-      if (e.deltaY > 0) {
-        e.preventDefault();
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = (e) => {
+  //     // Prevent scrolling down when the mouse wheel is used
+  //     if (e.deltaY > 0) {
+  //       e.preventDefault();
+  //     }
+  //   };
 
-    // Add the event listener to the document
-    document.addEventListener("wheel", handleScroll, { passive: false });
+  //   // Add the event listener to the document
+  //   document.addEventListener("wheel", handleScroll, { passive: false });
 
-    // Clean up the event listener when the component unmounts
-    return () => {
-      document.removeEventListener("wheel", handleScroll);
-    };
-  }, []);
+  //   // Clean up the event listener when the component unmounts
+  //   return () => {
+  //     document.removeEventListener("wheel", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <div className="bg-transparent">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="#" className="text-white">
-              Navbar
+            <a href="/" className="text-white">
+              LBA
             </a>
           </div>
+
           {/* navlinks */}
           <div className="hidden md:hidden">
             <div className="ml-10 flex item-basline space-x-4">
@@ -93,7 +95,7 @@ const Navbar = () => {
       </div>
       {open ? (
         <div className="md:block">
-          <div className="ox-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navlinks.map((link, index) => (
               <a
                 key={index}
