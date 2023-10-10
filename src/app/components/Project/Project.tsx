@@ -86,7 +86,8 @@ const Project: React.FC = () => {
       className="overflow-hidden h-[100vh] flex"
     >
       <div ref={bodyRef} className="overflow-hidden ">
-        <div className="bg-[#191970] min-h-screen w-full">
+        {/* <div className="bg-[#191970] min-h-screen w-full"> */}
+        <div className="min-h-screen w-full">
           <h2 className="text-xl font-semibold leading-normal tracking-widest text-white pl-[8%] pt-[3%] mb-[ddddddddd%] uppercase">
             P r o j e c t -
             <span className="text-orange-600"> [ T i m e l i n e ]</span>
@@ -95,7 +96,7 @@ const Project: React.FC = () => {
             <div className="absolute z-10">
               <div
                 ref={maskRef}
-                className="absolute bg-[#191970] h-20 w-screen z-10"
+                className="absolute bg-[#001152] h-20 w-screen z-10"
               ></div>
               <Timeline
                 className="flex flex-start h-20 opacity-100 z-0"
