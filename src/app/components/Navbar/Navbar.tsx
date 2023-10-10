@@ -2,29 +2,53 @@
 
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import marker from "../../../../public/marker.gif";
+import Image from "next/image";
+import Link from "next/link";
+import { Link as LinkS } from "react-scroll";
+
+// import { animateScroll as scroll } from "react-scroll";
 
 const navlinks = [
   {
     title: "Mission",
-    link: "#",
+    link: "mission",
   },
   {
     title: "Project",
-    link: "#",
+    link: "project",
   },
   {
     title: "Team",
-    link: "#",
+    link: "team",
   },
   {
     title: "Contact",
-    link: "#",
+    link: "/",
   },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
+  const [scrollNav, setScrollNav] = useState(false);
+
+  const updateNav = () => {
+    console.log(window.scrollY);
+    if (window.scrollY >= 70) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateNav);
+  }, []);
+
+  // const toggleHome = () => {
+  //   scroll.scrollToTop();
+  // };
   const handleMenu = () => {
     setOpen((prev) => !prev);
   };
@@ -47,64 +71,64 @@ const Navbar = () => {
   // }, []);
 
   return (
-    <div className="bg-transparent">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-transparent overflow-hidden">
+      <div className="container mx-auto w-screen">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <a href="/" className="text-white">
+          <div className="flex items-center gap-4">
+            <LinkS to="/" duration={500} className="text-white cursor-pointer">
               LBA
-            </a>
+            </LinkS>
+            <Link
+              href="https://lba-blog.vercel.app/"
+              className="text-white cursor-pointer"
+            >
+              LBA - Blog
+            </Link>
           </div>
 
           {/* navlinks */}
           <div className="hidden md:hidden">
-            <div className="ml-10 flex item-basline space-x-4">
+            <div className="flex item-basline space-x-4">
               {navlinks.map((link, index) => (
-                <a
-                  key={index}
-                  className="text-white transition-all duration-600  
-                      hover:bg-gray-600 hover:text-white px-3 py-2 rounded-md 
-                      text-xl font-large"
-                  href={link.link}
-                >
+                <LinkS key={index} duration={500} to={link.link}>
                   {link.title}
-                </a>
+                </LinkS>
               ))}
             </div>
           </div>
           {/* hamburger button*/}
-          <div className="-mr-2 flex md:block">
+          <div className="flex lg:block z-50 ">
             <button
               type="button"
               onClick={handleMenu}
-              className={`inline-flex items-center justify-center p-6 rounded-lg 
-                  text-white hover:text-white  focus:outline-none focus:ring-2 
-                  focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white 
-                  transition-transform transform 
+              className={` inline-flex items-center justify-center rounded-lgtext-white hover:text-white transition-transform transform 
                   ${open ? "rotate-90 scale-110" : "rotate-0 scale-10"}`}
             >
-              <span className="sr-only">Open Main Menu</span>
+              <Image alt="marker" src={marker} width={125} />
+              {/* <span className="sr-only">Open Main Menu</span>
               {open ? (
                 <FaTimes className="text-3xl" />
               ) : (
                 <FaBars className="text-3xl" />
-              )}
+              )} */}
             </button>
           </div>
         </div>
       </div>
       {open ? (
-        <div className="md:block">
+        <div className="bg-black flex justify-center absolute w-[100%] z-10 md:block">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navlinks.map((link, index) => (
-              <a
+              <LinkS
                 key={index}
-                className="text-white hover:bg-gray-700 hover:text-white 
-                  block text-center py-20 rounded-md text-xl font-extralarge"
-                href={link.link}
+                duration={500}
+                className="text-white hover:bg-white hover:text-orange-600
+                  block text-center py-20 text-6xl pointer"
+                // className="text-white hover:bg-white hover:text-orange-600 px-3 py-2 rounded-md text-xl pointer"
+                to={link.link}
               >
                 {link.title}
-              </a>
+              </LinkS>
             ))}
           </div>
         </div>
