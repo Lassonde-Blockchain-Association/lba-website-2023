@@ -48,7 +48,7 @@ function Mission() {
   }, []);
 
   return (
-    <div className="h-[100vh] flex justify-center items-center">
+    <div id="mission" className="h-[100vh] flex justify-center items-center">
       <div className="container mx-auto w-[85%]">
         <div className="flex flex-col-2 items-center rounded-lg border border-white bg-[#FFFFFF] bg-opacity-10 backdrop-blur-30">
           <MissionBigTitle />
