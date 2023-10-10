@@ -96,7 +96,7 @@ const Project: React.FC = () => {
             <div className="absolute z-10">
               <div
                 ref={maskRef}
-                className="absolute bg-[#191970] h-20 w-screen z-10"
+                className="absolute bg-[#001152] h-20 w-screen z-10"
               ></div>
               <Timeline
                 className="flex flex-start h-20 opacity-100 z-0"
