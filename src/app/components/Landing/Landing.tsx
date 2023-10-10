@@ -11,17 +11,7 @@ const Landing = () => {
   };
 
   return (
-    <div className="Landing h-[100vh] relative flex flex-col justify-between">
-      <div className="TopSection flex flex-row h-[20%] justify-between align-top">
-        <div className="LassondeBlockChainVariant2 w-[40%]  relative flex flex-row ml-16 mt-12">
-          <div className="MainLogo   text-white text-4xl font-bold font-alata mr-4">
-            LBA
-          </div>
-          <div className="LbaBlog  relative text-white text-opacity-80 text-3xl font-bold font-alata">
-            LBA-Blog
-          </div>
-        </div>
-      </div>
+    <div className="Landing h-[100vh] relative flex flex-col justify-end pb-10">
       <div className="MainContent">
         <div className="LassondeBlockchainAssociation pb-[3%] ml-16 align-center mt-20">
           <span className="text-white text-6xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
