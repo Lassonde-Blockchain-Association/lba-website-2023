@@ -56,7 +56,7 @@ const Project: React.FC = () => {
           translateX: 0,
         },
         {
-          translateX: `${-250 - 7 * Math.pow(timelineData.length, 1.35)}vw`,
+          translateX: `${-250 - 8 * Math.pow(timelineData.length, 1.35)}vw`,
           ease: "none",
           duration: 1,
           scrollTrigger: {

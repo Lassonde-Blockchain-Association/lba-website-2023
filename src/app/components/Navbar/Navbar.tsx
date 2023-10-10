@@ -74,13 +74,17 @@ const Navbar = () => {
     <div className="bg-transparent overflow-hidden">
       <div className="container mx-auto w-screen">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-4">
-            <LinkS to="/" duration={500} className="text-white cursor-pointer">
+          <div className="flex items-center gap-4 z-50 ">
+            <LinkS
+              to="/"
+              duration={500}
+              className="text-white cursor-pointer text-3xl"
+            >
               LBA
             </LinkS>
             <Link
               href="https://lba-blog.vercel.app/"
-              className="text-white cursor-pointer"
+              className="text-white cursor-pointer hover:text-orange-500 text-xl"
             >
               LBA - Blog
             </Link>
@@ -122,8 +126,7 @@ const Navbar = () => {
               <LinkS
                 key={index}
                 duration={500}
-                className="text-white hover:bg-white hover:text-orange-600
-                  block text-center py-20 text-6xl pointer"
+                className="text-white hover:bg-white hover:text-orange-600 block text-center py-20 text-6xl cursor-pointer"
                 // className="text-white hover:bg-white hover:text-orange-600 px-3 py-2 rounded-md text-xl pointer"
                 to={link.link}
               >
