@@ -14,7 +14,24 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
+<<<<<<< Updated upstream
   },
+=======
+    fontFamily: {
+      alata: ["var(--font-Alata)"],
+      saira_extra_condensed: ["var(--font-saira_extra_condensed)"],
+    },
+  },
+  // animation: {
+  //   "animate-infinite-scroll": "infinite-scroll 25s linear infinite",
+  // },
+  // keyframes: {
+  //   "animate-infinite-scroll": {
+  //     from: { transform: "translateX(0)" },
+  //     to: { transform: "translateX(-100%)" },
+  //   },
+  // },
+>>>>>>> Stashed changes
   plugins: [],
 }
 export default config
