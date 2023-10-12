@@ -15,7 +15,7 @@ const ScrollingBar = () => {
     scrollingList.push(      
       <ul className="flex items-center justify-center md:justify-start animation-infinite-scroll">
         {groupMember.map((data, index) => (
-          <li key={index} className="mx-8">
+          <li key={index} className="mx-8 whitespace-nowrap">
             <div className="flex items-center justify-center">
               <p>{data.name}</p>
             </div>
