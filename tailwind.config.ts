@@ -19,18 +19,6 @@ const config: Config = {
       alata: ["var(--font-Alata)"],
       saira_extra_condensed: ["var(--font-saira_extra_condensed)"],
     },
-<<<<<<< HEAD
-  },
-  animation: {
-    "animate-infinite-scroll": "infinite-scroll 25s linear infinite",
-  },
-  keyframes: {
-    "animate-infinite-scroll": {
-      from: { transform: "translateX(0)" },
-      to: { transform: "translateX(-100%)" },
-    },
-=======
->>>>>>> db86eb3be4d45f0fe2b2041f35200ce9f5822f41
   },
   // animation: {
   //   "animate-infinite-scroll": "infinite-scroll 25s linear infinite",
