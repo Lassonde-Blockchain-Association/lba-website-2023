@@ -40,8 +40,8 @@ const Footer = () => {
             />
           ))}
         </div>
-        {/* <ScrollingBar /> */}
-        <p className=" text-center mt-[3%] tracking-wider">
+        <ScrollingBar />
+        <p className=" text-center mt-3 tracking-wider">
           lassondeblockchain © {new Date().getFullYear()} All rights reserved.
         </p>
       </div>
