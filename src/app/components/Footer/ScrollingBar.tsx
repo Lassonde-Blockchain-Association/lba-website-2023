@@ -1,4 +1,5 @@
 import React from "react";
+import { DiDotnet } from "react-icons/di";
 
 const groupMember = [
   { name: "Lassonde Blockchain" },
@@ -11,8 +12,8 @@ const groupMember = [
 
 const ScrollingBar = () => {
   const scrollingList = [];
-  for(let i=0; i<6; i++){
-    scrollingList.push(      
+  for (let i = 0; i < 6; i++) {
+    scrollingList.push(
       <ul className="flex items-center justify-center md:justify-start animation-infinite-scroll">
         {groupMember.map((data, index) => (
           <li key={index} className="mx-8 whitespace-nowrap">
@@ -21,7 +22,8 @@ const ScrollingBar = () => {
             </div>
           </li>
         ))}
-      </ul>)
+      </ul>
+    );
   }
   return (
     <div className="w-full h-1/6 inline-flex flex-nowrap text-3xl font-semibold border-b-8">
