@@ -25,7 +25,10 @@ const iconsData = [
 
 const Footer = () => {
   return (
-    <div className="h-[80vh] overflow-hidden text-white flex-col flex justify-end">
+    <div
+      id="footer"
+      className="h-[80vh] overflow-hidden text-white flex-col flex justify-end"
+    >
       {/* <div className="fixed inset-x-0 bottom-0 h-4/6"> */}
       <div className="h-4/6 inset-x-0">
         <NewsLetter />

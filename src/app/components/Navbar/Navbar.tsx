@@ -24,7 +24,7 @@ const navlinks = [
   },
   {
     title: "Contact",
-    link: "/",
+    link: "footer",
   },
 ];
 
@@ -32,15 +32,6 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const [scrollNav, setScrollNav] = useState(false);
-
-  const updateNav = () => {
-    console.log(window.scrollY);
-    if (window.scrollY >= 70) {
-      setScrollNav(true);
-    } else {
-      setScrollNav(false);
-    }
-  };
 
   useEffect(() => {
     window.addEventListener("scroll", updateNav);
@@ -52,6 +43,20 @@ const Navbar = () => {
   const handleMenu = () => {
     setOpen((prev) => !prev);
   };
+
+  const updateNav = () => {
+    console.log(window.scrollY);
+    if (window.scrollY >= 100) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+    setOpen(false); // Close the menu when scroll event occurs
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateNav);
+  }, []);
 
   // useEffect(() => {
   //   const handleScroll = (e) => {
@@ -105,13 +110,13 @@ const Navbar = () => {
             <button
               type="button"
               onClick={handleMenu}
-              className={` inline-flex items-center justify-center rounded-lgtext-white hover:text-white transition-transform transform 
+              className={` inline-flex items-center justify-center rounded-lg text-white hover:text-white transition-transform transform 
                   ${open ? "rotate-90 scale-110" : "rotate-0 scale-10"}`}
             >
               <Image alt="marker" src={marker} width={125} />
-              {/* <span className="sr-only">Open Main Menu</span>
+              {/* <span className="sr-only ">Open Main Menu</span>
               {open ? (
-                <FaTimes className="text-3xl" />
+                <FaTimes className="text-3xl " />
               ) : (
                 <FaBars className="text-3xl" />
               )} */}
