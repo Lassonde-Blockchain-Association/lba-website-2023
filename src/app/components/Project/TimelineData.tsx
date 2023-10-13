@@ -7,7 +7,7 @@ let TimelineData = [
   // },
   {
     date: "June 2023",
-    title: "Launch of LBA Insights Blog",
+    title: "LBA Insights Blog",
     description:
       "With a focus on leading innovation in technology, the LBA Insights Blog is initiated to provide comprehensive analyses and insights into current technology markets, trends, and future projections.",
   },
@@ -15,11 +15,11 @@ let TimelineData = [
     date: "September 2023",
     title: "LBA Website Revamp",
     description:
-      "A complete overhaul of the official LBA website is undertaken by a newly assembled team of 10 specialists. The updated site is optimized for performance and user experience, featuring state-of-the-art technologies like Next.js and Tailwind CSS.",
+      "A new team of 15 specialists is overhauling the official LBA website. The updated site, optimized for performance and user experience, features modern technologies like Next.js, TypeScript, and Tailwind CSS.",
   },
   {
     date: "October - December 2023",
-    title: "Upcoming: LBA - Blog 2.0",
+    title: "LBA - Blog 2.0",
     description:
       "Stay tuned for the next iteration of our blog, which promises to deliver even deeper insights into the ever-evolving technological landscape.",
   },

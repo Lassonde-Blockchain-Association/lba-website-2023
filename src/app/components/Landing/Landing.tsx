@@ -32,7 +32,7 @@ const Landing = () => {
             className="my-auto float-left select-none text-xl border-white text-white box-border h-16 w-64 p-4 border-4 inline-block 
       rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950 mr-4 font-alata"
           >
-            Join Us
+            Join Discord
           </a>
           <div className="Line1 w-[80%] border-2 border-white mx-auto my-auto hidden sm:hidden md:block lg:block"></div>
           <button
