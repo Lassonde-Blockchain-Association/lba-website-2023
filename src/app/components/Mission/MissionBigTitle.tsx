@@ -14,10 +14,18 @@ const MissionBigTitle = () => {
           </span>
         </h1>
 
-        <p className="text-white text-left font-inter text-2xl font-normal leading-normal font-alata w-[70%]">
+        {/* <p className="text-white text-left font-inter text-2xl font-normal leading-normal font-alata w-[70%]">
           We&apos;re a new studio designed to accelerate the advent of web3
           gaming. We develop and publish hybrid games that are mobile first and
           blockchain-enabled.
+        </p> */}
+        <p className="text-white text-left font-inter text-2xl font-normal leading-normal font-alata w-[70%]">
+          We&apos;re the first ever project-based blockchain hub at York
+          University, rooted in a growth-oriented community dedicated to
+          advancing knowledge and honing practical skills in emerging
+          technologies such as blockchain, web3.0, and the metaverse. Operating
+          under a start-up model, we emphasize hands-on experience as the most
+          effective learning approach.
         </p>
       </div>
     </div>
