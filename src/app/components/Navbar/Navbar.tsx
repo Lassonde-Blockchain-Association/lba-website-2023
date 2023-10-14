@@ -31,34 +31,29 @@ const navlinks = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  // const [scrollNav, setScrollNav] = useState(false);
+  const [scrollNav, setScrollNav] = useState(false);
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", updateNav);
-  // }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", updateNav);
+  }, []);
 
   // const toggleHome = () => {
   //   scroll.scrollToTop();
   // };
 
-  // const updateNav = () => {
-  //   console.log(window.scrollY);
-  //   if (window.scrollY >= 100) {
-  //     setScrollNav(true);
-  //   } else {
-  //     setScrollNav(false);
-  //   }
-  //   setOpen(false); // Close the menu when scroll event occurs
-  // };
+  const updateNav = () => {
+    console.log(window.scrollY);
+    if (window.scrollY >= 100) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+    setOpen(false); // Close the menu when scroll event occurs
+  };
 
   const handleMenu = () => {
     setOpen((prev) => !prev);
   };
-
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", updateNav);
-  // }, []);
 
   // useEffect(() => {
   //   const handleScroll = (e) => {
@@ -78,7 +73,7 @@ const Navbar = () => {
   // }, []);
 
   return (
-    <div className="backdrop-blur-2xl overflow-hidden h-[10vh] w-screen fixed z-[100]">
+    <div className="backdrop-blur-7xl overflow-hidden h-[10vh] w-screen fixed z-[100]">
       <div className="container mx-auto w-[100%]">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4 z-50 ">
