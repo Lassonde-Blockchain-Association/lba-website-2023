@@ -31,32 +31,34 @@ const navlinks = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  const [scrollNav, setScrollNav] = useState(false);
+  // const [scrollNav, setScrollNav] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("scroll", updateNav);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", updateNav);
+  // }, []);
 
   // const toggleHome = () => {
   //   scroll.scrollToTop();
   // };
+
+  // const updateNav = () => {
+  //   console.log(window.scrollY);
+  //   if (window.scrollY >= 100) {
+  //     setScrollNav(true);
+  //   } else {
+  //     setScrollNav(false);
+  //   }
+  //   setOpen(false); // Close the menu when scroll event occurs
+  // };
+
   const handleMenu = () => {
     setOpen((prev) => !prev);
   };
 
-  const updateNav = () => {
-    console.log(window.scrollY);
-    if (window.scrollY >= 100) {
-      setScrollNav(true);
-    } else {
-      setScrollNav(false);
-    }
-    setOpen(false); // Close the menu when scroll event occurs
-  };
 
-  useEffect(() => {
-    window.addEventListener("scroll", updateNav);
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", updateNav);
+  // }, []);
 
   // useEffect(() => {
   //   const handleScroll = (e) => {
@@ -76,8 +78,8 @@ const Navbar = () => {
   // }, []);
 
   return (
-    <div className="bg-transparent overflow-hidden">
-      <div className="container mx-auto w-screen">
+    <div className="backdrop-blur-2xl overflow-hidden h-[10vh] w-screen fixed z-[100]">
+      <div className="container mx-auto w-[100%]">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4 z-50 ">
             <LinkS
@@ -125,14 +127,13 @@ const Navbar = () => {
         </div>
       </div>
       {open ? (
-        <div className="bg-black flex justify-center absolute w-[100%] z-10 md:block">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="backdrop-blur-2xl flex justify-center w-[100%] md:block fixed z-[100]">
+          <div className="px-2 h-[100%] pt-2 pb-3 space-y-1 sm:px-3 flex flex-row  justify-evenly items-center">
             {navlinks.map((link, index) => (
               <LinkS
                 key={index}
                 duration={500}
-                className="text-white hover:bg-white hover:text-orange-600 block text-center py-20 text-6xl cursor-pointer"
-                // className="text-white hover:bg-white hover:text-orange-600 px-3 py-2 rounded-md text-xl pointer"
+                className="text-white hover:bg-white hover:text-orange-600 text-center text-6xl cursor-pointer"
                 to={link.link}
               >
                 {link.title}
