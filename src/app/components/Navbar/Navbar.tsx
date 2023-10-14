@@ -5,9 +5,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import marker from "../../../../public/marker.gif";
 import Image from "next/image";
 import Link from "next/link";
-import { Link as LinkS } from "react-scroll";
-
-// import { animateScroll as scroll } from "react-scroll";
+import { Link as LinkS, animateScroll as scroll } from "react-scroll";
 
 const navlinks = [
   {
@@ -37,9 +35,9 @@ const Navbar = () => {
     window.addEventListener("scroll", updateNav);
   }, []);
 
-  // const toggleHome = () => {
-  //   scroll.scrollToTop();
-  // };
+  const toggleHome = () => {
+    scroll.scrollToTop();
+  };
 
   const updateNav = () => {
     console.log(window.scrollY);
@@ -55,23 +53,6 @@ const Navbar = () => {
     setOpen((prev) => !prev);
   };
 
-  // useEffect(() => {
-  //   const handleScroll = (e) => {
-  //     // Prevent scrolling down when the mouse wheel is used
-  //     if (e.deltaY > 0) {
-  //       e.preventDefault();
-  //     }
-  //   };
-
-  //   // Add the event listener to the document
-  //   document.addEventListener("wheel", handleScroll, { passive: false });
-
-  //   // Clean up the event listener when the component unmounts
-  //   return () => {
-  //     document.removeEventListener("wheel", handleScroll);
-  //   };
-  // }, []);
-
   return (
     <div className="overflow-hidden h-[10vh] w-[100%]  z-[100]">
       <div className="container mx-auto w-[100%]">
@@ -79,6 +60,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4 z-50 ">
             <LinkS
               to="/"
+              onClick={toggleHome}
               duration={500}
               className="text-white cursor-pointer text-3xl"
             >
@@ -127,9 +109,10 @@ const Navbar = () => {
             {navlinks.map((link, index) => (
               <LinkS
                 key={index}
-                duration={500}
-                className="text-white hover:bg-white hover:text-orange-600 text-center text-6xl cursor-pointer"
                 to={link.link}
+                duration={1500}
+                smooth={true}
+                className="text-white hover:bg-white hover:text-orange-600 text-center text-6xl cursor-pointer"
               >
                 {link.title}
               </LinkS>
