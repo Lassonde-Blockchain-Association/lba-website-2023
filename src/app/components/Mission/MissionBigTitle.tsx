@@ -23,7 +23,7 @@ const MissionBigTitle = () => {
           About Us
         </h3>
 
-        <p className="text-white text-left font-inter text-2xl font-normal leading-normal font-alata w-[70%]">
+        <p className="text-white text-left font-inter text-2xl font-normal leading-normal font-alata w-[70%]  pb-5">
           We&apos;re the first ever project-based blockchain hub at York
           University, rooted in a growth-oriented community dedicated to
           advancing knowledge and honing practical skills in emerging
