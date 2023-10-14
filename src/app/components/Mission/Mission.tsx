@@ -49,10 +49,10 @@ function Mission() {
 
   return (
     <div id="mission" className="h-[100vh] flex justify-center items-center">
-      <div className="container mx-auto w-[85%]">
-        <div className="flex flex-col-2 items-center rounded-lg border border-white bg-[#FFFFFF] bg-opacity-10 backdrop-blur-30">
+      <div className="container relative mx-auto w-[85%] overflow-hidden">
+        <div className="flex w-[100%] items-center rounded-lg border border-white bg-[#FFFFFF] bg-opacity-10 backdrop-blur-30">
           <MissionBigTitle />
-          <div className="inline-block">
+          <div className="absolute -right-1/4">
             <canvas
               className=""
               ref={canvasRef}
