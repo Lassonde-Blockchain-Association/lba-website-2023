@@ -59,14 +59,14 @@ const TeamData = [
   {
     name: "Tom Sun",
     job: "Software Developer",
-    image: "https://th.bing.com/th/id/OIG.hz0yGHB3HSNv92nst1T0?pid=ImgGn",
+    image: "https://th.bing.com/th/id/OIG.fqVQVFS0gBLapGku6wz_?pid=ImgGn",
     linkedin: "https://www.linkedin.com/in/ts2846/",
     bgColor: "bg-purple-500",
   },
   {
     name: "Krishna Patel",
     job: "Software Developer",
-    image: "https://th.bing.com/th/id/OIG.LM8CttahLJA7QfB6yGH_?pid=ImgGn",
+    image: "https://th.bing.com/th/id/OIG.CpmM0Huf1YY6Ortd5pJp?pid=ImgGn",
     linkedin: "https://www.linkedin.com/in/krishna-patel-a33548257/",
     bgColor: "bg-purple-500",
   },

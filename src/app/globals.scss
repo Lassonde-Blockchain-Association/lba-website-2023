@@ -79,7 +79,7 @@
     transform-origin: center center;
     animation: moveVertical 30s ease infinite;
 
-    opacity: 1;
+    opacity: 0.8;
   }
 
   .g2 {
@@ -95,7 +95,7 @@
     transform-origin: calc(50% - 400px);
     animation: moveInCircle 20s reverse infinite;
 
-    opacity: 1;
+    opacity: 0.8;
   }
 
   .g3 {
@@ -111,7 +111,7 @@
     transform-origin: 50%;
     animation: moveInCircle 40s linear infinite;
 
-    opacity: 1;
+    opacity: 0.8;
   }
 
   .g4 {
