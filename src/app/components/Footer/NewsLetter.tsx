@@ -6,7 +6,7 @@ const NewsLetter = () => {
     <div className="flex w-full border-solid border-white border-t-8 h-1/3 items-center justify-center">
       <a
         href="https://lba-blog.vercel.app/"
-        className="h-full flex items-center justify-center w-1/2 "
+        className="z-50 h-full flex items-center justify-center w-1/2 "
       >
         <h1 className="text-7xl tracking-widest hover:text-orange-500 uppercase font-semibold  p-2 ">
           LBA-Blog

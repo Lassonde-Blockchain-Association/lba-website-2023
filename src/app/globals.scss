@@ -76,10 +76,13 @@
   // overflow-x: hidden;
 
   .gradient-container {
+    position: relative;
+
     top: 0;
   }
 
   .g1 {
+    z-index: -5;
     position: absolute;
     background: radial-gradient(
         circle at center,
