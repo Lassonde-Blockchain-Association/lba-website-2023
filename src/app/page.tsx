@@ -16,13 +16,23 @@ export default function Home() {
         <span className="g3"></span>
         <span className="g4"></span>
         <span className="g5"></span>
+
+        <Navbar />
+        <Landing />
+        <Mission />
       </span>
-      <Navbar />
-      <Landing />
-      <Mission />
+
       <Project />
-      <TeamCard />
-      <Footer />
+
+      <span className="gradient-container">
+        <span className="g1"></span>
+        <span className="g2"></span>
+        <span className="g3"></span>
+        <span className="g4"></span>
+        <span className="g5"></span>
+        <TeamCard />
+        <Footer />
+      </span>
     </main>
   );
 }

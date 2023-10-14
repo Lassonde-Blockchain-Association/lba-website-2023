@@ -41,7 +41,7 @@ const SocialLink = ({
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full flex items-center justify-center text-6xl"
+        className="z-50 w-full flex items-center justify-center text-6xl"
       >
         <IconComponent className="text-9xl" />
         <p>{socialLinkTitle}</p>

@@ -14,8 +14,8 @@ function Mission() {
     if (canvasRef.current) {
       const globe = createGlobe(canvasRef.current, {
         devicePixelRatio: 1,
-        width: 600,
-        height: 600,
+        width: 700,
+        height: 700,
         phi: 2.7,
         theta: 0.7,
         dark: 1,
@@ -57,8 +57,8 @@ function Mission() {
               className=""
               ref={canvasRef}
               style={{
-                width: 600,
-                height: 600,
+                width: 700,
+                height: 700,
                 maxWidth: "100%",
                 aspectRatio: 1,
               }}
