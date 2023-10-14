@@ -24,7 +24,7 @@ const navlinks = [
   },
   {
     title: "Contact",
-    link: "/",
+    link: "footer",
   },
 ];
 
@@ -32,15 +32,6 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   const [scrollNav, setScrollNav] = useState(false);
-
-  const updateNav = () => {
-    console.log(window.scrollY);
-    if (window.scrollY >= 70) {
-      setScrollNav(true);
-    } else {
-      setScrollNav(false);
-    }
-  };
 
   useEffect(() => {
     window.addEventListener("scroll", updateNav);
@@ -52,6 +43,20 @@ const Navbar = () => {
   const handleMenu = () => {
     setOpen((prev) => !prev);
   };
+
+  const updateNav = () => {
+    console.log(window.scrollY);
+    if (window.scrollY >= 100) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+    setOpen(false); // Close the menu when scroll event occurs
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", updateNav);
+  }, []);
 
   // useEffect(() => {
   //   const handleScroll = (e) => {
@@ -74,13 +79,17 @@ const Navbar = () => {
     <div className="bg-transparent overflow-hidden">
       <div className="container mx-auto w-screen">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-4">
-            <LinkS to="/" duration={500} className="text-white cursor-pointer">
+          <div className="flex items-center gap-4 z-50 ">
+            <LinkS
+              to="/"
+              duration={500}
+              className="text-white cursor-pointer text-3xl"
+            >
               LBA
             </LinkS>
             <Link
               href="https://lba-blog.vercel.app/"
-              className="text-white cursor-pointer"
+              className="text-white cursor-pointer hover:text-orange-500 text-xl"
             >
               LBA - Blog
             </Link>
@@ -101,13 +110,13 @@ const Navbar = () => {
             <button
               type="button"
               onClick={handleMenu}
-              className={` inline-flex items-center justify-center rounded-lgtext-white hover:text-white transition-transform transform 
+              className={` inline-flex items-center justify-center rounded-lg text-white hover:text-white transition-transform transform 
                   ${open ? "rotate-90 scale-110" : "rotate-0 scale-10"}`}
             >
               <Image alt="marker" src={marker} width={125} />
-              {/* <span className="sr-only">Open Main Menu</span>
+              {/* <span className="sr-only ">Open Main Menu</span>
               {open ? (
-                <FaTimes className="text-3xl" />
+                <FaTimes className="text-3xl " />
               ) : (
                 <FaBars className="text-3xl" />
               )} */}
@@ -122,8 +131,7 @@ const Navbar = () => {
               <LinkS
                 key={index}
                 duration={500}
-                className="text-white hover:bg-white hover:text-orange-600
-                  block text-center py-20 text-6xl pointer"
+                className="text-white hover:bg-white hover:text-orange-600 block text-center py-20 text-6xl cursor-pointer"
                 // className="text-white hover:bg-white hover:text-orange-600 px-3 py-2 rounded-md text-xl pointer"
                 to={link.link}
               >

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const Landing = () => {
   const scrollToMission = () => {
     window.scrollTo({
-      top: window.innerHeight,
+      top: window.innerHeight + 80,
       behavior: "smooth",
     });
   };
@@ -13,12 +13,12 @@ const Landing = () => {
   return (
     <div className="Landing h-[100vh] relative flex flex-col justify-end pb-10">
       <div className="MainContent">
-        <div className="LassondeBlockchainAssociation pb-[3%] ml-16 align-center mt-20">
+        <div className=" pb-[3%] ml-16 align-center mt-20">
           <span className="text-white text-6xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
             LASSONDE
             <br />
           </span>
-          <span className="text-rose-400 text-6xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
+          <span className="text-rose-300 text-6xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
             BLOCKCHAIN
             <br />
           </span>
@@ -32,7 +32,7 @@ const Landing = () => {
             className="my-auto float-left select-none text-xl border-white text-white box-border h-16 w-64 p-4 border-4 inline-block 
       rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950 mr-4 font-alata"
           >
-            Join Us
+            Join Discord
           </a>
           <div className="Line1 w-[80%] border-2 border-white mx-auto my-auto hidden sm:hidden md:block lg:block"></div>
           <button
