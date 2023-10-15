@@ -1,8 +1,10 @@
-import "./globals.css";
+import "./globals.scss";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+import { Inter, Saira_Extra_Condensed, Alata } from "next/font/google";
+
+const saira_extra_condensed = Saira_Extra_Condensed({ subsets: ["latin"], weight: ["400", "700"],  variable: '--font-saira_extra_condensed' });
+const alata = Alata({ subsets: ["latin"], weight: "400", variable: '--font-Alata'});
 
 export const metadata: Metadata = {
   title: "Lassonde Blockchain Association",
@@ -16,16 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${alata.variable} ${saira_extra_condensed.className}`}>{children}</body>
     </html>
   );
 }
-// import "./globals.css";
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-//   return <div>{children}</div>;
-// }

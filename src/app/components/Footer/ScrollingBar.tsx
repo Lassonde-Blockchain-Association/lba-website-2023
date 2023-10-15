@@ -1,129 +1,34 @@
 import React from "react";
-import { DiDotnet } from "react-icons/di";
 
 const groupMember = [
-  { name: "Natalie" },
-  { name: "Seth" },
-  { name: "Samson" },
-  { name: "Nikhil" },
-  { name: "Krishna" },
-  { name: "Daniel" },
-  { name: "Luana" },
+  { name: "Lassonde Blockchain" },
+  { name: "Web3.0" },
+  { name: "Metaverse" },
+  { name: "NFT" },
+  { name: "DAO" },
+  { name: "Open Source" },
 ];
 
 const ScrollingBar = () => {
+  const scrollingList = [];
+  for (let i = 0; i < 6; i++) {
+    scrollingList.push(
+      <ul className="flex items-center justify-center md:justify-start animation-infinite-scroll">
+        {groupMember.map((data, index) => (
+          <li key={index} className="mx-8 whitespace-nowrap">
+            <div className="flex items-center justify-center">
+              <p>{data.name}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    );
+  }
   return (
-    <div className="w-full h-1/6 inline-flex flex-nowrap text-3xl font-semibold border-t-8 border-b-8">
-      <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
-        {groupMember.map((data, index) => (
-          <div key={index} className="flex items-center justify-center">
-            <DiDotnet />
-            <li>
-              <p>{data.name}</p>
-            </li>
-          </div>
-        ))}
-      </ul>
-      <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
-        {groupMember.map((data, index) => (
-          <div key={index} className="flex items-center justify-center">
-            <DiDotnet />
-            <li>
-              <p>{data.name}</p>
-            </li>
-          </div>
-        ))}
-      </ul>
-      <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
-        {groupMember.map((data, index) => (
-          <div key={index} className="flex items-center justify-center">
-            <DiDotnet />
-            <li>
-              <p>{data.name}</p>
-            </li>
-          </div>
-        ))}
-      </ul>
+    <div className="w-full h-1/6 inline-flex flex-nowrap text-xl border-b-8 uppercase">
+      {scrollingList}
     </div>
   );
 };
 
 export default ScrollingBar;
-
-{
-  /* <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll" aria-hidden="true">
-          <li>
-              <p>Natalie Au</p>
-          </li>
-          <li>
-              <p>Zhaohui Li</p>
-          </li>
-          <li>
-              <p>Natalie Au</p>
-          </li>
-          <li>
-              <p>Zhaohui Li</p>
-          </li>
-          <li>
-              <p>Natalie Au</p>
-          </li>
-          <li>
-              <p>Zhaohui Li</p>
-          </li>
-          <li>
-              <p>Natalie Au</p>
-          </li>
-          <li>
-              <p>Zhaohui Li</p>
-          </li>
-          <li>
-              <p>Natalie Au</p>
-          </li>
-          <li>
-              <p>Zhaohui Li</p>
-          </li>
-          <li>
-              <p>Natalie Au</p>
-          </li>
-          <li>
-              <p>Zhaohui Li</p>
-          </li>
-          <li>
-              <p>Natalie Au</p>
-          </li>
-          <li>
-              <p>Zhaohui Li</p>
-          </li>
-          <li>
-              <p>Natalie Au</p>
-          </li>
-          <li>
-              <p>Zhaohui Li</p>
-          </li>
-          <li>
-              <p>Natalie Au</p>
-          </li>
-          <li>
-              <p>Zhaohui Li</p>
-          </li>
-          <li>
-              <p>Natalie Au</p>
-          </li>
-          <li>
-              <p>Zhaohui Li</p>
-          </li>
-          <li>
-              <p>Natalie Au</p>
-          </li>
-          <li>
-              <p>Zhaohui Li</p>
-          </li>
-          <li>
-              <p>Natalie Au</p>
-          </li>
-          <li>
-              <p>Zhaohui Li</p>
-          </li>
-
-      </ul> */
-}

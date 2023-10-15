@@ -1,18 +1,26 @@
-import React from "react";
+// import React from "react";
 
-const MissionBigTitle: React.FC = () => {
+const MissionBigTitle = () => {
   return (
-    <div>
-      <h6 className="text-white font-inter text-xl font-semibold leading-normal tracking-widest flex justify-left pl-[150px] pt-[3%]">
+    <div className="inline-block pl-5">
+      <h3 className="text-white text-xl font-semibold leading-normal tracking-widest flex justify-left pt-[3%]">
         M I S S I O N
-      </h6>
-      <div className="flex-col justify-right w-[60%] pl-[150px]">
-        <h1 className="text-white font-inter text-6xl font-bold leading-normal pt-[20%]">
-          BUILDING A TOP-NOTCH{" "}
+      </h3>
+      <div className="flex-col justify-right">
+        <h1 className="text-white text-8xl font-bold leading-normal block">
+          BUILDING A TOP-NOTCH
+          <span className="text-orange-600 text-8xl font-bold leading-normal -mt-10 block">
+            BLOCKCHAIN HUB
+          </span>
         </h1>
-        <h1 className="text-orange-600 font-inter text-6xl font-bold leading-normal">
-          BLOCKCHAIN HUB
-        </h1>
+        <p className="text-white text-left font-inter text-2xl font-normal leading-normal font-alata w-[70%]  pb-5">
+          We&apos;re the first ever project-based blockchain hub at York
+          University, rooted in a growth-oriented community dedicated to
+          advancing knowledge and honing practical skills in emerging
+          technologies such as blockchain, web3.0, and the metaverse. Operating
+          under a start-up model, we emphasize hands-on experience as the most
+          effective learning approach.
+        </p>
       </div>
     </div>
   );

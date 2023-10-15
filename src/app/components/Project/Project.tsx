@@ -7,25 +7,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const Project: React.FC = () => {
-  console.log("ScrollSection component rendered"); // Add this line
-
   const timelineRef = useRef<HTMLDivElement>(null);
-
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const triggerRef = useRef<HTMLDivElement | null>(null);
 
   gsap.registerPlugin(ScrollTrigger);
-  console.log(sectionRef); // Add this line
 
   const bodyRef = useRef(null);
   const maskRef = useRef(null); // Needed for the max
-  let projectBodyColour = "gray-200";
-
-  const heightOfTimeline = 20;
-
-  const bodyClassName: string = `bg-[#191970] min-h-screen p-5 pl-40 w-full`;
-
-  const maskClassName: string = `absolute bg-[#191970] h-20 w-full z-10`;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,8 +35,8 @@ const Project: React.FC = () => {
       gsap.to(maskRef.current, {
         width: "1%",
         translateX: `${
-          Math.ceil(9 * timelineData.length) +
-          8 * timelineData.length * (1920 / window.innerWidth - 1)
+          Math.ceil(7 * timelineData.length) +
+          7 * timelineData.length * (1920 / window.innerWidth - 1)
         }vw`,
         duration: 20,
         // Trying to figure out how to sync it with the scroll
@@ -67,14 +56,15 @@ const Project: React.FC = () => {
           translateX: 0,
         },
         {
-          translateX: `${-250 - 7 * Math.pow(timelineData.length, 1.35)}vw`,
+          translateX: `${-250 - 8 * Math.pow(timelineData.length, 1.35)}vw`,
           ease: "none",
           duration: 1,
           scrollTrigger: {
             trigger: triggerRef.current,
             start: "top top",
-            end: `${800 + 100 * Math.pow(timelineData.length, 1.2)} top`,
-            scrub: 0.6,
+            // updated
+            end: `${800 + 150 * Math.pow(timelineData.length, 1.2)} top`,
+            scrub: 1,
             pin: true,
             markers: false,
           },
@@ -90,50 +80,60 @@ const Project: React.FC = () => {
   }, []);
 
   return (
-    <section ref={triggerRef} className="overflow-hidden flex">
+    <section
+      id="project"
+      ref={triggerRef}
+      className="overflow-hidden h-[100vh] flex"
+    >
       <div ref={bodyRef} className="overflow-hidden ">
-        <div className={bodyClassName}>
-          <h2 className="text-3xl font-bold mb-12 text-white">
-            Project Timeline
+        {/* <div className="bg-[#191970] min-h-screen w-full"> */}
+        <div className="min-h-screen w-full">
+          <h2 className="text-xl font-semibold leading-normal tracking-widest text-white pl-[8%] pt-[3%] mb-[ddddddddd%] uppercase">
+            P r o j e c t -
+            <span className="text-orange-600"> [ T i m e l i n e ]</span>
           </h2>
-          <div className="flex justify-center">
+          <div className=" md:flex hidden justify-center item-center">
             <div className="absolute z-10">
-              <div ref={maskRef} className={maskClassName}></div>
+              <div
+                ref={maskRef}
+                className="absolute bg-[#001152] h-20 w-screen z-10"
+              ></div>
               <Timeline
                 className="flex flex-start h-20 opacity-100 z-0"
-                heightClassName="h-20"
+                height={50}
                 length={timelineData.length}
               />
             </div>
             <div className="absolute z-30">
               <Timeline
                 className="flex flex-start h-20 opacity-40 z-30"
-                heightClassName="h-20"
+                height={50}
                 length={timelineData.length}
               />
             </div>
           </div>
-
-          <div
-            ref={sectionRef}
-            className="h-screen w-[400vw] flex flex-row relative items-center justify-center "
-          >
-            {timelineData.map((item, index) => (
-              <section
-                key={index}
-                className="w-screen p-20 m-20 text-center bg-slate-50 rounded-lg shadow-lg"
-              >
-                <h4 className="item-center flex justify-center text-red-400 text-lg">
-                  {item.date}
-                </h4>
-                <h1 className="text-5xl flex justify-center font-semibold">
-                  {item.title}
-                </h1>
-                <p className="text-lg italic leading-6 flex justify-center p-5">
-                  {item.description}
-                </p>
-              </section>
-            ))}
+          <div className="relative">
+            <div
+              ref={sectionRef}
+              className="h-screen w-[400vw] flex md:flex-row items-center justify-center"
+            >
+              {timelineData.map((item, index) => (
+                <section
+                  key={index}
+                  className="w-[60%] p-20 m-20 text-center rounded-lg shadow-xl shadow-cyan-500/50 border-2 border-white bg-[#ffb8ec] bg-opacity-10 backdrop-blur-30 "
+                >
+                  <h4 className="item-center flex justify-center text-orange-600 text-xl font-bold tracking-widest ">
+                    {item.date}
+                  </h4>
+                  <h1 className="text-8xl flex justify-center font-semibold text-white">
+                    {item.title}
+                  </h1>
+                  <p className="flex font-inter text-2xl font-normal leading-normal font-alata justify-center p-5 text-slate-200">
+                    {item.description}
+                  </p>
+                </section>
+              ))}
+            </div>
           </div>
         </div>
       </div>

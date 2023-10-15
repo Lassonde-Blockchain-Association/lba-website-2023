@@ -1,7 +1,7 @@
 "use client";
+
 import React from "react";
 import MissionBigTitle from "./MissionBigTitle";
-import MissionParagraph from "./MissionParagraph";
 import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
 
@@ -13,13 +13,13 @@ function Mission() {
 
     if (canvasRef.current) {
       const globe = createGlobe(canvasRef.current, {
-        devicePixelRatio: 2,
-        width: 600 * 2,
-        height: 600 * 2,
-        phi: 5.4,
-        theta: 0.4,
+        devicePixelRatio: 1,
+        width: 700,
+        height: 700,
+        phi: 2.7,
+        theta: 0.7,
         dark: 1,
-        diffuse: 3,
+        diffuse: 2.85,
         opacity: 0.4,
         mapSamples: 16000,
         mapBrightness: 5,
@@ -36,8 +36,6 @@ function Mission() {
           { location: [25.232026, 55.270747], size: 0.04 },
         ],
         onRender: (state) => {
-          // Called on every animation frame.
-          // `state` will be an empty object, return updated params.
           state.phi = phi;
           phi += 0.01;
         },
@@ -50,23 +48,23 @@ function Mission() {
   }, []);
 
   return (
-    <div className="h-screen relative">
-      <div className="h-max">
-        {/* <MissionHeader /> */}
-        <div className="flex">
+    <div id="mission" className="h-[100vh] flex justify-center items-center">
+      <div className="container relative mx-auto w-[85%] overflow-hidden">
+        <div className="flex w-[100%] items-center rounded-lg border border-white bg-[#FFFFFF] bg-opacity-10 backdrop-blur-30 p-5">
           <MissionBigTitle />
-          <canvas
-            className=""
-            ref={canvasRef}
-            style={{
-              width: 600,
-              height: 600,
-              maxWidth: "100%",
-              aspectRatio: 1,
-            }}
-          />
+          <div className="absolute -right-1/4">
+            <canvas
+              className=""
+              ref={canvasRef}
+              style={{
+                width: 700,
+                height: 700,
+                maxWidth: "100%",
+                aspectRatio: 1,
+              }}
+            />
+          </div>
         </div>
-        <MissionParagraph />
       </div>
     </div>
   );
