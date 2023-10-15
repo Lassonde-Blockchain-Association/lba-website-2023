@@ -32,7 +32,7 @@ const Footer = () => {
       {/* <div className="fixed inset-x-0 bottom-0 h-4/6"> */}
       <div className="h-4/6 inset-x-0">
         <NewsLetter />
-        <div className=" z-50 flex w-full border-solid border-white border-t-8 border-b-8 h-2/5 items-center justify-center">
+        <div className="  flex w-full border-solid border-white border-t-8 border-b-8 h-2/5 items-center justify-center">
           {iconsData.map((data, index) => (
             <SocialLink
               key={index}
