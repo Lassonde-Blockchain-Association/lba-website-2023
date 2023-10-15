@@ -54,7 +54,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="overflow-hidden h-[10vh] w-[100%]  z-[100]">
+    <div className="overflow-hidden h-[10vh] w-screen fixed z-[100]">
       <div className="container mx-auto w-[100%]">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4 z-50 ">
@@ -85,7 +85,7 @@ const Navbar = () => {
             </div>
           </div>
           {/* hamburger button*/}
-          <div className="flex fixed right-0 lg:block z-50 ">
+          <div className="flex fixed right-12 lg:block z-50 ">
             <button
               type="button"
               onClick={handleMenu}
