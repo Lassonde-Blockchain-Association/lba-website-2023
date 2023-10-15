@@ -45,8 +45,7 @@ const Footer = () => {
         </div>
         <ScrollingBar />
         <p className=" text-center mt-3 tracking-wider">
-          Lassonde Blockchaon Association &copy; {new Date().getFullYear()} All
-          rights reserved.
+          Lassonde Blockchaon Association &copy; {new Date().getFullYear()}
         </p>
       </div>
     </div>
