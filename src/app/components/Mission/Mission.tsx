@@ -57,8 +57,8 @@ function Mission() {
               className=""
               ref={canvasRef}
               style={{
-                width: 700,
-                height: 700,
+                width: 750,
+                height: 750,
                 maxWidth: "100%",
                 aspectRatio: 1,
               }}
