@@ -55,7 +55,7 @@ const Navbar = () => {
 
   return (
     <div className="overflow-hidden h-[10vh] w-screen fixed z-[100]">
-      <div className="container mx-auto w-[100%]">
+      <div className="container mx-auto w-[100%] pt-2">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4 z-50 ">
             <LinkS
@@ -85,11 +85,11 @@ const Navbar = () => {
             </div>
           </div>
           {/* hamburger button*/}
-          <div className="flex fixed right-12 lg:block z-50 ">
+          <div className="flex right-12 lg:block z-50 ">
             <button
               type="button"
               onClick={handleMenu}
-              className={` inline-flex items-center justify-center rounded-lg text-white hover:text-white transition-transform transform 
+              className={`inline-flex items-center justify-center rounded-lg transition-transform transform 
                   ${open ? "rotate-90 scale-110" : "rotate-0 scale-10"}`}
             >
               <Image alt="marker" src={marker} width={125} />
