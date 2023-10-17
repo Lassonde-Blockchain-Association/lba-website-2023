@@ -14,8 +14,8 @@ function Mission() {
     if (canvasRef.current) {
       const globe = createGlobe(canvasRef.current, {
         devicePixelRatio: 1,
-        width: 700,
-        height: 700,
+        width: 750,
+        height: 750,
         phi: 2.7,
         theta: 0.7,
         dark: 1,
