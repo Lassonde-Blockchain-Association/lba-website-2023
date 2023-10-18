@@ -56,7 +56,7 @@ const Navbar = () => {
   return (
     // old
     // <div className="fixed overflow-hidden py-10 pl-10 flex items-center h-[10vh] w-[100%] z-[100]">
-    <div className="fixed overflow-hidden pl-8 flex items-center h-[8vh] w-[100%] z-[100]">
+    <div className="fixed overflow-hidden pl-8 flex items-center h-fit pt-2 w-[100%] z-[100]">
       <div className="container mx-auto w-[100%]">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4 z-50 left-">
