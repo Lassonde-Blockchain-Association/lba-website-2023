@@ -3,7 +3,7 @@ const TeamData = [
     name: "Samson Chan",
     job: "Chairman | Co-Founder",
     image:
-      "https://media.licdn.com/dms/image/C4E03AQHEgqU30a5sdQ/profile-displayphoto-shrink_400_400/0/1633539572247?e=1701907200&v=beta&t=pZoSXmm_WhBB0OEQdtFjQhSMn2WQOOPr2echpKBvESE",
+      "https://media.licdn.com/dms/image/D5603AQHd79mKSbxPyg/profile-displayphoto-shrink_800_800/0/1697423145834?e=1703116800&v=beta&t=WiUlTrYqSUW5sQ2uorgkk6dZ1vbcyDMUr0eZbzFg-4Q",
     linkedin: "https://www.linkedin.com/in/samson-chan/",
     bgColor: "bg-purple-500",
   },
