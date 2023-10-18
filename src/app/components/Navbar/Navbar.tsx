@@ -54,7 +54,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="overflow-hidden h-[10vh] w-screen fixed z-[100]">
+    <div className="overflow-hidden py-10 pl-10 flex items-center h-[10vh] w-[100%] z-[100]">
       <div className="container mx-auto w-[100%]">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4 z-50 ">
@@ -104,15 +104,15 @@ const Navbar = () => {
         </div>
       </div>
       {open ? (
-        <div className="backdrop-blur-2xl flex justify-center w-[100%] md:block fixed z-[100]">
-          <div className="px-2 h-[100%] pt-2 pb-3 space-y-1 sm:px-3 flex flex-row  justify-evenly items-center">
+        <div className="fixed backdrop-blur-xl bg-[#ffffff] bg-opacity-20 w-fit md:block right-[12%] p-4 z-[100] mx-auto my-auto rounded-full transform duration-500 animate-slide-in">
+          <div className="items-center">
             {navlinks.map((link, index) => (
               <LinkS
                 key={index}
                 to={link.link}
                 duration={1500}
                 smooth={true}
-                className="text-white hover:bg-white hover:text-orange-600 text-center text-6xl cursor-pointer"
+                className="text-white px-2 hover:bg-white hover:rounded-2xl hover:text-orange-600 transform duration-150 text-center text-2xl cursor-pointer"
               >
                 {link.title}
               </LinkS>

@@ -8,6 +8,24 @@
   box-sizing: border-box;
 }
 
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn ease 0.3s;
+  -webkit-animation: slideIn ease 0.3s;
+  -moz-animation: slideIn ease 0.3s;
+  -o-animation: slideIn ease 0.3s;
+  -ms-animation: slideIn ease 0.3s;
+}
+
+
 :root {
   --color-bg1: rgb(108, 0, 162);
   --color-bg2: rgb(0, 17, 82);
