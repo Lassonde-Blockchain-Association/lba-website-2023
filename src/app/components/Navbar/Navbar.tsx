@@ -54,10 +54,12 @@ const Navbar = () => {
   };
 
   return (
-    <div className="overflow-hidden py-10 pl-10 flex items-center h-[10vh] w-[100%] z-[100]">
+    // old
+    // <div className="fixed overflow-hidden py-10 pl-10 flex items-center h-[10vh] w-[100%] z-[100]">
+    <div className="fixed overflow-hidden pl-8 flex items-center h-[8vh] w-[100%] z-[100]">
       <div className="container mx-auto w-[100%]">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-4 z-50 ">
+          <div className="flex items-center gap-4 z-50 left-">
             <LinkS
               to="/"
               onClick={toggleHome}
@@ -85,7 +87,7 @@ const Navbar = () => {
             </div>
           </div>
           {/* hamburger button*/}
-          <div className="flex right-12 lg:block z-50 ">
+          <div className="flex lg:block z-50 ">
             <button
               type="button"
               onClick={handleMenu}
