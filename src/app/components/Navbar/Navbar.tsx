@@ -85,11 +85,11 @@ const Navbar = () => {
             </div>
           </div>
           {/* hamburger button*/}
-          <div className="flex fixed right-12 lg:block z-50 ">
+          <div className="flex right-12 lg:block z-50 ">
             <button
               type="button"
               onClick={handleMenu}
-              className={` inline-flex items-center justify-center rounded-lg text-white hover:text-white transition-transform transform 
+              className={`inline-flex items-center justify-center rounded-lg transition-transform transform 
                   ${open ? "rotate-90 scale-110" : "rotate-0 scale-10"}`}
             >
               <Image alt="marker" src={marker} width={125} />
