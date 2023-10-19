@@ -80,64 +80,66 @@ const Project: React.FC = () => {
   }, []);
 
   return (
-    <section
-      id="project"
-      ref={triggerRef}
-      className="overflow-hidden h-[100vh] flex"
-    >
-      <div ref={bodyRef} className="overflow-hidden ">
-        {/* <div className="bg-[#191970] min-h-screen w-full"> */}
-        <div className="min-h-screen w-full">
-          <h2 className="text-xl font-semibold leading-normal tracking-widest text-white pl-[8%] pt-[3%] mb-[ddddddddd%] uppercase">
-            P r o j e c t -
-            <span className="text-orange-600"> [ T i m e l i n e ]</span>
-          </h2>
-          <div className=" md:flex hidden justify-center item-center">
-            <div className="absolute z-10">
+    <div id="project">
+      <section
+        // id="project"
+        ref={triggerRef}
+        className="overflow-hidden h-[100vh] flex"
+      >
+        <div ref={bodyRef} className="overflow-hidden  ">
+          {/* <div className="bg-[#191970] min-h-screen w-full"> */}
+          <div className="min-h-screen w-ful mt-10">
+            <h2 className="text-xl font-semibold leading-normal tracking-widest text-white pl-[8%] pt-[3%] mb-[ddddddddd%] uppercase">
+              P r o j e c t -
+              <span className="text-orange-600"> [ T i m e l i n e ]</span>
+            </h2>
+            <div className=" md:flex hidden justify-center item-center">
+              <div className="absolute z-10">
+                <div
+                  ref={maskRef}
+                  className="absolute bg-[#001152] h-20 w-screen z-10"
+                ></div>
+                <Timeline
+                  className="flex flex-start h-20 opacity-100 z-0"
+                  height={50}
+                  length={timelineData.length}
+                />
+              </div>
+              <div className="absolute z-30">
+                <Timeline
+                  className="flex flex-start h-20 opacity-40 z-30"
+                  height={50}
+                  length={timelineData.length}
+                />
+              </div>
+            </div>
+            <div className="relative">
               <div
-                ref={maskRef}
-                className="absolute bg-[#001152] h-20 w-screen z-10"
-              ></div>
-              <Timeline
-                className="flex flex-start h-20 opacity-100 z-0"
-                height={50}
-                length={timelineData.length}
-              />
-            </div>
-            <div className="absolute z-30">
-              <Timeline
-                className="flex flex-start h-20 opacity-40 z-30"
-                height={50}
-                length={timelineData.length}
-              />
-            </div>
-          </div>
-          <div className="relative">
-            <div
-              ref={sectionRef}
-              className="h-screen w-[400vw] flex md:flex-row items-center justify-center"
-            >
-              {timelineData.map((item, index) => (
-                <section
-                  key={index}
-                  className="w-[60%] p-20 m-20 text-center rounded-lg shadow-xl shadow-cyan-500/50 border-2 border-white bg-[#ffb8ec] bg-opacity-10 backdrop-blur-30 "
-                >
-                  <h4 className="item-center flex justify-center text-orange-600 text-xl font-bold tracking-widest ">
-                    {item.date}
-                  </h4>
-                  <h1 className="text-8xl flex justify-center font-semibold text-white">
-                    {item.title}
-                  </h1>
-                  <p className="flex font-inter text-2xl font-normal leading-normal font-alata justify-center p-5 text-slate-200">
-                    {item.description}
-                  </p>
-                </section>
-              ))}
+                ref={sectionRef}
+                className="h-screen w-[400vw] flex md:flex-row items-center justify-center"
+              >
+                {timelineData.map((item, index) => (
+                  <section
+                    key={index}
+                    className="w-[60%] p-20 m-20 text-center rounded-lg shadow-xl shadow-cyan-500/50 border-2 border-white bg-[#ffb8ec] bg-opacity-10 backdrop-blur-30 "
+                  >
+                    <h4 className="item-center flex justify-center text-orange-600 text-xl font-bold tracking-widest ">
+                      {item.date}
+                    </h4>
+                    <h1 className="text-8xl flex justify-center font-semibold text-white">
+                      {item.title}
+                    </h1>
+                    <p className="flex font-inter text-2xl font-normal leading-normal font-alata justify-center p-5 text-slate-200">
+                      {item.description}
+                    </p>
+                  </section>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

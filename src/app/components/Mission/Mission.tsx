@@ -14,8 +14,8 @@ function Mission() {
     if (canvasRef.current) {
       const globe = createGlobe(canvasRef.current, {
         devicePixelRatio: 1,
-        width: 700,
-        height: 700,
+        width: 750,
+        height: 750,
         phi: 2.7,
         theta: 0.7,
         dark: 1,
@@ -48,7 +48,7 @@ function Mission() {
   }, []);
 
   return (
-    <div id="mission" className="h-[100vh] flex justify-center items-center">
+    <div id="mission" className="h-[100vh] flex justify-center items-center ">
       <div className="container relative mx-auto w-[85%] overflow-hidden">
         <div className="flex w-[100%] items-center rounded-lg border border-white bg-[#FFFFFF] bg-opacity-10 backdrop-blur-30 p-5">
           <MissionBigTitle />
@@ -57,8 +57,8 @@ function Mission() {
               className=""
               ref={canvasRef}
               style={{
-                width: 700,
-                height: 700,
+                width: 750,
+                height: 750,
                 maxWidth: "100%",
                 aspectRatio: 1,
               }}

@@ -27,7 +27,7 @@ const navlinks = [
 ];
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const [scrollNav, setScrollNav] = useState(false);
 
@@ -43,10 +43,11 @@ const Navbar = () => {
     console.log(window.scrollY);
     if (window.scrollY >= 100) {
       setScrollNav(true);
+      setOpen(false);
     } else {
       setScrollNav(false);
+      setOpen(true); // pop out when logo is trigger (to landing page)
     }
-    setOpen(false); // Close the menu when scroll event occurs
   };
 
   const handleMenu = () => {
@@ -54,21 +55,39 @@ const Navbar = () => {
   };
 
   return (
-    <div className="overflow-hidden h-[10vh] w-screen fixed z-[100]">
+    // old
+    // <div className="fixed overflow-hidden py-10 pl-10 flex items-center h-[10vh] w-[100%] z-[100]">
+    <div className="fixed overflow-hidden pl-8 flex items-center h-fit pt-2 w-[100%] z-[100]">
       <div className="container mx-auto w-[100%]">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-4 z-50 ">
-            <LinkS
+          <div className="flex items-center gap-4 z-50 left-">
+            {/* With Logo Background */}
+            {/* <LinkS
               to="/"
               onClick={toggleHome}
               duration={500}
-              className="text-white cursor-pointer text-3xl"
+              className="text-white cursor-pointer text-3xl hover:text-orange-300 rounded-lg p-2 bg-white bg-opacity-20 backdrop-blur-xl transform duration-150"
             >
               LBA
             </LinkS>
             <Link
               href="https://lba-blog.vercel.app/"
-              className="text-white cursor-pointer hover:text-orange-500 text-xl"
+              className="text-white cursor-pointer text-xl hover:text-orange-300 rounded-lg p-2 bg-white bg-opacity-20 backdrop-blur-xl transform duration-150"
+            >
+              LBA - Blog
+            </Link> */}
+
+            <LinkS
+              to="/"
+              onClick={toggleHome}
+              duration={500}
+              className="text-white cursor-pointer text-3xl hover:text-orange-300 transform duration-150"
+            >
+              LBA
+            </LinkS>
+            <Link
+              href="https://lba-blog.vercel.app/"
+              className="text-white cursor-pointer text-xl hover:text-orange-300 transform duration-150"
             >
               LBA - Blog
             </Link>
@@ -85,11 +104,11 @@ const Navbar = () => {
             </div>
           </div>
           {/* hamburger button*/}
-          <div className="flex fixed right-12 lg:block z-50 ">
+          <div className="flex lg:block z-50 ">
             <button
               type="button"
               onClick={handleMenu}
-              className={` inline-flex items-center justify-center rounded-lg text-white hover:text-white transition-transform transform 
+              className={`inline-flex items-center justify-center rounded-lg transition-transform transform 
                   ${open ? "rotate-90 scale-110" : "rotate-0 scale-10"}`}
             >
               <Image alt="marker" src={marker} width={125} />
@@ -104,15 +123,15 @@ const Navbar = () => {
         </div>
       </div>
       {open ? (
-        <div className="backdrop-blur-2xl flex justify-center w-[100%] md:block fixed z-[100]">
-          <div className="px-2 h-[100%] pt-2 pb-3 space-y-1 sm:px-3 flex flex-row  justify-evenly items-center">
+        <div className="fixed backdrop-blur-xl bg-[#ffffff] bg-opacity-20 w-fit md:block right-[12%] p-4 z-[100] mx-auto my-auto rounded-full animate-slide-in">
+          <div className="items-center">
             {navlinks.map((link, index) => (
               <LinkS
                 key={index}
                 to={link.link}
                 duration={1500}
                 smooth={true}
-                className="text-white hover:bg-white hover:text-orange-600 text-center text-6xl cursor-pointer"
+                className="text-white px-2 hover:bg-white hover:rounded-2xl hover:text-orange-600 transform duration-150 text-center text-2xl cursor-pointer"
               >
                 {link.title}
               </LinkS>

@@ -5,15 +5,15 @@ import { useEffect, useState } from "react";
 const Landing = () => {
   const scrollToMission = () => {
     window.scrollTo({
-      top: window.innerHeight + 80,
+      top: window.innerHeight,
       behavior: "smooth",
     });
   };
 
   return (
-    <div className="Landing h-[100vh] relative flex flex-col justify-end pb-10">
+    <div className="Landing h-screen relative flex flex-col justify-end pb-[1vh] px-16">
       <div className="MainContent">
-        <div className=" pb-[3%] ml-16 align-center mt-20">
+        <div className=" pb-[3%] ml-16 align-center mt-10">
           <span className="text-white text-6xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
             LASSONDE
             <br />
@@ -29,8 +29,7 @@ const Landing = () => {
         <div className="BottomSection select-none whitespace-nowrap align-bottom mb-20 ml-16 mr-20 flex">
           <a
             href="https://discord.gg/YRdu7zeb8g"
-            className="my-auto float-left select-none text-xl border-white text-white box-border h-16 w-64 p-4 border-4 inline-block 
-      rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950 mr-4 font-alata"
+            className="my-auto float-left select-none text-xl border-white text-white box-border h-16 w-64 p-4 border-4 inline-block rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950 mr-4 font-alata"
           >
             Join Discord
           </a>
