@@ -16,6 +16,7 @@ export default function Home() {
         <span className="g3"></span>
         <span className="g4"></span>
         <span className="g5"></span>
+        <span className="g6"></span>
 
         <Navbar />
         <Landing />
