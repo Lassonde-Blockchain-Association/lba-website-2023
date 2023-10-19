@@ -65,13 +65,13 @@ const Navbar = () => {
               to="/"
               onClick={toggleHome}
               duration={500}
-              className="text-gray-100 cursor-pointer text-3xl bg-white bg-opacity-20 backdrop-blur-xl rounded-lg hover:text-orange-300 p-2 transform duration-150"
+              className="text-white cursor-pointer text-3xl hover:text-orange-300 transform duration-150"
             >
               LBA
             </LinkS>
             <Link
               href="https://lba-blog.vercel.app/"
-              className="text-white cursor-pointer text-xl p-2 rounded-lg bg-white bg-opacity-20 backdrop-blur-xl hover:text-orange-300 transform duration-150"
+              className="text-white cursor-pointer text-xl hover:text-orange-300 transform duration-150"
             >
               LBA - Blog
             </Link>
