@@ -27,7 +27,7 @@ const navlinks = [
 ];
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
 
   const [scrollNav, setScrollNav] = useState(false);
 
@@ -43,10 +43,11 @@ const Navbar = () => {
     console.log(window.scrollY);
     if (window.scrollY >= 100) {
       setScrollNav(true);
+      setOpen(false);
     } else {
       setScrollNav(false);
+      setOpen(true); // pop out when logo is trigger (to landing page)
     }
-    setOpen(false); // Close the menu when scroll event occurs
   };
 
   const handleMenu = () => {
@@ -56,7 +57,7 @@ const Navbar = () => {
   return (
     // old
     // <div className="fixed overflow-hidden py-10 pl-10 flex items-center h-[10vh] w-[100%] z-[100]">
-    <div className="fixed overflow-hidden pl-8 flex items-center h-[8vh] w-[100%] z-[100]">
+    <div className="fixed overflow-hidden pl-8 flex items-center h-fit pt-2 w-[100%] z-[100]">
       <div className="container mx-auto w-[100%]">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4 z-50 left-">
@@ -106,7 +107,7 @@ const Navbar = () => {
         </div>
       </div>
       {open ? (
-        <div className="fixed backdrop-blur-xl bg-[#ffffff] bg-opacity-20 w-fit md:block right-[12%] p-4 z-[100] mx-auto my-auto rounded-full transform duration-500 animate-slide-in">
+        <div className="fixed backdrop-blur-xl bg-[#ffffff] bg-opacity-20 w-fit md:block right-[12%] p-4 z-[100] mx-auto my-auto rounded-full animate-slide-in">
           <div className="items-center">
             {navlinks.map((link, index) => (
               <LinkS
