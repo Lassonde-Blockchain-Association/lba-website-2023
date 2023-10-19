@@ -61,6 +61,22 @@ const Navbar = () => {
       <div className="container mx-auto w-[100%]">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-4 z-50 left-">
+            {/* With Logo Background */}
+            {/* <LinkS
+              to="/"
+              onClick={toggleHome}
+              duration={500}
+              className="text-white cursor-pointer text-3xl hover:text-orange-300 rounded-lg p-2 bg-white bg-opacity-20 backdrop-blur-xl transform duration-150"
+            >
+              LBA
+            </LinkS>
+            <Link
+              href="https://lba-blog.vercel.app/"
+              className="text-white cursor-pointer text-xl hover:text-orange-300 rounded-lg p-2 bg-white bg-opacity-20 backdrop-blur-xl transform duration-150"
+            >
+              LBA - Blog
+            </Link> */}
+
             <LinkS
               to="/"
               onClick={toggleHome}
