@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import marker from "../../../../public/marker.gif";
+import Logo from "../../../../public/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { Link as LinkS, animateScroll as scroll } from "react-scroll";
@@ -77,14 +78,23 @@ const Navbar = () => {
               LBA - Blog
             </Link> */}
 
-            <LinkS
+            {/* <LinkS
               to="/"
               onClick={toggleHome}
               duration={500}
               className="text-white cursor-pointer text-3xl hover:text-orange-300 transform duration-150"
             >
               LBA
+            </LinkS> */}
+            <LinkS
+              to="/"
+              onClick={toggleHome}
+              duration={500}
+              className=""
+            >
+              <Image alt="logo" src={Logo} className="cursor-pointer hover:shadow-lg transform duration-150 h-[50px] w-[50px] hover:h-[60px] hover:w-[60px]" />
             </LinkS>
+            <span className="text-white text-4xl">/</span>
             <Link
               href="https://lba-blog.vercel.app/"
               className="text-white cursor-pointer text-xl hover:text-orange-300 transform duration-150"
