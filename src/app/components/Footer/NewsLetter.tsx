@@ -8,7 +8,7 @@ const NewsLetter = () => {
         href="https://lba-blog.vercel.app/"
         className="z-50 h-full flex items-center justify-center w-1/2 "
       >
-        <h1 className="text-7xl tracking-widest hover:text-orange-500 uppercase font-semibold  p-2 ">
+        <h1 className="text-7xl tracking-widest hover:text-orange-300 uppercase font-semibold  p-2 transform duration-150">
           LBA-Blog
         </h1>
       </a>
