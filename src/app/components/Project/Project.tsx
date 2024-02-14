@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import Timeline from "./Timeline";
+import setupGSAPContext from "./gsapConfig";
 import timelineData from "./TimelineData";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -31,46 +32,13 @@ const Project: React.FC = () => {
         });
       }
     };
-    let ctx = gsap.context(() => {
-      gsap.to(maskRef.current, {
-        width: "1%",
-        translateX: `${
-          Math.ceil(7 * timelineData.length) +
-          7 * timelineData.length * (1920 / window.innerWidth - 1)
-        }vw`,
-        duration: 20,
-        // Trying to figure out how to sync it with the scroll
-
-        scrollTrigger: {
-          trigger: bodyRef.current,
-          markers: false,
-          start: "top top",
-          end: `+=${Math.ceil(1500 * Math.pow(timelineData.length, 0.4))}`,
-          scrub: 1,
-          pin: true,
-        },
-      });
-      gsap.fromTo(
-        sectionRef.current,
-        {
-          translateX: 0,
-        },
-        {
-          translateX: `${-250 - 8 * Math.pow(timelineData.length, 1.35)}vw`,
-          ease: "none",
-          duration: 1,
-          scrollTrigger: {
-            trigger: triggerRef.current,
-            start: "top top",
-            // updated
-            end: `${800 + 150 * Math.pow(timelineData.length, 1.2)} top`,
-            scrub: 1,
-            pin: true,
-            markers: false,
-          },
-        }
-      );
-    });
+    let ctx = setupGSAPContext(
+      sectionRef,
+      triggerRef,
+      maskRef,
+      bodyRef,
+      timelineData.length
+    );
 
     handleScroll();
 
@@ -95,6 +63,7 @@ const Project: React.FC = () => {
               <span className="text-orange-600"> [ T i m e l i n e ]</span>
             </h2>
             <div className=" md:flex hidden justify-center item-center">
+              {/* MASK COVERING THE IMAGE */}
               <div className="absolute z-10">
                 <div
                   ref={maskRef}
@@ -106,6 +75,7 @@ const Project: React.FC = () => {
                   length={timelineData.length}
                 />
               </div>
+              {/* TIMELINE TRANSLUCENT */}
               <div className="absolute z-30">
                 <Timeline
                   className="flex flex-start h-20 opacity-40 z-30"
@@ -119,6 +89,7 @@ const Project: React.FC = () => {
                 ref={sectionRef}
                 className="h-screen w-[400vw] flex md:flex-row items-center justify-center"
               >
+                {/* SHOW EVENTS IN TIMELINE */}
                 {timelineData.map((item, index) => (
                   <section
                     key={index}
