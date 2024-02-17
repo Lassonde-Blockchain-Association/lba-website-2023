@@ -47,6 +47,8 @@ const Project: React.FC = () => {
 
       window.addEventListener("scroll", handleScroll);
       return () => ctx.revert();
+    } else {
+      console.log("Skipped  scroll animations on mobile.");
     }
 
     console.log(`Screen size is ${window.innerWidth}`);
@@ -57,7 +59,7 @@ const Project: React.FC = () => {
       <section
         // id="project"
         ref={triggerRef}
-        className="overflow-hidden h-[100vh] flex"
+        className="overflow-hidden md:h-[100vh] flex"
       >
         <div ref={bodyRef} className="overflow-hidden  ">
           {/* <div className="bg-[#191970] min-h-screen w-full"> */}
@@ -68,18 +70,17 @@ const Project: React.FC = () => {
               <span className="text-orange-600"> [ T i m e l i n e ]</span>
             </h2>
             <TimelineMask
-              tailwindHeight={20}
               maskRef={maskRef}
               timelineDataCount={timelineData.length}
             ></TimelineMask>
             <div className="relative">
               <div
                 ref={sectionRef}
-                className="h-screen md:w-[400vw] flex md:flex-row flex-col items-center md:justify-center"
+                className="md:h-screen md:w-[400vw] flex md:flex-row flex-col items-center md:justify-center"
               >
                 {/* SHOW EVENTS IN TIMELINE */}
                 {timelineData.map((item, index) => (
-                  <TimelineEvent index={index} item={item} />
+                  <TimelineEvent key={index} item={item} />
                 ))}
               </div>
             </div>
