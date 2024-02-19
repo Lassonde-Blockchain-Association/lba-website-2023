@@ -11,27 +11,27 @@ const Landing = () => {
   };
 
   return (
-    <div className="Landing h-screen relative flex flex-col justify-end pb-[1vh] px-16">
+    <div className="Landing md:h-screen relative flex flex-col justify-end pb-[1vh] px-6 md:px-16 py-24">
       <div className="MainContent">
-        <div className=" pb-[3%] ml-16 align-center mt-10">
-          <span className="text-white text-6xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
+        <div className="md:pb-[3%] md:ml-16 text-center md:text-left mt-10 pl-0">
+          <span className="text-white text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
             LASSONDE
             <br />
           </span>
-          <span className="text-rose-500 text-6xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
+          <span className="text-rose-500 text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
             BLOCKCHAIN
             <br />
           </span>
-          <span className="text-white text-6xl sm:text-6xl md:text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
+          <span className="text-white text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
             ASSOCIATION
           </span>
         </div>
-        <div className="BottomSection select-none whitespace-nowrap align-bottom mb-20 ml-16 mr-20 flex">
+        <div className="BottomSection select-none whitespace-nowrap align-bottom mt-16 md:mt-0 mb-16 md:mb-20 md:ml-16 md:mr-20 flex justify-center">
           <a
             href="https://discord.gg/YRdu7zeb8g"
-            className="my-auto float-left select-none text-xl border-white text-white box-border h-16 w-64 p-4 border-4 inline-block rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950 mr-4 font-alata"
+            className="flex items-center justify-center my-auto float-left select-none text-xl border-white text-white box-border h-16 w-64 p-4 border-4 rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950 md:mr-4 font-alata"
           >
-            Join Discord
+            Join Us
           </a>
           <div className="Line1 w-[80%] border-2 border-white mx-auto my-auto hidden sm:hidden md:block lg:block"></div>
           <button
