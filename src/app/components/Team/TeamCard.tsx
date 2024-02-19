@@ -54,7 +54,10 @@ const TeamCard = () => {
                 </a>
                 {/* </div> */}
               </Tilt>
-              <div className="md:hidden flex flex-col m-4 mb-8 w-52 h-52">
+              <div
+                key={index}
+                className="md:hidden flex flex-col m-4 mb-8 w-52 h-52"
+              >
                 <a
                   className="flex flex-col items-center justify-center"
                   href={person.linkedin}
