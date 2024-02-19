@@ -16,9 +16,8 @@ const TeamCard = () => {
         </h2>
         <div className="p-1 flex flex-wrap items-center justify-center">
           {TeamData.map((person, index) => (
-            <div>
+            <div key={index}>
               <Tilt
-                key={index}
                 glareEnable={true}
                 glareColor={person.bgColor}
                 scale={1.25}
@@ -54,10 +53,7 @@ const TeamCard = () => {
                 </a>
                 {/* </div> */}
               </Tilt>
-              <div
-                key={index}
-                className="md:hidden flex flex-col m-4 mb-8 w-52 h-52"
-              >
+              <div className="md:hidden flex flex-col m-4 mb-8 w-52 h-52">
                 <a
                   className="flex flex-col items-center justify-center"
                   href={person.linkedin}
