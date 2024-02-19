@@ -58,10 +58,11 @@ const Navbar = () => {
   return (
     // old
     // <div className="fixed overflow-hidden py-10 pl-10 flex items-center h-[10vh] w-[100%] z-[100]">
-    <div className="fixed overflow-hidden pl-8 flex items-center h-fit pt-2 w-[100%] z-[100]">
-      <div className="container mx-auto w-[100%]">
+    <div className="fixed overflow-hidden pl-8 md:pl-10 flex items-center h-fit pt-4 w-full z-[100]">
+      <div className="mx-auto w-[100%]">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-4 z-50 left-">
+          <div className="flex items-center gap-3 md:gap-4 z-50">
+
             {/* With Logo Background */}
             {/* <LinkS
               to="/"
@@ -86,13 +87,14 @@ const Navbar = () => {
             >
               LBA
             </LinkS> */}
+
             <LinkS
               to="/"
               onClick={toggleHome}
               duration={500}
               className=""
             >
-              <Image alt="logo" src={Logo} className="cursor-pointer hover:shadow-lg transform duration-150 h-[50px] w-[50px] hover:h-[60px] hover:w-[60px]" />
+              <Image alt="logo" src={Logo} className="cursor-pointer transform duration-150 h-[50px] w-[50px] hover:h-[60px] hover:w-[60px]" />
             </LinkS>
             <span className="text-white text-4xl">/</span>
             <Link
@@ -103,8 +105,9 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* navlinks */}
-          <div className="hidden md:hidden">
+          {/* Old Nav Links */}
+          {/* navlinks
+          <div className="">
             <div className="flex item-basline space-x-4">
               {navlinks.map((link, index) => (
                 <LinkS key={index} duration={500} to={link.link}>
@@ -112,43 +115,47 @@ const Navbar = () => {
                 </LinkS>
               ))}
             </div>
-          </div>
+          </div> */}
+
           {/* hamburger button*/}
-          <div className="flex lg:block z-50 ">
-            <button
-              type="button"
-              onClick={handleMenu}
-              className={`inline-flex items-center justify-center rounded-lg transition-transform transform 
-                  ${open ? "rotate-90 scale-110" : "rotate-0 scale-10"}`}
-            >
-              <Image alt="marker" src={marker} width={125} />
-              {/* <span className="sr-only ">Open Main Menu</span>
+          
+          <div className="flex justify-end md:items-center">
               {open ? (
-                <FaTimes className="text-3xl " />
-              ) : (
-                <FaBars className="text-3xl" />
-              )} */}
-            </button>
+              <div className="fixed backdrop-blur-xl bg-[#ffffff] bg-opacity-20 sm:w-fit md:block p-4 z-[100] md:mx-auto my-auto rounded-[40px] md:rounded-full animate-slide-in mt-[105px] md:mt-0 md:mr-[12%] w-[90%] mx-6 drop-shadow-md">
+                <div className="flex flex-col md:flex-row">
+                  {navlinks.map((link, index) => (
+                    <LinkS
+                      key={index}
+                      to={link.link}
+                      duration={1500}
+                      smooth={true}
+                      className="text-white px-2 py-1 md:py-0 rounded-2xl hover:bg-white hover:rounded-2xl hover:text-orange-600 transform duration-150 text-center text-2xl cursor-pointer"
+                    >
+                      {link.title}
+                    </LinkS>
+                  ))}
+                </div>
+              </div>
+              ) : null}
+
+              <button
+                type="button"
+                onClick={handleMenu}
+                className={`inline-flex items-center justify-end rounded-lg transition-transform transform ${open ? "rotate-90 scale-110" : "rotate-0 scale-10"}`}
+              >
+                <Image alt="marker" src={marker} width={125} height={125} />
+                
+                {/* <span className="sr-only ">Open Main Menu</span>
+                {open ? (
+                  <FaTimes className="text-3xl " />
+                ) : (
+                  <FaBars className="text-3xl" />
+                )} */}
+                
+              </button>
           </div>
         </div>
       </div>
-      {open ? (
-        <div className="fixed backdrop-blur-xl bg-[#ffffff] bg-opacity-20 w-fit md:block right-[12%] p-4 z-[100] mx-auto my-auto rounded-full animate-slide-in">
-          <div className="items-center">
-            {navlinks.map((link, index) => (
-              <LinkS
-                key={index}
-                to={link.link}
-                duration={1500}
-                smooth={true}
-                className="text-white px-2 hover:bg-white hover:rounded-2xl hover:text-orange-600 transform duration-150 text-center text-2xl cursor-pointer"
-              >
-                {link.title}
-              </LinkS>
-            ))}
-          </div>
-        </div>
-      ) : null}
     </div>
   );
 };

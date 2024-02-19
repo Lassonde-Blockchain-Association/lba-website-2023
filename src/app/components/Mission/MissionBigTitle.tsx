@@ -2,18 +2,18 @@
 
 const MissionBigTitle = () => {
   return (
-    <div className="inline-block pl-5">
+    <div className="inline-block md:pl-5">
       <h3 className="text-white text-xl font-semibold leading-normal tracking-widest pt-[3%]">
         M I S S I O N - <span className="text-orange-600"> [ A B O U T ]</span>
       </h3>
-      <div className="flex-col justify-right">
-        <h1 className="text-white text-8xl font-bold leading-normal block">
+      <div className="flex-col mt-12 md:mt-0">
+        <h1 className="text-white text-center md:text-left text-8xl font-bold leading-none md:leading-normal block">
           BUILDING A TOP-NOTCH
-          <span className="text-orange-600 text-8xl font-bold leading-normal -mt-10 block">
+          <span className="text-orange-600 text-center md:text-left text-8xl font-bold leading-none md:leading-normal md:-mt-10 block">
             BLOCKCHAIN HUB
           </span>
         </h1>
-        <p className="text-white text-left font-inter text-2xl font-normal leading-normal font-alata w-[60%]  pb-5">
+        <p className="text-white text-center md:text-left font-inter text-xl md:text-2xl md:font-normal md:leading-normal font-alata md:w-[60%] pb-5 pt-10 md:pt-0">
           We&apos;re the first ever project-based blockchain hub at York
           University, rooted in a growth-oriented community dedicated to
           advancing knowledge and honing practical skills in emerging
