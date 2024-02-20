@@ -53,7 +53,7 @@ const TeamCard = () => {
                 </a>
                 {/* </div> */}
               </Tilt>
-              <div className="md:hidden flex flex-col mt-8 w-52 h-52">
+              <div className="md:hidden flex flex-col mt-16 w-40 h-52">
                 <a
                   className="flex flex-col items-center justify-center"
                   href={person.linkedin}
@@ -66,12 +66,12 @@ const TeamCard = () => {
                     alt=""
                   />
                   <div className="text-center text-white my-3">
-                    <span className="block font-semibold text-2xl">
+                    <h1 className="block font-semibold text-2xl">
                       {person.name}
-                    </span>
-                    <span className="text-lg px-3 py-2 leading-none mt-1">
+                    </h1>
+                    <h2 className="text-lg px-3 pt-1 text-center mt-1 leading-tight">
                       {person.job}
-                    </span>
+                    </h2>
                   </div>
                 </a>
               </div>

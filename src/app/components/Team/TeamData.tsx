@@ -49,6 +49,13 @@ const TeamData = [
     bgColor: "bg-purple-500",
   },
   {
+    name: "Krishna Patel",
+    job: "Software Developer",
+    image: "/Krishna_Patel_pic.jpg",
+    linkedin: "https://www.linkedin.com/in/krishna-patel-a33548257/",
+    bgColor: "bg-purple-500",
+  },
+  {
     name: "Gloria Boakye Yiadom",
     job: "Social Media Manager",
     image: "/Gloria_Boakye_Yiadom_pic.jpeg",
