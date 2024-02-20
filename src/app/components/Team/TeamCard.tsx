@@ -53,7 +53,7 @@ const TeamCard = () => {
                 </a>
                 {/* </div> */}
               </Tilt>
-              <div className="md:hidden flex flex-col mb-8 w-52 h-52">
+              <div className="md:hidden flex flex-col mt-8 w-52 h-52">
                 <a
                   className="flex flex-col items-center justify-center"
                   href={person.linkedin}
