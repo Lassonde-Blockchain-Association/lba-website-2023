@@ -119,17 +119,17 @@ const Navbar = () => {
 
           {/* hamburger button*/}
           
-          <div className="flex justify-end md:items-center">
+          <div className="flex justify-end items-center">
               {open ? (
-              <div className="fixed backdrop-blur-xl bg-[#ffffff] bg-opacity-20 sm:w-fit md:block p-4 z-[100] md:mx-auto my-auto rounded-[40px] md:rounded-full animate-slide-in mt-[105px] md:mt-0 md:mr-[12%] w-[90%] mx-6 drop-shadow-md">
-                <div className="flex flex-col md:flex-row">
+              <div className="fixed backdrop-blur-xl bg-[#ffffff] bg-opacity-20 w-fit md:block p-4 z-[100] md:mx-auto my-auto rounded-full animate-slide-in mt-0 mr-[26%] md:mr-[12%] mx-6 drop-shadow-md">
+                <div className="flex flex-row">
                   {navlinks.map((link, index) => (
                     <LinkS
                       key={index}
                       to={link.link}
                       duration={1500}
                       smooth={true}
-                      className="text-white px-2 py-1 md:py-0 rounded-2xl hover:bg-white hover:rounded-2xl hover:text-orange-600 transform duration-150 text-center text-2xl cursor-pointer"
+                      className="text-white px-2 py-0 rounded-2xl hover:bg-white hover:rounded-2xl hover:text-orange-600 transform duration-150 text-center text-2xl cursor-pointer"
                     >
                       {link.title}
                     </LinkS>

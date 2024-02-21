@@ -11,7 +11,7 @@ const Landing = () => {
   };
 
   return (
-    <div className="Landing md:h-screen relative flex flex-col justify-end pb-[1vh] px-6 md:px-16 py-24">
+    <div className="Landing md:h-screen relative flex flex-col justify-end pb-[1vh] px-6 md:px-16 pt-20 md:pt-24">
       <div className="MainContent">
         <div className="md:pb-[3%] md:ml-16 text-center md:text-left mt-10 pl-0">
           <span className="text-white text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
