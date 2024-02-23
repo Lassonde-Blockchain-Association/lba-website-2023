@@ -11,6 +11,9 @@ interface DynamicSocialLinkProps {
   socialLinkTitle: string;
   url: string;
   hasRightBorder: boolean;
+  textClass?: string;
+  iconClass?: string;
+  containerClass?: string; // Add containerClass property
 }
 
 const iconMap: { [key: string]: IconType } = {
@@ -24,6 +27,9 @@ const SocialLink = ({
   socialLinkTitle,
   url,
   hasRightBorder,
+  textClass,
+  iconClass,
+  containerClass, // Include containerClass in the props
 }: DynamicSocialLinkProps) => {
   const IconComponent = iconMap[iconName];
 
@@ -33,19 +39,19 @@ const SocialLink = ({
 
   return (
     <div
-      className={`w-1/3 h-full flex items-center justify-center hover:bg-white hover:text-blue-950 ${
+      className={`w-1/3 h-full flex flex-col items-center justify-center hover:bg-white hover:text-blue-950 ${
         hasRightBorder ? "border-r-4" : ""
-      }`}
+      } ${containerClass}`} // Apply containerClass
     >
       <a
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className="z-50 w-full flex items-center justify-center text-6xl"
+        className={`z-50 w-full flex items-center justify-center text-4xl md:text-6xl ${textClass}`} // Adjust text size for responsive view
       >
-        <IconComponent className="text-9xl" />
-        <p>{socialLinkTitle}</p>
+        <IconComponent className={`text-6xl md:text-9xl ${iconClass}`} /> {/* Adjust icon size for responsive view */}
       </a>
+      <p className="text-sm md:text-base">{socialLinkTitle}</p> {/* Adjust text size for responsive view */}
     </div>
   );
 };
