@@ -14,15 +14,15 @@ const Landing = () => {
     <div className="Landing md:h-screen relative flex flex-col justify-end pb-[1vh] px-6 md:px-16 pt-20 md:pt-24">
       <div className="MainContent">
         <div className="md:pb-[3%] md:ml-16 text-center md:text-left mt-10 pl-0">
-          <span className="text-white text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
+          <span className="text-white text-6xl md:text-7xl lg:text-9xl font-extrabold font-saira_extra_condensed">
             LASSONDE
             <br />
           </span>
-          <span className="text-rose-500 text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
+          <span className="text-rose-500 text-6xl md:text-7xl lg:text-9xl font-extrabold font-saira_extra_condensed">
             BLOCKCHAIN
             <br />
           </span>
-          <span className="text-white text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
+          <span className="text-white text-6xl md:text-7xl lg:text-9xl font-extrabold font-saira_extra_condensed">
             ASSOCIATION
           </span>
         </div>
