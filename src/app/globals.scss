@@ -120,7 +120,7 @@
 .gradient-bg {
   // position: relative;
   background: var(--color-bg2);
-  // overflow-x: hidden;
+  overflow: hidden;
 
   .gradient-container {
     position: relative;

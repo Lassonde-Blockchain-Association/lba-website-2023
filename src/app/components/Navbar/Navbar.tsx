@@ -34,6 +34,9 @@ const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", updateNav);
+    if (window.innerWidth < 768) {
+      setOpen(false);
+    }
   }, []);
 
   const toggleHome = () => {
@@ -45,7 +48,7 @@ const Navbar = () => {
     if (window.scrollY >= 100) {
       setScrollNav(true);
       setOpen(false);
-    } else {
+    } else if (window.innerWidth >= 768) {
       setScrollNav(false);
       setOpen(true); // pop out when logo is trigger (to landing page)
     }
@@ -58,10 +61,10 @@ const Navbar = () => {
   return (
     // old
     // <div className="fixed overflow-hidden py-10 pl-10 flex items-center h-[10vh] w-[100%] z-[100]">
-    <div className="fixed overflow-hidden pl-8 flex items-center h-fit pt-2 w-[100%] z-[100]">
-      <div className="container mx-auto w-[100%]">
+    <div className="fixed overflow-hidden pl-8 md:pl-10 flex items-center h-fit pt-4 w-full z-[90]">
+      <div className="mx-auto w-[100%]">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-4 z-50 left-">
+          <div className="flex items-center gap-3 md:gap-4 z-50">
             {/* With Logo Background */}
             {/* <LinkS
               to="/"
@@ -86,13 +89,13 @@ const Navbar = () => {
             >
               LBA
             </LinkS> */}
-            <LinkS
-              to="/"
-              onClick={toggleHome}
-              duration={500}
-              className=""
-            >
-              <Image alt="logo" src={Logo} className="cursor-pointer hover:shadow-lg transform duration-150 h-[50px] w-[50px] hover:h-[60px] hover:w-[60px]" />
+
+            <LinkS to="/" onClick={toggleHome} duration={500} className="">
+              <Image
+                alt="logo"
+                src={Logo}
+                className="cursor-pointer transform duration-150 h-[50px] w-[50px] hover:h-[60px] hover:w-[60px]"
+              />
             </LinkS>
             <span className="text-white text-4xl">/</span>
             <Link
@@ -103,8 +106,9 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* navlinks */}
-          <div className="hidden md:hidden">
+          {/* Old Nav Links */}
+          {/* navlinks
+          <div className="">
             <div className="flex item-basline space-x-4">
               {navlinks.map((link, index) => (
                 <LinkS key={index} duration={500} to={link.link}>
@@ -112,43 +116,49 @@ const Navbar = () => {
                 </LinkS>
               ))}
             </div>
-          </div>
+          </div> */}
+
           {/* hamburger button*/}
-          <div className="flex lg:block z-50 ">
-            <button
-              type="button"
-              onClick={handleMenu}
-              className={`inline-flex items-center justify-center rounded-lg transition-transform transform 
-                  ${open ? "rotate-90 scale-110" : "rotate-0 scale-10"}`}
-            >
-              <Image alt="marker" src={marker} width={125} />
-              {/* <span className="sr-only ">Open Main Menu</span>
-              {open ? (
-                <FaTimes className="text-3xl " />
-              ) : (
-                <FaBars className="text-3xl" />
-              )} */}
-            </button>
+
+          <div className="flex justify-end items-center">
+            {open && (
+              <div className="fixed inset-0 md:static md:p-4 md:rounded-full md:mx-auto my-auto md:mr-[12%] bg-[#ffffff] bg-opacity-0 md:bg-opacity-20 backdrop-blur-xl z-[100] animate-slide-in drop-shadow-md flex items-center justify-center">
+                <div className="flex flex-col md:flex-row">
+                  {navlinks.map((link, index) => (
+                    <LinkS
+                      key={index}
+                      to={link.link}
+                      duration={1500}
+                      smooth={true}
+                      className="text-white px-20 md:px-2 py-7 md:py-0 border-b-2 md:border-b-0 md:rounded-2xl hover:bg-white hover:rounded-2xl hover:text-orange-600 transform duration-150 text-center text-4xl md:text-2xl cursor-pointer"
+                    >
+                      {link.title}
+                    </LinkS>
+                  ))}
+                </div>
+              </div>
+            )}
+            <div className="flex-shrink-0 z-[100] md:z-[90]">
+              <button
+                type="button"
+                onClick={handleMenu}
+                className={`inline-flex items-center justify-end rounded-lg transition-transform transform ${
+                  open ? "rotate-90 scale-110" : "rotate-0 scale-10"
+                }`}
+              >
+                <Image alt="marker" src={marker} width={125} height={125} />
+
+                {/* <span className="sr-only ">Open Main Menu</span>
+                {open ? (
+                  <FaTimes className="text-3xl " />
+                ) : (
+                  <FaBars className="text-3xl" />
+                )} */}
+              </button>
+            </div>
           </div>
         </div>
       </div>
-      {open ? (
-        <div className="fixed backdrop-blur-xl bg-[#ffffff] bg-opacity-20 w-fit md:block right-[12%] p-4 z-[100] mx-auto my-auto rounded-full animate-slide-in">
-          <div className="items-center">
-            {navlinks.map((link, index) => (
-              <LinkS
-                key={index}
-                to={link.link}
-                duration={1500}
-                smooth={true}
-                className="text-white px-2 hover:bg-white hover:rounded-2xl hover:text-orange-600 transform duration-150 text-center text-2xl cursor-pointer"
-              >
-                {link.title}
-              </LinkS>
-            ))}
-          </div>
-        </div>
-      ) : null}
     </div>
   );
 };
