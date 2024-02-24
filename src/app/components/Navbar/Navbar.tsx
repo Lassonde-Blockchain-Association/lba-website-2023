@@ -58,7 +58,7 @@ const Navbar = () => {
   return (
     // old
     // <div className="fixed overflow-hidden py-10 pl-10 flex items-center h-[10vh] w-[100%] z-[100]">
-    <div className="fixed overflow-hidden pl-8 md:pl-10 flex items-center h-fit pt-4 w-full z-[100]">
+    <div className="fixed overflow-hidden pl-8 md:pl-10 flex items-center h-fit pt-4 w-full z-[90]">
       <div className="mx-auto w-[100%]">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3 md:gap-4 z-50">
@@ -119,9 +119,9 @@ const Navbar = () => {
 
           {/* hamburger button*/}
           
-          <div className="flex justify-end md:items-center">
-              {open ? (
-              <div className="fixed backdrop-blur-xl bg-[#ffffff] bg-opacity-20 sm:w-fit md:block p-4 z-[100] md:mx-auto my-auto rounded-[40px] md:rounded-full animate-slide-in mt-[105px] md:mt-0 md:mr-[12%] w-[90%] mx-6 drop-shadow-md">
+          <div className="flex justify-end items-center">
+            {open && (
+              <div className="fixed inset-0 md:static md:p-4 md:rounded-full md:mx-auto my-auto md:mr-[12%] bg-[#ffffff] bg-opacity-0 md:bg-opacity-20 backdrop-blur-xl z-[100] animate-slide-in drop-shadow-md flex items-center justify-center">
                 <div className="flex flex-col md:flex-row">
                   {navlinks.map((link, index) => (
                     <LinkS
@@ -129,30 +129,31 @@ const Navbar = () => {
                       to={link.link}
                       duration={1500}
                       smooth={true}
-                      className="text-white px-2 py-1 md:py-0 rounded-2xl hover:bg-white hover:rounded-2xl hover:text-orange-600 transform duration-150 text-center text-2xl cursor-pointer"
+                      className="text-white px-20 md:px-2 py-7 md:py-0 border-b-2 md:border-b-0 md:rounded-2xl hover:bg-white hover:rounded-2xl hover:text-orange-600 transform duration-150 text-center text-4xl md:text-2xl cursor-pointer"
                     >
                       {link.title}
                     </LinkS>
                   ))}
                 </div>
               </div>
-              ) : null}
-
+            )}
+            <div className="flex-shrink-0 z-[100] md:z-[90]">
               <button
                 type="button"
                 onClick={handleMenu}
                 className={`inline-flex items-center justify-end rounded-lg transition-transform transform ${open ? "rotate-90 scale-110" : "rotate-0 scale-10"}`}
               >
                 <Image alt="marker" src={marker} width={125} height={125} />
-                
+
                 {/* <span className="sr-only ">Open Main Menu</span>
                 {open ? (
                   <FaTimes className="text-3xl " />
                 ) : (
                   <FaBars className="text-3xl" />
                 )} */}
-                
+
               </button>
+            </div>
           </div>
         </div>
       </div>
