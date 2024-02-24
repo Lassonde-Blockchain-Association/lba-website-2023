@@ -18,11 +18,11 @@ const Landing = () => {
             LASSONDE
             <br />
           </span>
-          <span className="text-rose-500 text-6xl md:text-7xl lg:text-9xl font-extrabold font-saira_extra_condensed">
+          <span className="text-rose-500 text-6xl md:text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
             BLOCKCHAIN
             <br />
           </span>
-          <span className="text-white text-6xl md:text-7xl lg:text-9xl font-extrabold font-saira_extra_condensed">
+          <span className="text-white text-6xl md:text-8xl lg:text-9xl font-extrabold font-saira_extra_condensed">
             ASSOCIATION
           </span>
         </div>

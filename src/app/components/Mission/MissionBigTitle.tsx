@@ -7,9 +7,9 @@ const MissionBigTitle = () => {
         M I S S I O N - <span className="text-orange-600"> [ A B O U T ]</span>
       </h3>
       <div className="flex-col mt-12 md:mt-0">
-        <h1 className="text-white text-center md:text-left text-5xl lg:text-8xl font-bold leading-none md:leading-normal block">
+        <h1 className="text-white text-center md:text-left text-6xl lg:text-8xl font-bold leading-none md:leading-normal block">
           BUILDING A TOP-NOTCH
-          <span className="text-orange-600 text-center md:text-left text-5xl lg:text-8xl font-bold leading-none md:leading-normal md:mb-6 block">
+          <span className="text-orange-600 text-center md:text-left text-6xl lg:text-8xl font-bold leading-none md:leading-normal md:mb-6 block">
             BLOCKCHAIN HUB
           </span>
         </h1>
