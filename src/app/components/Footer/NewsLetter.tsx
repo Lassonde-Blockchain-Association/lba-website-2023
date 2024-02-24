@@ -3,7 +3,7 @@ import { BsFillArrowUpLeftCircleFill } from "react-icons/bs";
 
 const NewsLetter = () => {
   return (
-    <div className="flex flex-col sm:flex-row md:py-0 py-2 w-full border-solid border-white border-t-8 h-1/3 items-center justify-center">
+    <div className="flex flex-col sm:flex-row md:py-0 py-2  w-full border-solid border-white border-t-8 h-1/3 items-center justify-center">
       <a
         href="https://lba-blog.vercel.app/"
         className="z-50 h-full flex items-center justify-center sm:w-1/2"
