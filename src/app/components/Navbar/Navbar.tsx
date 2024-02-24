@@ -34,6 +34,9 @@ const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", updateNav);
+    if (window.innerWidth < 768) {
+      setOpen(false);
+    }
   }, []);
 
   const toggleHome = () => {
@@ -45,7 +48,7 @@ const Navbar = () => {
     if (window.scrollY >= 100) {
       setScrollNav(true);
       setOpen(false);
-    } else {
+    } else if (window.innerWidth >= 768) {
       setScrollNav(false);
       setOpen(true); // pop out when logo is trigger (to landing page)
     }
@@ -62,7 +65,6 @@ const Navbar = () => {
       <div className="mx-auto w-[100%]">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3 md:gap-4 z-50">
-
             {/* With Logo Background */}
             {/* <LinkS
               to="/"
@@ -88,13 +90,12 @@ const Navbar = () => {
               LBA
             </LinkS> */}
 
-            <LinkS
-              to="/"
-              onClick={toggleHome}
-              duration={500}
-              className=""
-            >
-              <Image alt="logo" src={Logo} className="cursor-pointer transform duration-150 h-[50px] w-[50px] hover:h-[60px] hover:w-[60px]" />
+            <LinkS to="/" onClick={toggleHome} duration={500} className="">
+              <Image
+                alt="logo"
+                src={Logo}
+                className="cursor-pointer transform duration-150 h-[50px] w-[50px] hover:h-[60px] hover:w-[60px]"
+              />
             </LinkS>
             <span className="text-white text-4xl">/</span>
             <Link
@@ -118,7 +119,7 @@ const Navbar = () => {
           </div> */}
 
           {/* hamburger button*/}
-          
+
           <div className="flex justify-end items-center">
             {open && (
               <div className="fixed inset-0 md:static md:p-4 md:rounded-full md:mx-auto my-auto md:mr-[12%] bg-[#ffffff] bg-opacity-0 md:bg-opacity-20 backdrop-blur-xl z-[100] animate-slide-in drop-shadow-md flex items-center justify-center">
@@ -141,7 +142,9 @@ const Navbar = () => {
               <button
                 type="button"
                 onClick={handleMenu}
-                className={`inline-flex items-center justify-end rounded-lg transition-transform transform ${open ? "rotate-90 scale-110" : "rotate-0 scale-10"}`}
+                className={`inline-flex items-center justify-end rounded-lg transition-transform transform ${
+                  open ? "rotate-90 scale-110" : "rotate-0 scale-10"
+                }`}
               >
                 <Image alt="marker" src={marker} width={125} height={125} />
 
@@ -151,7 +154,6 @@ const Navbar = () => {
                 ) : (
                   <FaBars className="text-3xl" />
                 )} */}
-
               </button>
             </div>
           </div>

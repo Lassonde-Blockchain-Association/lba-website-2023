@@ -8,7 +8,7 @@ const NewsLetter = () => {
         href="https://lba-blog.vercel.app/"
         className="z-50 h-full flex items-center justify-center sm:w-1/2"
       >
-        <h1 className="text-5xl sm:text-7xl tracking-widest hover:text-orange-300 uppercase font-semibold p-2 transform duration-150">
+        <h1 className="text-5xl sm:text-7xl tracking-widest hover:text-orange-300 uppercase font-semibold lg:mt-0 mt-2 transform duration-150">
           LBA-Blog
         </h1>
       </a>
@@ -18,9 +18,9 @@ const NewsLetter = () => {
           <label className="text-lg sm:text-xl text-center">
             Contribute to our blog
           </label>
-          <div className="w-full flex py-2 justify-center">
+          <div className="w-full flex py-2 justify-center lg:mb-0 mb-2">
             <input
-              className="w-3/4 sm:w-full rounded-full placeholder:text-gray-500 pl-3 border-4 border-gray-100 text-black text-base"
+              className="w-3/4 sm:w-full rounded-full placeholder:text-gray-500 pl-3 border-4 border-gray-100 text-black text-base "
               type="email"
               maxLength={256}
               placeholder="Add your email"
