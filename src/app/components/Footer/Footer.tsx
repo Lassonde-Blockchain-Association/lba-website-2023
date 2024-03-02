@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import NewsLetter from "./NewsLetter";
 import SocialLink from "./SocialLink";
@@ -24,19 +24,11 @@ const iconsData = [
   {
     iconName: "BiLogoGithub",
     socialLinkTitle: "Github",
-    url: "https://github.com/Lassonde-Blockchain-Association/lba-website-2023",
+    url: "https://github.com/Lassonde-Blockchain-Association",
   },
 ];
 
 const Footer = () => {
-  function determineIfRightBorder(index: number): boolean {
-    if (window.innerWidth < 768) {
-      return index % 2 == 0;
-    } else {
-      return index < iconsData.length - 1;
-    }
-  }
-
   return (
     <div
       id="footer"
@@ -49,10 +41,10 @@ const Footer = () => {
           {iconsData.map((data, index) => (
             <SocialLink
               key={index}
+              iconsDataLength={iconsData.length}
               iconName={data.iconName}
               socialLinkTitle={data.socialLinkTitle}
               url={data.url}
-              hasRightBorder={determineIfRightBorder(index)}
               textClass="text-xs sm:text-base" // Added classes for smaller text size on small screens
             />
           ))}

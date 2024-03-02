@@ -8,10 +8,11 @@ import {
 } from "react-icons/bi";
 
 interface DynamicSocialLinkProps {
+  key: number;
+  iconsDataLength: number;
   iconName: string;
   socialLinkTitle: string;
   url: string;
-  hasRightBorder: boolean;
   textClass?: string;
   iconClass?: string;
   containerClass?: string; // Add containerClass property
@@ -25,10 +26,11 @@ const iconMap: { [key: string]: IconType } = {
 };
 
 const SocialLink = ({
+  key,
+  iconsDataLength,
   iconName,
   socialLinkTitle,
   url,
-  hasRightBorder,
   textClass,
   iconClass,
   containerClass, // Include containerClass in the props
@@ -41,9 +43,9 @@ const SocialLink = ({
 
   return (
     <div
-      className={`md:w-1/3 h-full flex flex-col items-center justify-center hover:bg-white hover:text-blue-950 md:border-b-0 border-b-8 ${
-        hasRightBorder ? "border-r-4" : ""
-      } ${containerClass}`} // Apply containerClass
+      className={`md:w-1/3 h-full flex flex-col items-center justify-center hover:bg-white hover:text-blue-950 md:border-b-0 border-b-8  ${
+        key < iconsDataLength - 1 ? "" : ""
+      } ${key % 2 == 0 ? "" : ""} ${containerClass}`} // Apply containerClass
     >
       <a
         href={url}
