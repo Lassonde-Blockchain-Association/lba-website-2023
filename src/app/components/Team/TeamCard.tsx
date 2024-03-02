@@ -14,7 +14,7 @@ const TeamCard = () => {
         <h2 className=" pl-[8%] pt-[3%] mb-[ddddddddd%]  text-xl font-semibold leading-normal tracking-widest text-white md:mb-4">
           O U R -<span className="text-orange-600"> [ T E A M ]</span>
         </h2>
-        <div className="p-1 flex flex-wrap items-center justify-center z-10">
+        <div className="p-1 flex flex-wrap items-center justify-center z-50">
           {TeamData.map((person, index) => (
             <div key={index}>
               <Tilt

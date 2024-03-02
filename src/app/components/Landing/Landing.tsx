@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { BiLogoGithub } from "react-icons/bi";
 
 const Landing = () => {
   const scrollToMission = () => {
@@ -27,12 +28,21 @@ const Landing = () => {
           </span>
         </div>
         <div className="BottomSection select-none whitespace-nowrap align-bottom mt-16 md:mt-0 mb-16 md:mb-20 md:ml-16 md:mr-20 flex justify-center">
-          <a
-            href="https://discord.gg/YRdu7zeb8g"
-            className="flex items-center justify-center my-auto float-left select-none text-xl border-white text-white box-border h-16 w-64 p-4 border-4 rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950 md:mr-4 font-alata"
-          >
-            Join Us
-          </a>
+          <div className="flex flex-col md:flex-row">
+            <a
+              href="https://discord.gg/YRdu7zeb8g"
+              className="flex items-center justify-center my-auto float-left select-none text-xl border-white text-white box-border h-16 w-64 p-4 border-4 rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950 md:mr-4 font-alata"
+            >
+              Join Us
+            </a>
+            <a
+              href="https://github.com/Lassonde-Blockchain-Association"
+              className="md:mt-0 mt-4 flex items-center justify-center my-auto float-left select-none text-xl border-white text-white box-border h-16 w-64 p-4 border-4 rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950 md:mr-4 font-alata"
+            >
+              <BiLogoGithub size={40}></BiLogoGithub>
+              <p className="ml-1">Github</p>
+            </a>
+          </div>
           <div className="Line1 w-[80%] border-2 border-white mx-auto my-auto hidden sm:hidden md:block lg:block"></div>
           <button
             className="my-auto float-right box-border border-2 border-transparent p-2 w-16 h-16 rounded-full bg-white ml-4 hover:bg-slate-300 hidden sm:hidden md:block lg:block"
