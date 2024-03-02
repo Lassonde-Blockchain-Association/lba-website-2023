@@ -14,7 +14,7 @@ const TeamCard = () => {
         <h2 className=" pl-[8%] pt-[3%] mb-[ddddddddd%]  text-xl font-semibold leading-normal tracking-widest text-white md:mb-4">
           O U R -<span className="text-orange-600"> [ T E A M ]</span>
         </h2>
-        <div className="p-1 flex flex-wrap items-center justify-center z-50">
+        <div className="p-1 flex flex-wrap items-center justify-center ">
           {TeamData.map((person, index) => (
             <div key={index}>
               <Tilt
@@ -53,9 +53,9 @@ const TeamCard = () => {
                 </a>
                 {/* </div> */}
               </Tilt>
-              <div className="md:hidden flex flex-col mt-16 w-40 h-52 ">
+              <div className="md:hidden flex flex-col mt-16 w-40 h-52">
                 <a
-                  className="flex flex-col items-center justify-center"
+                  className="flex flex-col items-center justify-center  z-50"
                   href={person.linkedin}
                 >
                   <Image
