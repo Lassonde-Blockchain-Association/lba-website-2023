@@ -4,6 +4,7 @@ import {
   BiLogoDiscordAlt,
   BiLogoInstagramAlt,
   BiLogoLinkedinSquare,
+  BiLogoGithub,
 } from "react-icons/bi";
 
 interface DynamicSocialLinkProps {
@@ -20,6 +21,7 @@ const iconMap: { [key: string]: IconType } = {
   BiLogoDiscordAlt,
   BiLogoInstagramAlt,
   BiLogoLinkedinSquare,
+  BiLogoGithub,
 };
 
 const SocialLink = ({
@@ -39,7 +41,7 @@ const SocialLink = ({
 
   return (
     <div
-      className={`w-1/3 h-full flex flex-col items-center justify-center hover:bg-white hover:text-blue-950 ${
+      className={`md:w-1/3 h-full flex flex-col items-center justify-center hover:bg-white hover:text-blue-950 md:border-b-0 border-b-8 ${
         hasRightBorder ? "border-r-4" : ""
       } ${containerClass}`} // Apply containerClass
     >
@@ -49,9 +51,11 @@ const SocialLink = ({
         rel="noopener noreferrer"
         className={`z-50 w-full flex items-center justify-center text-4xl md:text-6xl ${textClass}`} // Adjust text size for responsive view
       >
-        <IconComponent className={`text-6xl md:text-9xl ${iconClass}`} /> {/* Adjust icon size for responsive view */}
+        <IconComponent className={`text-6xl md:text-9xl ${iconClass}`} />{" "}
+        {/* Adjust icon size for responsive view */}
       </a>
-      <p className="text-sm md:text-base">{socialLinkTitle}</p> {/* Adjust text size for responsive view */}
+      <p className="text-sm md:text-base">{socialLinkTitle}</p>{" "}
+      {/* Adjust text size for responsive view */}
     </div>
   );
 };

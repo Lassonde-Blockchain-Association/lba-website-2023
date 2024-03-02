@@ -21,25 +21,38 @@ const iconsData = [
     socialLinkTitle: "LinkedIn",
     url: "https://www.linkedin.com/company/lassonde-blockchain-association/",
   },
+  {
+    iconName: "BiLogoGithub",
+    socialLinkTitle: "Github",
+    url: "https://github.com/Lassonde-Blockchain-Association/lba-website-2023",
+  },
 ];
 
 const Footer = () => {
+  function determineIfRightBorder(index: number): boolean {
+    if (window.innerWidth < 768) {
+      return index % 2 == 0;
+    } else {
+      return index < iconsData.length - 1;
+    }
+  }
+
   return (
     <div
       id="footer"
-      className=" h-[80vh] overflow-hidden text-white flex-col flex justify-end"
+      className=" md:h-[80vh] h-[100vh] overflow-hidden text-white flex-col flex justify-end"
     >
       {/* <div className="fixed inset-x-0 bottom-0 h-4/6"> */}
       <div className="md:h-4/6 h-5/6 inset-x-0">
         <NewsLetter />
-        <div className="flex w-full border-solid border-white border-t-8 border-b-8 h-2/5 items-center justify-center">
+        <div className="md:flex md:justify-center grid grid-cols-2 grid-rows-2 w-full border-solid border-white border-t-8 md:border-b-8 h-2/5 items-center ">
           {iconsData.map((data, index) => (
             <SocialLink
               key={index}
               iconName={data.iconName}
               socialLinkTitle={data.socialLinkTitle}
               url={data.url}
-              hasRightBorder={index < iconsData.length - 1}
+              hasRightBorder={determineIfRightBorder(index)}
               textClass="text-xs sm:text-base" // Added classes for smaller text size on small screens
             />
           ))}
