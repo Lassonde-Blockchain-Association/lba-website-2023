@@ -39,8 +39,8 @@ const Landing = () => {
               href="https://github.com/Lassonde-Blockchain-Association"
               className="md:mt-0 mt-4 flex items-center justify-center my-auto float-left select-none text-xl border-white text-white box-border h-16 w-64 p-4 border-4 rounded-full text-center hover:bg-white transition ease-in-out duration-500 hover:scale-110 hover:text-indigo-950 md:mr-4 font-alata"
             >
-              <BiLogoGithub size={40}></BiLogoGithub>
-              <p className="ml-1">Github</p>
+              <BiLogoGithub size={30}></BiLogoGithub>
+              <p className="ml-3">Github</p>
             </a>
           </div>
           <div className="Line1 w-[80%] border-2 border-white mx-auto my-auto hidden sm:hidden md:block lg:block"></div>
