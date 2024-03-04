@@ -48,13 +48,13 @@ function Mission() {
   }, []);
 
   return (
-    <div id="mission" className="h-[100vh] flex justify-center items-center ">
-      <div className="container relative mx-auto w-[85%] overflow-hidden">
+    <div id="mission" className="md:h-[100vh] flex justify-center items-center ">
+      <div className="container relative mx-auto w-[92%] md:w-[85%] overflow-hidden">
         <div className="flex w-[100%] items-center rounded-lg border border-white bg-[#FFFFFF] bg-opacity-10 backdrop-blur-30 p-5">
           <MissionBigTitle />
           <div className="absolute -right-1/4">
             <canvas
-              className=""
+              className="opacity-20 md:opacity-100"
               ref={canvasRef}
               style={{
                 width: 750,

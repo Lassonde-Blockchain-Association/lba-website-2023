@@ -15,7 +15,7 @@ let TimelineData = [
     date: "September 2023",
     title: "LBA Website Revamp",
     description:
-      "A new team of 15 specialists is overhauling the official LBA website. The updated site, optimized for performance and user experience, features modern technologies like Next.js, TypeScript, and Tailwind CSS.",
+      "A new team of 15 devleopers is overhauling the official LBA website. The updated site, optimized for performance and user experience, features modern technologies like Next.js, TypeScript, and Tailwind CSS.",
   },
   {
     date: "October - December 2023",
