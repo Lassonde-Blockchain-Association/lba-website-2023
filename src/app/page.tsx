@@ -5,6 +5,7 @@ import Project from "./components/Project/Project";
 import TeamCard from "./components/Team/TeamCard";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
+import Chatbot from "./components/chatbot";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Navbar />
         <Landing />
         <Mission />
+        <Chatbot />
       </span>
 
       <Project />
