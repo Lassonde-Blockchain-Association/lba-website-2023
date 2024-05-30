@@ -22,7 +22,7 @@ export default function Home() {
         <Navbar />
         <Landing />
         <Mission />
-        <Chatbot />
+        {/* <Chatbot /> */}
       </span>
 
       <Project />
