@@ -7,11 +7,21 @@ const groupMember = [
   { name: "NFT" },
   { name: "DAO" },
   { name: "Open Source" },
+
+  { name: "Bitcoin" },
+  { name: "Distributed Ledger" },
+  { name: "Cryptographic Hashes" },
+  { name: "P2P" },
+  { name: "Blockchain Transactions" },
+  { name: "Trusted Timestamping" },
+  { name: "Crypto" },
+  { name: "Ethereum" },
+  
 ];
 
 const ScrollingBar = () => {
   const scrollingList = [];
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 14; i++) {
     scrollingList.push(
       <ul className="flex items-center justify-center md:justify-start animation-infinite-scroll">
         {groupMember.map((data, index) => (
