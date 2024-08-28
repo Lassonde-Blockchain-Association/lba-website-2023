@@ -6,78 +6,39 @@ import Image from "next/image";
 
 const TeamCard = () => {
   return (
-    <div
-      id="team"
-      className="h-max flex flex-col items-center justify-center py-20"
-    >
-      <div className="p-4  h-4/6">
-        <h2 className=" pl-[8%] pt-[3%] mb-[ddddddddd%]  text-xl font-semibold leading-normal tracking-widest text-white md:mb-4">
-          O U R -<span className="text-orange-600"> [ T E A M ]</span>
-        </h2>
-        <div className="p-1 flex flex-wrap items-center justify-center ">
-          {TeamData.map((person, index) => (
-            <div key={index}>
-              <Tilt
-                glareEnable={true}
-                glareColor={person.bgColor}
-                scale={1.25}
-                transitionSpeed={600}
-                perspective={500}
-                tiltMaxAngleX={25}
-                tiltMaxAngleY={25}
-                className="flex-shrink-0 m-10 hidden md:block md:relative overflow-hidden rounded-lg max-w-xs shadow-lg"
-              >
-                {/* <div> */}
-                <a href={person.linkedin}>
-                  <div>
-                    <div className="relative md:w-48 md:h-48">
-                      <Image
-                        className="relative"
-                        src={person.image}
-                        width={320}
-                        height={196}
-                        alt=""
-                      />
-                      <div className="hidden absolute h-full inset-0 md:flex flex-col items-center justify-end opacity-0 hover:opacity-100 transition-opacity bg-black bg-opacity-30 text-white pb-2">
-                        <div className="text-center">
-                          <span className="block font-semibold text-3xl">
-                            {person.name}
-                          </span>
-                          <span className="text-xl px-3 py-2 leading-none mt-1">
-                            {person.job}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                {/* </div> */}
-              </Tilt>
-              <div className="md:hidden flex flex-col mt-16 w-40 h-52">
-                <a
-                  className="flex flex-col items-center justify-center  z-50"
-                  href={person.linkedin}
-                >
+    <div id="team" className="flex flex-col items-center justify-center py-20">
+      <h2 className="text-5xl font-semibold text-gray-400 mb-10"> 
+        Our Team
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-10 px-5">
+        {TeamData.map((person, index) => (
+          <div key={index} className="flex flex-col items-center">
+            <Tilt
+              glareEnable={true}
+              glareColor="#ffffff"
+              glarePosition="bottom"
+              scale={1.10}
+              transitionSpeed={1500}
+              className="w-full"
+            >
+              <div className="image-container">
+                <div className="image">
                   <Image
-                    className="h-28 w-28"
                     src={person.image}
-                    width={320}
-                    height={196}
-                    alt=""
+                    layout="fill"
+                    objectFit="cover"
+                    alt={person.name}
+                    className="transition-transform duration-300 transform hover:scale-110"
                   />
-                  <div className="text-center text-white my-3">
-                    <h1 className="block font-semibold text-2xl">
-                      {person.name}
-                    </h1>
-                    <h2 className="text-lg px-3 pt-1 text-center mt-1 leading-tight">
-                      {person.job}
-                    </h2>
-                  </div>
-                </a>
+                </div>
               </div>
+            </Tilt>
+            <div className="text-center mt-3">
+              <h3 className="text-3xl font-semibold text-gray-400">{person.name}</h3>
+              <p className="text-gray-700 font-semibold">{person.job}</p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </div>
   );
