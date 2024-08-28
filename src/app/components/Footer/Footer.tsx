@@ -37,18 +37,19 @@ const Footer = () => {
       {/* <div className="fixed inset-x-0 bottom-0 h-4/6"> */}
       <div className="md:h-4/6 h-5/6 inset-x-0">
         <NewsLetter />
-        <div className="md:flex md:justify-center grid grid-cols-2 grid-rows-2 w-full border-solid border-white border-t-8 md:border-b-8 h-2/5 items-center ">
-          {iconsData.map((data, index) => (
-            <SocialLink
-              key={index}
-              iconsDataLength={iconsData.length}
-              iconName={data.iconName}
-              socialLinkTitle={data.socialLinkTitle}
-              url={data.url}
-              textClass="text-xs sm:text-base" // Added classes for smaller text size on small screens
-            />
-          ))}
-        </div>
+        <div className="md:flex md:justify-left grid grid-cols-2 grid-rows-2 w-full border-solid border-white border-b-8 h-1.5/5 items-center">
+  {iconsData.map((data, index) => (
+    <SocialLink
+      key={index}
+      iconsDataLength={iconsData.length}
+      iconName={data.iconName}
+      socialLinkTitle={data.socialLinkTitle}
+      url={data.url}
+      textClass="text-xs sm:text-base" // Adjust text size for responsive view
+    />
+  ))}
+</div>
+
         <ScrollingBar />
         <p className="text-center mt-3 tracking-wider">
           Lassonde Blockchain Association &copy; {new Date().getFullYear()}
