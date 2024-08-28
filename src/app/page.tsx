@@ -5,12 +5,10 @@ import Project from "./components/Project/Project";
 import TeamCard from "./components/Team/TeamCard";
 import Footer from "./components/Footer/Footer";
 import Navbar from "./components/Navbar/Navbar";
-import Chatbot from "./components/chatbot";
 
 export default function Home() {
   return (
-    // <main className="LBA bg-[#191970]">
-    <main className="gradient-bg">
+<main className="gradient-bg">
       <span className="gradient-container">
         <span className="g1"></span>
         <span className="g2"></span>
@@ -23,6 +21,7 @@ export default function Home() {
         <Landing />
         <Mission />
         {/* <Chatbot /> */}
+        
       </span>
 
       <Project />
@@ -39,3 +38,5 @@ export default function Home() {
     </main>
   );
 }
+
+<Project />
