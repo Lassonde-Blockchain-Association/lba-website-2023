@@ -20,28 +20,153 @@
 }
 
 .animate-slide-in {
-  animation: slideIn ease 0.3s;
-  -webkit-animation: slideIn ease 0.3s;
-  -moz-animation: slideIn ease 0.3s;
-  -o-animation: slideIn ease 0.3s;
-  -ms-animation: slideIn ease 0.3s;
+  animation: slideIn ease 0.003s;
+  -webkit-animation: slideIn ease 0.003s;
+  -moz-animation: slideIn ease 0.003s;
+  -o-animation: slideIn ease 0.003s;
+  -ms-animation: slideIn ease 0.003s;
 }
 
 
-// Background Radial Blur Balls
 
+
+
+
+
+
+
+
+
+
+/* Define the gradient border animation */
+@keyframes gradientBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Image container with default border settings */
+.image-container {
+  position: relative;
+  width: 250px; /* Adjust size as needed */
+  height: 350px; /* Adjust size as needed */
+  border-radius: 20px;
+  overflow: hidden;
+  background: transparent; /* No border by default */
+  border: 5px solid white;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover effect for the image container */
+.image-container:hover {
+  border: none;
+  background: linear-gradient(45deg, #f6ff00, #fea203,  #ee1d24, #ff0080, #c800b7, #98008b, #6700c8, #4600c8);
+  background-size: 200% 200%;
+  animation: gradientBorder 2s ease infinite;
+}
+
+/* Next.js Image component specific styling */
+.image {
+  position: absolute;
+  top: 5px; /* Adjust border size */
+  left: 5px; /* Adjust border size */
+  right: 5px; /* Adjust border size */
+  bottom: 5px; /* Adjust border size */
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+
+// Progress Bar gradient color
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  75% {
+    background-position: 50% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.gradient-bar {
+  background: linear-gradient(45deg, #f6ff00, #fea203,  #ee1d24, #ff0080, #c800b7, #98008b, #6700c8, #4600c8);
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+
+
+
+
+
+
+//.fluent-bg {
+  /* Image and Gradient Background */
+  //background: 
+  //background-size: 150% 100%, cover; /* Gradient size and image cover */
+  //background-position: 0% 80%, center; /* Initial gradient position and center the image */
+
+  /* Animation */
+  //animation: GradientBackground 15s ease infinite;
+  
+  //backdrop-filter: blur(20px); /* Blur effect */
+  //-webkit-backdrop-filter: blur(20px); /* For Safari */
+  //border: 1px solid rgba(255, 255, 255, 0.2); /* Optional: light border for better definition */
+//}
+
+/* Keyframes for gradient animation */
+@keyframes GradientBackground {
+  0% { background-position: 0% 50%, center; }
+  50% { background-position: 100% 50%, center; }
+  100% { background-position: 0% 50%, center; }
+}
+
+
+
+
+
+// Colorful Background Radial Blur Balls
+//:root {
+  //--color-bg1: rgb(253, 255, 156); /* Yellow */
+  //--color-bg2: rgb(255, 189, 200); /* White pink main Background color */
+  //--color1: 255, 31, 83; /*  Red pinkish start section */
+  //--color2: 239, 255, 99; /* Orange color */
+  //--color3: 255, 119, 0; /* Orange circle middle project timeline */
+  //--color4: 214, 0, 242; /* Purple right bottom for start section */
+  //--color5:253, 255, 156; /* Yellow circle middle project timeline */
+  //--color6: 245, 34, 70; /* Blue top left circle */
+  //--color-interactive: 244, 63, 94; /* Purple circle outer color */
+  //--circle-size: 3000px; /* No change needed */
+  //--blending: hard-light; /* Softer blending mode for Fluent-like feel */
+//}
+
+// Dark Background Radial Blur Balls
 :root {
-  --color-bg1: rgb(108, 0, 162);
-  --color-bg2: rgb(0, 17, 82);
-  --color1: 18, 113, 255;
-  --color2: 221, 74, 255;
-  --color3: 10, 3, 92;
-  --color4: 200, 50, 50;
-  --color5: 71, 57, 227;
-  --color6: 255, 62, 162;
-  --color-interactive: 140, 100, 255;
-  --circle-size: 1000px;
-  --blending: hard-light;
+  --color-bg1: rgb(253, 255, 156); /* Yellow */
+  --color-bg2: rgb(0, 0, 0); /* White pink main Background color */
+  --color1: 255, 31, 83; /*  Red pinkish start section */
+  --color2: 214, 0, 242; /* Orange color */
+  --color3: 255, 31, 83; /* Orange circle middle project timeline */
+  --color4: 214, 0, 242; /* Purple right bottom for start section */
+  --color5:253, 255, 156; /* Yellow circle middle project timeline */
+  --color6: 245, 34, 70; /* Blue top left circle */
+  --color-interactive: 244, 63, 94; /* Purple circle outer color */
+  --circle-size: 3000px; /* No change needed */
+  --blending: hard-light; /* Softer blending mode for Fluent-like feel */
 }
 
 @keyframes moveInCircle {
@@ -187,7 +312,7 @@
     left: calc(50% - var(--circle-size) / 2 - 90%);
 
     transform-origin: 50%;
-    animation: moveInCircle 40s linear infinite;
+    animation: moveInCircle 20s linear infinite;
 
     opacity: 0.8;
   }
@@ -208,7 +333,7 @@
     left: calc(50% - var(--circle-size) / 2);
 
     transform-origin: calc(50% + 100px);
-    animation: moveHorizontal 40s ease infinite;
+    animation: moveHorizontal 20s ease infinite;
 
     opacity: 0.8;
   }
@@ -229,7 +354,7 @@
     left: calc(50% - var(--circle-size));
 
     transform-origin: calc(50% - 15%) calc(50%);
-    animation: moveInCircle 20s ease infinite;
+    animation: moveInCircle 10s ease infinite;
 
     opacity: 1;
   }
@@ -249,7 +374,7 @@
     right: calc(10% - var(--circle-size) / 4);
 
     transform-origin: 50%;
-    animation: moveHorizontalOpposite 40s ease infinite;
+    animation: moveHorizontalOpposite 20s ease infinite;
 
     opacity: 0.8;
   }
