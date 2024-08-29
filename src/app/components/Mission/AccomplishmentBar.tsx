@@ -22,7 +22,7 @@ const bar3 = [
 ];
 
 const AccomplishmentBar = () => {
-  const createScrollingList = (dataList, directionClass) => {
+  const createScrollingList = (dataList: any[], directionClass: string) => {
     const scrollingList = [];
     for (let i = 0; i < 6; i++) {
       scrollingList.push(
