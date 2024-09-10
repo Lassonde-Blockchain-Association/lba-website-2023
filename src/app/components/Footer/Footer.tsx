@@ -32,12 +32,12 @@ const Footer = () => {
   return (
     <div
       id="footer"
-      className=" md:h-[80vh] h-[100vh] overflow-hidden text-white flex-col flex justify-end"
+      className=" md:h-[80vh] h-[100vh] overflow-x-hidden text-white flex-col flex justify-end"
     >
       {/* <div className="fixed inset-x-0 bottom-0 h-4/6"> */}
       <div className="md:h-4/6 h-5/6 inset-x-0">
         <NewsLetter />
-        <div className="md:flex md:justify-center grid grid-cols-2 grid-rows-2 w-full border-solid border-white border-t-8 md:border-b-8 h-2/5 items-center ">
+        <div className="md:flex md:justify-center grid grid-cols-2 grid-rows-2 w-full border-solid border-white border-t-8 md:border-b-8 h-3/5 items-center ">
           {iconsData.map((data, index) => (
             <SocialLink
               key={index}
