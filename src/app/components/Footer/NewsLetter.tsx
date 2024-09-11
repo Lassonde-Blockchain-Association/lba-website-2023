@@ -14,13 +14,13 @@ const NewsLetter = () => {
       </a>
 
       <div className="h-full w-full sm:w-1/2 flex items-center justify-center">
-        <div className="w-full sm:w-3/4 flex flex-col items-center">
-          <label className="text-lg sm:text-xl text-center">
+        <div className="w-full sm:w-3/4 flex flex-col items-center py-1">
+          <label className="text-lg sm:text-xl text-center mt-2">
             Contribute to our blog
           </label>
-          <div className="w-full flex py-2 justify-center lg:mb-0 mb-2">
+          <div className="w-full flex py-2 justify-center lg:mb-0">
             <input
-              className="w-3/4 sm:w-full rounded-full placeholder:text-gray-500 pl-3 border-4 border-gray-100 text-black text-base "
+              className="w-3/4 sm:w-full rounded-full placeholder:text-gray-500 pl-3 border-4 border-gray-100 text-black text-base mb-2"
               type="email"
               maxLength={256}
               placeholder="Add your email"
