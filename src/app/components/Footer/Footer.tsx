@@ -36,8 +36,8 @@ const Footer = () => {
     >
       {/* <div className="fixed inset-x-0 bottom-0 h-4/6"> */}
       <div className="md:h-4/6 h-5/6 inset-x-0">
-        <NewsLetter />
-        <div className="md:flex md:justify-center grid grid-cols-2 grid-rows-2 w-full border-solid border-white border-t-8 md:border-b-8 h-3/5 items-center ">
+        <NewsLetter />                                                                        {/* Adjusted height here to prevent y overflow */}
+        <div className="md:flex md:justify-center grid grid-cols-2 grid-rows-2 w-full border-solid border-white border-t-8 md:border-b-8 h-3/6 items-center ">
           {iconsData.map((data, index) => (
             <SocialLink
               key={index}

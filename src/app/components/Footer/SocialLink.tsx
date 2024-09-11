@@ -51,9 +51,9 @@ const SocialLink = ({
         href={url}
         target="_blank"
         rel="noopener noreferrer"
-        className={`z-50 w-full flex items-center justify-center text-4xl md:text-6xl ${textClass}`} // Adjust text size for responsive view
-      > {/* min-w-50 for link - prev*/}
-        <IconComponent className={`text-6xl py-3 md:text-9xl min-w-50 ${iconClass}`} />{" "}
+        className={`z-50 w-full h-10 flex items-center justify-center text-4xl md:text-6xl my-auto ${textClass}`} // Adjust text size for responsive view
+      > 
+        <IconComponent className={`text-6xl md:text-9xl w-30 min-w-10 ${iconClass}`} />{" "}
         {/* Adjust icon size for responsive view */}
       </a>
       <p className="text-sm md:text-base">{socialLinkTitle}</p>{" "}
