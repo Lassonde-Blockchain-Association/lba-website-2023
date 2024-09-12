@@ -32,7 +32,7 @@ const Footer = () => {
   return (
     <div
       id="footer"
-      className="bg-black md:h-[80vh] h-[100vh] overflow-hidden text-white flex-col flex justify-end"
+      className="md:h-[80vh] h-[100vh] overflow-hidden text-white flex-col flex justify-end"
     >
       {/* <div className="fixed inset-x-0 bottom-0 h-4/6"> */}
       <div className="md:h-3/6 inset-x-0">
