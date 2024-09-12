@@ -43,7 +43,7 @@ const SocialLink = ({
 
   return (
     <div
-      className={`md:w-full h-full pt-3 flex flex-col items-center justify-center hover:bg-white hover:text-blue-950 md:border-b-0 border-b-8  ${
+      className={`md:w-full h-full h-full pt-1 flex flex-col items-center justify-center hover:bg-white hover:text-blue-950 md:border-b-0 border-b-8  ${
         key < iconsDataLength - 1 ? "" : ""
       } ${key % 2 == 0 ? "" : ""} ${containerClass}`} // Apply containerClass
     > 
@@ -51,9 +51,9 @@ const SocialLink = ({
         href={url}
         target="_blank"
         rel="noopener noreferrer" 
-        className={`w-full md:h-10 h-auto flex items-center justify-center text-4xl md:text-6xl ${textClass}`} // Adjust text size for responsive view
+        className={`w-full h-auto my-auto flex items-center justify-center text-4xl md:text-6xl ${textClass}`} // Adjust text size for responsive view
       > 
-        <IconComponent className={`text-6xl md:h-10 md:text-9x1${iconClass}`} />{" "}
+        <IconComponent className={`text-6xl md:h-auto md:text-9x1${iconClass}`} />{" "}
         {/* Adjust icon size for responsive view */}
       </a>
       <p className="text-sm md:text-base mb-1">{socialLinkTitle}</p>{" "}

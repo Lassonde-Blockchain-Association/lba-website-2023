@@ -25,7 +25,7 @@ const ScrollingBar = () => {
     );
   }  
   return ( 
-    <div className="w-full h-10 inline-flex flex-nowrap text-xl border-b-8 uppercase">
+    <div className="w-full md:h-10 h-auto inline-flex flex-nowrap text-xl border-b-8 uppercase">
       {scrollingList}
     </div>
   );
