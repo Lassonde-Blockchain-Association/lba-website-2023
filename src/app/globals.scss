@@ -115,7 +115,29 @@
 
 .animation-infinite-scroll {
   animation: animate-infinite-scroll 25s linear infinite;
+  animation-delay: 0s;
+  
+  
 }
+@keyframes animate-infinite-scroll-1 {
+  from {
+    transform: translateX(50%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animation-infinite-scroll-1 {
+  animation: animate-infinite-scroll 5s linear infinite;
+  animation-delay: 0s;
+  
+  
+}
+
+
+
+
 
 .gradient-bg {
   // position: relative;
@@ -253,4 +275,18 @@
 
     opacity: 0.8;
   }
+}
+@keyframes infiniteScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animation-infinite-scroll {
+  display: flex;
+  animation: infiniteScroll 20s linear infinite;
+  /* Adjust the speed (20s) as needed */
 }
