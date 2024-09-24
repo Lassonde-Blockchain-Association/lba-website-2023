@@ -32,10 +32,10 @@ const Footer = () => {
   return (
     <div
       id="footer"
-      className="z-50 md:h-[80vh] h-[100vh] h-auto overflow-hidden text-white flex-col flex justify-end"
+      className="bg-white z-50 md:h-[80vh] h-[100vh] overflow-x-hidden text-white flex-col flex justify-end mb-5"
     >
       {/* <div className="fixed inset-x-0 bottom-0 h-4/6"> */}
-      <div className="md:h-3/6 inset-x-0">
+      <div className="bg-red-700 md:h-3/6 inset-x-0 mb-10">
         <NewsLetter />                                                                        {/* Adjusted height here to prevent y overflow */}
         <div className="md:h-auto md:flex md:justify-center grid shrink-0 grid-cols-2 grid-rows-2 w-full border-solid border-white border-t-8 md:border-b-8 md:h-2/5 items-center">
           {iconsData.map((data, index) => (
