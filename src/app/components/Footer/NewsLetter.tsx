@@ -3,7 +3,7 @@ import { BsFillArrowUpLeftCircleFill } from "react-icons/bs";
 
 const NewsLetter = () => {
   return (
-    <div className="bg-black min-h-1/3 flex flex-col sm:flex-row md:py-2 w-full border-solid border-white border-t-8 items-center justify-center">
+    <div className="min-h-1/3 flex flex-col sm:flex-row md:py-2 w-full border-solid border-white border-t-8 items-center justify-center">
       <a
         href="https://lba-blog.vercel.app/"
         className="z-50 flex items-center justify-center sm:w-1/2"
@@ -18,7 +18,7 @@ const NewsLetter = () => {
           <label className="text-lg sm:text-xl text-center">
             Contribute to our blog
           </label>
-          <div className="w-full flex justify-center gap-x-6">
+          <div className="w-full flex justify-center gap-x-6 pb-2">
             <input
               className="w-3/4 lg:h-3/4 sm:w-full rounded-full placeholder:text-gray-500 pl-3 border-4 border-gray-100 text-black text-base"
               type="email"
@@ -26,7 +26,7 @@ const NewsLetter = () => {
               placeholder="Add your email"
               required
             />
-            <button type="submit" className="bg-red-700 text-4xl sm:text-5xl">
+            <button type="submit" className="text-4xl sm:text-5xl">
               <BsFillArrowUpLeftCircleFill />
             </button>
           </div>
