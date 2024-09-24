@@ -27,6 +27,36 @@
   -ms-animation: slideIn ease 0.3s;
 }
 
+///////////////////////////
+
+/// Accomplishment Bar
+
+@keyframes animate-infinite-scroll-reverse {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animation-infinite-scroll-reverse {
+  animation: animate-infinite-scroll-reverse 15s linear infinite;
+}
+
+
+/* Increase font size and make text color white */
+.accomplishment-item {
+  font-size: 2.15rem; /* Increase this value as needed */
+  color: white;
+}
+
+
+
+
+
+
+//////////////////
 
 // Background Radial Blur Balls
 
@@ -114,8 +144,16 @@
 }
 
 .animation-infinite-scroll {
-  animation: animate-infinite-scroll 25s linear infinite;
+  animation: animate-infinite-scroll 15s linear infinite;
 }
+
+
+
+
+
+
+
+
 
 .gradient-bg {
   // position: relative;

@@ -8,7 +8,7 @@ const TeamCard = () => {
   return (
     <div
       id="team"
-      className="h-max flex flex-col items-center justify-center py-20"
+      className="z-0 h-max flex flex-col items-center justify-center py-20"
     >
       <div className="p-4  h-4/6">
         <h2 className=" pl-[8%] pt-[3%] mb-[ddddddddd%]  text-xl font-semibold leading-normal tracking-widest text-white md:mb-4">
