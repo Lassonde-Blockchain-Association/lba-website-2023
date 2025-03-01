@@ -43,3 +43,4 @@ const Timeline: React.FC<TimelineProps> = ({ className, height, length }) => {
 };
 
 export default Timeline;
+

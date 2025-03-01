@@ -1,39 +1,43 @@
 import React from "react";
+import Logo from "../../../../public/logo.png";
+import Link from "next/link";
+import { Link as LinkS, animateScroll as scroll } from "react-scroll";
+import Image from "next/image";
 import { BsFillArrowUpLeftCircleFill } from "react-icons/bs";
+
+
+const toggleHome = () => {
+  scroll.scrollToTop();
+};
+
 
 const NewsLetter = () => {
   return (
-    <div className="flex flex-col sm:flex-row md:py-0 py-2  w-full border-solid border-white border-t-8 h-1/3 items-center justify-center">
-      <a
-        href="https://lba-blog.vercel.app/"
-        className="z-50 h-full flex items-center justify-center sm:w-1/2"
-      >
-        <h1 className="text-5xl sm:text-7xl tracking-widest hover:text-orange-300 uppercase font-semibold lg:mt-0 mt-2 transform duration-150">
-          LBA-Blog
-        </h1>
-      </a>
-
-      <div className="h-full w-full sm:w-1/2 flex items-center justify-center">
-        <div className="w-full sm:w-3/4 flex flex-col items-center">
-          <label className="text-lg sm:text-xl text-center">
-            Contribute to our blog
-          </label>
-          <div className="w-full flex py-2 justify-center lg:mb-0 mb-2">
-            <input
-              className="w-3/4 sm:w-full rounded-full placeholder:text-gray-500 pl-3 border-4 border-gray-100 text-black text-base "
-              type="email"
-              maxLength={256}
-              placeholder="Add your email"
-              required
-            />
-            <button type="submit" className="text-4xl sm:text-5xl pl-2">
-              <BsFillArrowUpLeftCircleFill />
-            </button>
-          </div>
-        </div>
+<div className="relative w-full">
+  <div className="flex flex-col items-start gap-3 md:gap-4 z-50 ml-8 md:ml-24 w-full">
+    <div className="flex items-center w-full">
+      <div className="flex flex-col items-center">
+        <LinkS to="/" onClick={toggleHome} duration={500} className="flex flex-col items-center">
+          <Image
+            alt="logo"
+            src={Logo}
+            className="cursor-pointer transform duration-150 h-[150px] w-[150px] hover:h-[180px] hover:w-[180px]"
+          />
+          <span className="mt-2 text-lg md:text-3xl font-semibold text-center">Lassonde Blockchain Association</span>
+        </LinkS>
+      </div>
+      <div className="absolute right-0 mr-8">
+        <p className="text-lg md:text-xl font-medium italic text-gray-300" style={{ fontFamily: 'Dancing Script, cursive' }}>We are always looking for new talent,</p>
+        <p className="text-lg md:text-xl font-medium italic text-gray-300" style={{ fontFamily: 'Dancing Script, cursive' }}>consider joining us to further explore Blockchain technology in York University!</p>
       </div>
     </div>
+  </div>
+</div>
+
   );
 };
 
 export default NewsLetter;
+
+
+
